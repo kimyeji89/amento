@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "@components/ui/Header";
+import Footer from "@components/ui/Footer";
+import HomePage from "@pages/HomePage/HomePage";
+import ProcessCatePage from "@pages/ProcessCatePage/ProcessCatePage";
+import ProcessDetailPage from "@pages/ProcessDetailPage/ProcessDetailPage";
+import ProcessDonePage from "@pages/ProcessDonePage/ProcessDonePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/processCate" element={<ProcessCatePage />} />
+          <Route path="/processDetail" element={<ProcessDetailPage />} />
+          <Route path="/processDone" element={<ProcessDonePage />} />
+        </Routes>
+      </Router>
+      <Footer />
+    </>
   );
 }
 
