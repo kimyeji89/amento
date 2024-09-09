@@ -29,39 +29,39 @@ function App() {
   return (
     <>
       <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/processCate" element={<ProcessCatePage />} />
-          <Route path="/processDetail" element={<ProcessDetailPage />} />
-          <Route path="/processDone" element={<ProcessDonePage />} />
+      {/* <Router> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/processCate" element={<ProcessCatePage />} />
+        <Route path="/processDetail" element={<ProcessDetailPage />} />
+        <Route path="/processDone" element={<ProcessDonePage />} />
 
-          {/* 게시판 */}
-          <Route path="/companyIntro" element={<CompanyIntroPage />} />
-          <Route path="/service" element={<ServicePage />} />
-          <Route path="/application" element={<ApplicationPage />} />
-          <Route path="/consulting" element={<ConsultingPage />} />
-          <Route path="/businessReview" element={<BusinessReviewPage />} />
+        {/* 게시판 */}
+        <Route path="/companyIntro" element={<CompanyIntroPage />} />
+        <Route path="/service" element={<ServicePage />} />
+        <Route path="/application" element={<ApplicationPage />} />
+        <Route path="/consulting" element={<ConsultingPage />} />
+        <Route path="/businessReview" element={<BusinessReviewPage />} />
 
-          {/* 회원 관리 */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/joinTos" element={<JoinTosPage />} />
-          <Route path="/joinDetail" element={<JoinDetailPage />} />
-          <Route path="/joinDone" element={<JoinDonePage />} />
-          <Route path="/editUser" element={<EditUserPage />} />
-          <Route path="/editUserDone" element={<EditUserDonePage />} />
-          <Route path="/withdrawalUser" element={<WithdrawalUserPage />} />
-          <Route
-            path="/withdrawalUserDone"
-            element={<WithdrawalUserDonePage />}
-          />
-          <Route path="/findId" element={<FindIdPage />} />
-          <Route path="/findIdDone" element={<FindIdDonePage />} />
-          <Route path="/changePwPage" element={<ChangePwPage />} />
-          <Route path="/changePwDetailPage" element={<ChangePwDetailPage />} />
-          <Route path="/changePwDonePage" element={<ChangePwDonePage />} />
-        </Routes>
-      </Router>
+        {/* 회원 관리 */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/joinTos" element={<JoinTosPage />} />
+        <Route path="/joinDetail" element={<JoinDetailPage />} />
+        <Route path="/joinDone" element={<JoinDonePage />} />
+        <Route path="/editUser" element={<EditUserPage />} />
+        <Route path="/editUserDone" element={<EditUserDonePage />} />
+        <Route path="/withdrawalUser" element={<WithdrawalUserPage />} />
+        <Route
+          path="/withdrawalUserDone"
+          element={<WithdrawalUserDonePage />}
+        />
+        <Route path="/findId" element={<FindIdPage />} />
+        <Route path="/findIdDone" element={<FindIdDonePage />} />
+        <Route path="/changePwPage" element={<ChangePwPage />} />
+        <Route path="/changePwDetailPage" element={<ChangePwDetailPage />} />
+        <Route path="/changePwDonePage" element={<ChangePwDonePage />} />
+      </Routes>
+      {/* </Router> */}
       <Footer />
     </>
   );
