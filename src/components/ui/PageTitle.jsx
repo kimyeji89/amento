@@ -3,9 +3,9 @@ import { css } from "@emotion/react";
 import { ReactComponent as HomeIcon } from "@svgs/home.svg";
 import { ReactComponent as AngleRightIcon } from "@svgs/angleRight.svg";
 
-export default function PageTitle({ title }) {
+export default function PageTitle({ title, hasBorder }) {
   return (
-    <div css={title_wrap}>
+    <div css={title_wrap(hasBorder)}>
       <div css={icon_wrap}>
         <div css={home_wrap}>
           <HomeIcon />
@@ -18,12 +18,13 @@ export default function PageTitle({ title }) {
   );
 }
 
-const title_wrap = css`
+const title_wrap = (hasBorder) => css`
   display: flex;
   align-items: center;
   height: 200px;
   padding: 0 0 0 150px;
-  background: var(--white-1);
+  background-color: var(--white);
+  border-bottom: ${hasBorder ? "1px solid #DBDBDB" : "none"};
 `;
 
 const icon_wrap = css`

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import FormHeader from "@components/form/FormHeader";
-import FormLink from "../../components/form/FormLink";
-import Button from "../../components/ui/Button";
-import FormInput from "../../components/form/FormInput";
+import FormLink from "@components/form/FormLink";
+import Button from "@components/ui/Button";
+import FormInput from "@components/form/FormInput";
 // import GradientBack from "../../components/ui/GradientBack";
 
 export default function LoginPage() {
