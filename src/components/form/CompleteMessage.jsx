@@ -2,12 +2,15 @@
 import { css } from "@emotion/react";
 import { ReactComponent as CompleteIcon } from "@svgs/complete.svg";
 
-export default function CompleteMessage({ icon, text, highlight }) {
+export default function CompleteMessage({ text, highlight, remainingText }) {
   return (
     <div css={message_wrap}>
       <CompleteIcon css={icon} />
       <p>{text}</p>
-      {highlight && <p css={highlight_style}>{highlight}</p>}
+      <p>
+        <span css={highlight_style}>{highlight}</span>
+        {remainingText}
+      </p>
     </div>
   );
 }
@@ -23,9 +26,14 @@ const message_wrap = css`
   p {
     font-size: 24px;
     font-weight: 700;
-    line-height: 28.8px;
     color: #3c3c3c;
   }
 `;
 
-const highlight_style = css``;
+const icon = css`
+  padding: 0 0 12px 0;
+`;
+
+const highlight_style = css`
+  color: var(--primary);
+`;
