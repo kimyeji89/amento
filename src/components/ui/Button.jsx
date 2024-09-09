@@ -1,13 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { Link } from "react-router-dom";
 
-export default function Button({ label }) {
+export default function Button({ label, link }) {
   return (
-    <div css={button_wrap}>
-      <p>{label}</p>
-    </div>
+    <Link to={link} css={link_style}>
+      <div css={button_wrap}>
+        <p>{label}</p>
+      </div>
+    </Link>
   );
 }
+
+const link_style = css`
+  text-decoration: none;
+`;
 
 const button_wrap = css`
   display: flex;
