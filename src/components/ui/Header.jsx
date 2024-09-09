@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleOpen(e) {
+  function handleChangeOpen(e) {
     setIsOpen(!isOpen);
   }
 
@@ -53,7 +53,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="user" css={user}>
-          <button type="button" css={user_button} onClick={handleOpen}>
+          <button type="button" css={user_button} onClick={handleChangeOpen}>
             {isOpen === false ? (
               <>
                 <UserDefault />
