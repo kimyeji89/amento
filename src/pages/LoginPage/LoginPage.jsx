@@ -17,7 +17,7 @@ export default function LoginPage() {
       </div>
 
       <Button label={"로그인"} />
-      <FormLink />
+      <FormLink hasBorder />
     </div>
   );
 }
