@@ -1,3 +1,10 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 export default function HomePage() {
-  return <div>Home</div>;
+  return <main css={ctn}>Home</main>;
 }
+
+const ctn = css`
+  min-height: 100vh;
+`;
