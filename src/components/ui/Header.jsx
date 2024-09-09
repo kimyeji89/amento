@@ -19,7 +19,7 @@ export default function Header() {
       <div css={ctn}>
         <div className="logo" css={logo}>
           <Link to="/">
-            <p className="text">AMENTO VENTURES</p>
+            <h1 className="text">AMENTO VENTURES</h1>
             <img src="/assets/images/logoPicture.png" alt="logo" />
           </Link>
         </div>
@@ -146,7 +146,7 @@ const logo = css`
   height: 48px;
   a {
     display: flex;
-    p {
+    h1 {
       display: none;
     }
     img {

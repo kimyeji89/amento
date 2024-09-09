@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ReactComponent as Counsel } from "@svgs/counsel.svg";
 import { ReactComponent as DeleteInputValue } from "@svgs/deleteInputValue.svg";
 
-function SidePopUpFormInput({ name, label, value, onChnage, onClick }) {
+function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
   return (
     <div css={form_input}>
       <label htmlFor={name}>{label}</label>
@@ -13,7 +13,7 @@ function SidePopUpFormInput({ name, label, value, onChnage, onClick }) {
         name={name}
         id={name}
         value={value}
-        onChange={onChnage}
+        onChange={onChange}
       />
       <DeleteInputValue onClick={onClick} />
     </div>
@@ -190,6 +190,7 @@ export default function SidePopUp() {
 }
 const side_popup_ctn = css`
   display: flex;
+  z-index: 10;
   position: fixed;
   transition: left 0.4s ease-out;
   left: -359px;
