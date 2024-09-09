@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleOpen(e) {
+  function handleChangeOpen(e) {
     setIsOpen(!isOpen);
   }
 
@@ -19,7 +19,7 @@ export default function Header() {
       <div css={ctn}>
         <div className="logo" css={logo}>
           <Link to="/">
-            <p className="text">AMENTO VENTURES</p>
+            <h1 className="text">AMENTO VENTURES</h1>
             <img src="/assets/images/logoPicture.png" alt="logo" />
           </Link>
         </div>
@@ -53,7 +53,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="user" css={user}>
-          <button type="button" css={user_button} onClick={handleOpen}>
+          <button type="button" css={user_button} onClick={handleChangeOpen}>
             {isOpen === false ? (
               <>
                 <UserDefault />
@@ -146,7 +146,7 @@ const logo = css`
   height: 48px;
   a {
     display: flex;
-    p {
+    h1 {
       display: none;
     }
     img {
