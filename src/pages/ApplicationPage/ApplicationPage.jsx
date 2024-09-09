@@ -1,3 +1,9 @@
+import PageTitle from "@components/ui/PageTitle";
+
 export default function ApplicationPage() {
-  return <div>ApplicationPage</div>;
+  return (
+    <div>
+      <PageTitle title="설명회 신청" />
+    </div>
+  );
 }
