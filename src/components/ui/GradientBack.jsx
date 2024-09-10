@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export default function GradientBack({ children, mt }) {
+export default function GradientBack({ children }) {
   return (
     <div css={container}>
-      <div css={gradient_wrap(mt)}></div>
+      <div css={gradient_wrap}></div>
       {children}
     </div>
   );
@@ -25,6 +25,4 @@ const gradient_wrap = (mt) => css`
 
   background: url(/assets/images/gradientMask.png) no-repeat center center;
   background-size: cover;
-
-  // margin-top: ${mt ? "mt" : "165px"};
 `;
