@@ -12,7 +12,7 @@ export default function WithdrawalUserPage() {
       <div css={page_wrap}>
         <WarningMessage text="정말 탈퇴하시겠습니까?" />
         <WarningBox />
-        <Button label="취소" />
+        <Button label="취소" link="/" />
         <div css={link_wrap}>
           <div>
             <Link to="/withdrawalUserDone">탈퇴하기</Link>
