@@ -2,10 +2,10 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 
-export default function Button({ label, link }) {
+export default function Button({ label, link, onClick }) {
   return (
     <Link to={link} css={link_style}>
-      <div css={button_wrap}>
+      <div css={button_wrap} onClick={onClick}>
         <p>{label}</p>
       </div>
     </Link>
@@ -22,8 +22,7 @@ const button_wrap = css`
   align-items: center;
   cursor: pointer;
 
-  width: 100%;
-  height: 60px;
+  padding: 20px;
   background: var(--primary);
   border-radius: 64px;
 
@@ -31,6 +30,6 @@ const button_wrap = css`
     color: var(--white);
     font-size: 17px;
     font-weight: 700;
-    line-height: 20.29px;
+    line-height: 20px;
   }
 `;
