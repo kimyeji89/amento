@@ -38,7 +38,7 @@ export default function ChangePwDetailPage() {
 }
 
 const page_wrap = css`
-  padding: 85px 0 140px;
+  padding: 250px 0 294px;
   width: 500px;
   margin: 0 auto;
 `;

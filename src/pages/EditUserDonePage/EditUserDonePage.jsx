@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import FormHeader from "@components/form/FormHeader";
 import CompleteMessage from "@components/form/CompleteMessage";
 import Button from "@components/ui/Button";
-import GradientBack from "../../components/ui/GradientBack";
+import GradientBack from "@components/ui/GradientBack";
 
 export default function EditUserDonePage() {
   return (
@@ -22,7 +22,7 @@ export default function EditUserDonePage() {
 }
 
 const page_wrap = css`
-  padding: 85px 0 406px;
+  padding: 250px 0 406px;
   width: 500px;
   margin: 0 auto;
 `;

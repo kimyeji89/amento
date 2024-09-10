@@ -29,7 +29,7 @@ export default function FindIdDonePage() {
 }
 
 const page_wrap = css`
-  padding: 85px 0 362px;
+  padding: 250px 0 362px;
   width: 500px;
   margin: 0 auto;
 `;

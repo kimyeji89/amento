@@ -18,7 +18,7 @@ export default function JoinDonePage() {
 }
 
 const page_wrap = css`
-  padding: 85px 0 404px;
+  padding: 250px 0 443px;
   width: 500px;
   margin: 0 auto;
 `;

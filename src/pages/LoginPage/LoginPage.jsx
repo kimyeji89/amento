@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import FormHeader from "@components/form/FormHeader";
-import FormLink from "@components/form/FormLink";
-import Button from "@components/ui/Button";
-import FormInput from "@components/form/FormInput";
 import GradientBack from "@components/ui/GradientBack";
+import FormHeader from "@components/form/FormHeader";
+import FormInput from "@components/form/FormInput";
+import Button from "@components/ui/Button";
+import FormLink from "@components/form/FormLink";
 
 export default function LoginPage() {
   return (
@@ -31,7 +31,7 @@ const login_wrap = css`
 
   width: 500px;
   margin: 0 auto;
-  padding: 85px 0 292px;
+  padding: 250px 0 292px;
 `;
 
 const form_wrapper = css`

@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import FormHeader from "@components/form/FormHeader";
 import WarningMessage from "@components/form/WarningMessage";
 import GradientBack from "@components/ui/GradientBack";
 import WarningBox from "./WarningBox";
@@ -10,6 +11,7 @@ export default function WithdrawalUserPage() {
   return (
     <GradientBack>
       <div css={page_wrap}>
+        <FormHeader label="탈퇴하기" />
         <WarningMessage text="정말 탈퇴하시겠습니까?" />
         <WarningBox />
         <Button label="취소" link="/" />
@@ -24,7 +26,7 @@ export default function WithdrawalUserPage() {
 }
 
 const page_wrap = css`
-  padding: 85px 0 404px;
+  padding: 250px 0 250px;
   width: 500px;
   margin: 0 auto;
 `;

@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import FormHeader from "@components/form/FormHeader";
 import WarningMessage from "@components/form/WarningMessage";
 import GradientBack from "@components/ui/GradientBack";
 import Button from "@components/ui/Button";
@@ -8,6 +9,7 @@ export default function WithdrawalUserDonePage() {
   return (
     <GradientBack>
       <div css={page_wrap}>
+        <FormHeader label="탈퇴하기" />
         <WarningMessage text="회원탈퇴가 완료되었습니다." />
         <div css={message}>
           그동안 저희 서비스를 이용해주셔서
@@ -24,7 +26,7 @@ export default function WithdrawalUserDonePage() {
 }
 
 const page_wrap = css`
-  padding: 85px 0 404px;
+  padding: 250px 0 356px;
   width: 500px;
   margin: 0 auto;
 `;
