@@ -83,7 +83,7 @@ const login_btn_wrap = css`
     font-size: 15px;
     width: 150px;
     text-align: center;
-    line-height: 10px;
+    line-height: 10px !important;
   }
 `;
 

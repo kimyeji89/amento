@@ -22,7 +22,7 @@ const title_wrap = (hasBorder) => css`
   display: flex;
   align-items: center;
   height: 200px;
-  padding: 0 0 0 150px;
+  padding: 0 0 0 210px;
   background-color: var(--white);
   border-bottom: ${hasBorder ? "1px solid #DBDBDB" : "none"};
 `;
