@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as Counsel } from "@svgs/counsel.svg";
 import { ReactComponent as DeleteInputValue } from "@svgs/deleteInputValue.svg";
 
@@ -176,9 +177,9 @@ export default function SidePopUp() {
         </div>
         <div css={form_submit_ctn}>
           <p css={contact}>문의사항 : ddd@amento.com</p>
-          <button type="submit" css={submit_button}>
-            신청하기
-          </button>
+          <Link to="/processCate" css={submit_button}>
+            <button type="submit">신청하기</button>
+          </Link>
         </div>
       </form>
       <div className="tag" css={tag} onClick={handleChangeIsOpen}>
@@ -332,19 +333,22 @@ const form_button = css`
 `;
 
 const submit_button = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
-  padding: 20px 34px;
-  box-sizing: border-box;
-  background-color: var(--primary);
-  color: var(--white);
-  border-radius: 15px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 20.29px;
+  text-decoration: none;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 20px 34px;
+    box-sizing: border-box;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20.29px;
+  }
 `;
 
 const contact = css`
