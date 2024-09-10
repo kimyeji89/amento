@@ -19,7 +19,7 @@ export default function FindIdPage() {
       <div css={page_wrap}>
         <FormHeader label="아이디 찾기" />
 
-        <div css={form_wrapper}>
+        <div css={form_wrapper(showError)}>
           <FormInput label="이름" placeholder="아이디를 입력하세요." />
           <FormInput label="연락처" placeholder="연락처를 입력하세요." />
         </div>
@@ -46,11 +46,11 @@ const page_wrap = css`
   margin: 0 auto;
 `;
 
-const form_wrapper = css`
+const form_wrapper = (showError) => css`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 44px 0 24px 0;
+  padding: 44px 0 ${showError ? "24px" : "34px"} 0;
 `;
 
 const err_msg = css`

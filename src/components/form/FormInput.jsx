@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { ReactComponent as DeleteInputValue } from "@svgs/deleteInputValue.svg";
 import { useState } from "react";
 
-export default function FormInput({ label, placeholder }) {
+export default function FormInput({ label, placeholder, required }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
@@ -16,7 +16,10 @@ export default function FormInput({ label, placeholder }) {
 
   return (
     <div css={input_wrap}>
-      <label css={label_style}>{label}</label>
+      <label css={label_style}>
+        {label}
+        {required && <span css={required_mark}>*</span>}
+      </label>
       <input
         placeholder={placeholder}
         value={inputValue}
@@ -42,6 +45,12 @@ const label_style = css`
   font-weight: 800;
   line-height: 20.4px;
   color: #3c3c3c;
+`;
+
+const required_mark = css`
+  color: var(--primary, #9627e7);
+  font-size: 17px;
+  font-weight: 600;
 `;
 
 const input_style = css`
