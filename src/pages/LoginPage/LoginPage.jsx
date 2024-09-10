@@ -17,7 +17,7 @@ export default function LoginPage() {
           <FormInput label="비밀번호" placeholder="비밀번호를 입력하세요." />
         </div>
 
-        <Button label={"로그인"} />
+        <Button label="로그인" />
         <FormLink hasBorder />
       </div>
     </GradientBack>

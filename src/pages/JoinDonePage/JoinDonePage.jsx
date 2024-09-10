@@ -11,7 +11,7 @@ export default function JoinDonePage() {
       <div css={page_wrap}>
         <FormHeader label="회원가입" />
         <CompleteMessage text="회원가입이 완료되었습니다." />
-        <Button label={"로그인"} />
+        <Button label={"로그인"} link="/login" />
       </div>
     </GradientBack>
   );

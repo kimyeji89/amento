@@ -59,9 +59,9 @@ function App() {
           />
           <Route path="/findId" element={<FindIdPage />} />
           <Route path="/findIdDone" element={<FindIdDonePage />} />
-          <Route path="/changePwPage" element={<ChangePwPage />} />
-          <Route path="/changePwDetailPage" element={<ChangePwDetailPage />} />
-          <Route path="/changePwDonePage" element={<ChangePwDonePage />} />
+          <Route path="/changePw" element={<ChangePwPage />} />
+          <Route path="/changePwDetail" element={<ChangePwDetailPage />} />
+          <Route path="/changePwDone" element={<ChangePwDonePage />} />
         </Routes>
         <Footer />
       </Router>
