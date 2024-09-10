@@ -4,7 +4,7 @@ import FormHeader from "@components/form/FormHeader";
 import FormLink from "@components/form/FormLink";
 import Button from "@components/ui/Button";
 import FormInput from "@components/form/FormInput";
-import GradientBack from "../../components/ui/GradientBack";
+import GradientBack from "@components/ui/GradientBack";
 
 export default function LoginPage() {
   return (
@@ -13,7 +13,7 @@ export default function LoginPage() {
         <FormHeader label="로그인" />
 
         <div css={form_wrapper}>
-          <FormInput label="이메일" placeholder="이메일주소를 입력하세요." />
+          <FormInput label="이메일" placeholder="이메일 주소를 입력하세요." />
           <FormInput label="비밀번호" placeholder="비밀번호를 입력하세요." />
         </div>
 

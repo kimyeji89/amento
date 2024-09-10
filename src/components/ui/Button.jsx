@@ -2,10 +2,10 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 
-export default function Button({ label, link }) {
+export default function Button({ label, link, onClick }) {
   return (
     <Link to={link} css={link_style}>
-      <div css={button_wrap}>
+      <div css={button_wrap} onClick={onClick}>
         <p>{label}</p>
       </div>
     </Link>
