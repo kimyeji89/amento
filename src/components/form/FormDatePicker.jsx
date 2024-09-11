@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as CalendarIcon } from "@svgs/calendar.svg";
+import { ReactComponent as CalendarIcon } from "@svgs/joinDetailPage/calendar.svg";
 import { useState } from "react";
 
 export default function FormDatePicker({ label }) {
