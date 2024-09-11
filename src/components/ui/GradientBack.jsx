@@ -23,6 +23,7 @@ const gradient_wrap = (mt) => css`
   width: 100%;
   height: 915px;
 
-  background: url(/assets/images/gradientMask.png) no-repeat center center;
+  background: url(/assets/images/common/gradientMask.png) no-repeat center
+    center;
   background-size: cover;
 `;

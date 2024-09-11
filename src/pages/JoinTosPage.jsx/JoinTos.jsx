@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as CheckBefore } from "@svgs/checkBefore.svg";
-// import { ReactComponent as CheckGray } from "@svgs/checkGray.svg";
-import { ReactComponent as AngleRight } from "@svgs/angleRight.svg";
+import { ReactComponent as CheckBefore } from "@svgs/joinTosPage/checkBefore.svg";
+import { ReactComponent as CheckGray } from "@svgs/joinTosPage/checkGray.svg";
+import { ReactComponent as AngleRight } from "@svgs/common/angleRight.svg";
 
 export default function JoinTos() {
   return (

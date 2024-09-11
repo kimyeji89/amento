@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as HomeIcon } from "@svgs/home.svg";
-import { ReactComponent as AngleRightIcon } from "@svgs/angleRight.svg";
+import { ReactComponent as HomeIcon } from "@svgs/common/home.svg";
+import { ReactComponent as AngleRightIcon } from "@svgs/common/angleRight.svg";
 
 export default function PageTitle({ title, hasBorder }) {
   return (

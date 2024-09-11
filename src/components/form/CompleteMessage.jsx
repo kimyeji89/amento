@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as CompleteIcon } from "@svgs/complete.svg";
+import { ReactComponent as CompleteIcon } from "@svgs/common/complete.svg";
 
 export default function CompleteMessage({ text, highlight, remainingText }) {
   return (
