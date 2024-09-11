@@ -17,20 +17,22 @@ export default function Footer() {
               통신판매신고번호 : 제 2024-서울영등포-1348
             </span>
           </p>
-          <p css={info_with_title}>
-            <span css={info_title}>office</span>
-            <span css={info_content}>
+          <div css={info_with_title}>
+            <p css={info_title}>office</p>
+            <p css={info_content}>
               서울시 영등포구 양평동 2가 19-4 양평동오피스텔 201호
-            </span>
-          </p>
-          <p css={info_with_title}>
-            <span css={info_title}>contact</span>
-            <span css={info_content}>TEL : 070.7700.1555</span>
-            <span css={info_content}>email : amentoventures@gmail.com</span>
-            <span css={info_content}>
-              평일 : 9:00 ~ 18:00 (11:30 ~ 13:00 점심시간)
-            </span>
-          </p>
+            </p>
+          </div>
+          <div css={info_with_title}>
+            <p css={info_title}>contact</p>
+            <div css={info_content_cnt}>
+              <p css={info_content}>TEL : 070.7700.1555</p>
+              <p css={info_content}>email : amentoventures@gmail.com</p>
+              <p css={info_content}>
+                평일 : 9:00 ~ 18:00 (11:30 ~ 13:00 점심시간)
+              </p>
+            </div>
+          </div>
           <p>
             <Link to="/" css={info_link_ctn}>
               <span css={info_link}>개인정보처리방침</span>
@@ -55,6 +57,21 @@ const footer = css`
   justify-content: start;
   padding: 50px 100px;
   box-sizing: border-box;
+  @media (max-width: 1199px) {
+    padding: 40px 100px;
+  }
+  @media (max-width: 1024px) {
+    padding: 36px 110px;
+  }
+  @media (max-width: 767px) {
+    padding: 32px 64px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const ctn = css`
@@ -62,18 +79,59 @@ const ctn = css`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 1199px) {
+  }
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+  @media (max-width: 767px) {
+    gap: 14px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const info = css`
   display: flex;
   flex-direction: column;
   gap: 14px;
+  @media (max-width: 1199px) {
+    gap: 12px;
+  }
+  @media (max-width: 1024px) {
+    gap: 10px;
+  }
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const info_text_ctn = css`
   display: flex;
   gap: 14px;
-  align-items: center;z
+  align-items: center;
+  @media (max-width: 1199px) {
+  }
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 767px) {
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const info_text = css`
@@ -83,6 +141,20 @@ const info_text = css`
   line-height: 18.2px;
   letter-spacing: -0.14000000059604645px;
   opacity: 0.8;
+  @media (max-width: 1199px) {
+  }
+  @media (max-width: 1024px) {
+    font-size: 13px;
+  }
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const info_divider = css`
@@ -94,22 +166,49 @@ const info_divider = css`
 
 const info_with_title = css`
   display: flex;
-  height: 24px;
 `;
 
 const info_title = css`
   font-size: 14px;
   font-weight: 600;
-  line-height: 23.4px;
+  line-height: 24px;
   letter-spacing: -0.5px;
   text-align: left;
   text-transform: uppercase;
   width: 110px;
+  margin-right: 20px;
+  @media (max-width: 1199px) {
+    margin-right: 16px;
+    line-height: 20px;
+  }
+  @media (max-width: 1024px) {
+    margin-right: 12px;
+    line-height: 18px;
+    font-size: 13px;
+  }
+  @media (max-width: 767px) {
+    margin-right: 10px;
+    line-height: 16px;
+    font-size: 12px;
+    width: 90px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
+`;
+
+const info_content_cnt = css`
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 110px - 20px);
 `;
 
 const info_content = css`
   font-size: 14px;
-  line-height: 23.4px;
+  line-height: 24px;
   letter-spacing: -0.5px;
   text-align: left;
   opacity: 0.8;
@@ -127,11 +226,45 @@ const info_content = css`
     height: 10px;
     background-color: #aaaaaa;
   }
+  @media (max-width: 1199px) {
+    line-height: 20px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @media (max-width: 767px) {
+    line-height: 16px;
+    font-size: 12px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const info_link_ctn = css`
-  width: 110px;
   display: inline-block;
+  width: 110px;
+  margin-right: 20px;
+  @media (max-width: 1199px) {
+    margin-right: 16px;
+  }
+  @media (max-width: 1024px) {
+    margin-right: 12px;
+  }
+  @media (max-width: 767px) {
+    width: 90px;
+    margin-right: 10px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 const info_link = css`
   display: inline-block;
@@ -141,6 +274,23 @@ const info_link = css`
   color: var(--white);
   text-decoration: none;
   border-bottom: 1px solid var(--white);
+  @media (max-width: 1199px) {
+    height: 20px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 13px;
+    height: 18px;
+  }
+  @media (max-width: 767px) {
+    height: 16px;
+    font-size: 12px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const divider = css`
@@ -155,4 +305,21 @@ const copyright = css`
   line-height: 20.8px;
   letter-spacing: -0.5px;
   color: #666666;
+  @media (max-width: 1199px) {
+    line-height: 20px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;

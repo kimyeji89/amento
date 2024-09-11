@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as DeleteInputValue } from "@svgs/deleteInputValue.svg";
+// import { ReactComponent as DeleteInputValue } from "@svgs/deleteInputValue.svg";
 import { useState } from "react";
 
 export default function FormInput({ label, placeholder, required }) {
@@ -26,9 +26,9 @@ export default function FormInput({ label, placeholder, required }) {
         onChange={handleChange}
         css={input_style}
       />
-      {inputValue && (
+      {/* {inputValue && (
         <DeleteInputValue onClick={clearInput} css={delete_icon} />
-      )}
+      )} */}
     </div>
   );
 }
