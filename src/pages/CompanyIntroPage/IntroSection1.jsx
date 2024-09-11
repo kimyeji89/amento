@@ -8,7 +8,6 @@ export default function IntroSection1() {
       <div css={gradient_img} />
 
       <div css={text_wrap}>
-        {/* <div css={slogan}>Slogan</div> */}
         <div>
           <h1>당신의 목표, 우리의 도전</h1>
           <p css={p_1}>
@@ -34,8 +33,9 @@ const section_wrap = css`
 const picture2 = css`
   width: 78.39%;
   height: 100%;
-  background: url("/assets/images/CompanyIntroPage/introBanner.png") lightgray
-    50% / cover no-repeat;
+  background: url("${process.env
+      .PUBLIC_URL}/assets/images/CompanyIntroPage/introBanner.png")
+    lightgray 50% / cover no-repeat;
 `;
 
 const gradient_img = css`
@@ -68,14 +68,6 @@ const text_wrap = css`
     line-height: 120%; /* 66px */
   }
 `;
-
-// const slogan = css`
-//   color: var(--black-1);
-//   font-family: Poppins;
-//   font-size: 17px;
-//   font-weight: 700;
-//   text-transform: capitalize;
-// `;
 
 const p_1 = css`
   color: #292929;

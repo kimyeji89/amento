@@ -10,29 +10,38 @@ export default function IntroSection3() {
       </div>
       <div css={box_wrap}>
         <div css={box_1}>
-          <img src="/assets/images/graph.png" alt="graph" />
+          <img
+            src="/assets/images/companyIntroPage/platform.png"
+            alt="platform"
+          />
           <p css={number}>01</p>
           <p css={des}>
-            창업 및 기업가의 미래를 <br />
-            설계하고 성장을 지원하는 <br />
-            전문 창업 플랫폼
+            미래를 설계하고 성장을 지원하는
+            <br />
+            <span>전문 창업 플랫폼</span>
           </p>
         </div>
         <div css={box_2}>
-          <img src="/assets/images/graph.png" alt="graph" />
+          <img
+            src="/assets/images/companyIntroPage/handshaking.png"
+            alt="hand"
+          />
           <p css={number}>02</p>
           <p css={des}>
-            창업 및 가맹본부 설립의 경험을 <br />
-            갖춘 전문가 지원 <br />
-            (경영, 법률, 세무, 지식재산권 등)
+            다양한 창업 및 가맹본부 설립 경험을 갖춘
+            <br />
+            <span css={pro_span}>전문가 그룹</span>
+            <br />
+            <p css={pro_p}>(경영, 법률, 세무, 지식재산권 등)</p>
           </p>
         </div>
         <div css={box_3}>
-          <img src="/assets/images/graph.png" alt="graph" />
+          <img src="/assets/images/companyIntroPage/graph.png" alt="graph" />
           <p css={number}>03</p>
           <p css={des}>
-            창업에 대한 비즈니스모델 수립 및 <br />
-            최적화된 전략을 설계 및 지원
+            최적화된 비즈니스모델 전략
+            <br />
+            <span>설계 및 지원</span>
           </p>
         </div>
       </div>
@@ -95,27 +104,37 @@ const box_wrap = css`
     align-items: center;
     border-radius: 30px;
   }
-
-  img {
-    width: 126px;
-    height: 120px;
-  }
 `;
 
 const box_1 = css`
   background: #f2e8fa;
+
+  img {
+    width: 146px;
+    height: 134px;
+  }
 `;
 
 const box_2 = css`
   background: #e4e8ff;
+
+  img {
+    width: 137px;
+    height: 134px;
+  }
 `;
 
 const box_3 = css`
   background: #e5def2;
+
+  img {
+    width: 126px;
+    // height: 144px;
+  }
 `;
 
 const number = css`
-  color: var(--primary, #9627e7);
+  color: var(--primary);
   text-align: center;
   font-family: Poppins;
   font-size: 15px;
@@ -132,4 +151,23 @@ const des = css`
   font-style: normal;
   font-weight: 600;
   line-height: 140%; /* 28px */
+
+  span {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+`;
+
+const pro_span = css`
+  color: #2768e7 !important;
+`;
+
+const pro_p = css`
+  color: #454c5a;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 160%; /* 25.6px */
+  padding: 4px 0 0;
 `;

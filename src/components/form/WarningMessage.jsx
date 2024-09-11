@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as WarningIcon } from "@svgs/warning.svg";
+import { ReactComponent as WarningIcon } from "@svgs/common/warning.svg";
 
 export default function WarningMessage({ text }) {
   return (

@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { ReactComponent as ArrowImg } from "@svgs/companyIntroPage/arrow.svg";
 
 export default function IntroSection2() {
   return (
@@ -15,7 +16,12 @@ export default function IntroSection2() {
           <p>신뢰성을 기반으로 함께 참여하는</p>
           <p>아멘토벤처스, 프로젝트 FC</p>
         </div>
-        <div css={img_container}>이미지 수정 요청</div>
+        <ArrowImg alt="arrow" />
+        <img
+          src="/assets/images/companyIntroPage/amentoAbout.png"
+          alt="amentoAbout"
+          css={about_img}
+        />
         <p css={des_2}>
           새롭고 고도화된 창업과 가맹본부 설립을 지원하여
           <br /> <span>시장 및 환경에서 경쟁우위를 통한 성장을 적극 지원</span>
@@ -61,9 +67,7 @@ const des = css`
 `;
 
 const box = css`
-  padding: 40px;
   display: flex;
-  margin-bottom: 60px;
   width: 337px;
   height: 131px;
   padding: 0;
@@ -92,13 +96,8 @@ const box = css`
   }
 `;
 
-const img_container = css`
-  width: 600px;
-  height: 250px;
-  border: 1px solid;
-`;
-
 const des_2 = css`
+  padding: 34px 0 0;
   color: var(--black-1);
   text-align: center;
   font-size: 20px;
@@ -111,4 +110,8 @@ const des_2 = css`
     font-size: 20px;
     font-weight: 700;
   }
+`;
+
+const about_img = css`
+  width: 595px;
 `;
