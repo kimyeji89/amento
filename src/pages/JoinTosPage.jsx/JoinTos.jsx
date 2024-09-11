@@ -23,7 +23,7 @@ export function Tos() {
   return (
     <div css={tos_list}>
       <div css={required_tos}>
-        {/* <CheckGray /> */}
+        <CheckGray />
         <div>
           <span css={hightlight}>(필수)</span>서비스 이용약관
         </div>
