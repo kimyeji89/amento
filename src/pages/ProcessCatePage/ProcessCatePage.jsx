@@ -2,8 +2,7 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ReactComponent as CheckGray } from "@svgs/ProcessCatePage/checkGray.svg";
-import { ReactComponent as CheckPrimary } from "@svgs/ProcessCatePage/checkPrimary.svg";
+import CategoryCard from "./CategoryCard";
 
 export default function ProcessCatePage() {
   const [category, setCategory] = useState("");
@@ -29,71 +28,32 @@ export default function ProcessCatePage() {
 
   return (
     <main css={ctn}>
-      <h2 className="page_title">컨설팅 프로세스</h2>
+      <h2 css={page_title}>컨설팅 프로세스</h2>
       <div css={category_card_ctn}>
-        <div
-          className="category_card"
-          css={category_card}
-          data-category={categoryText.cate1}
+        <CategoryCard
+          category={category}
+          categoryText={categoryText.cate1}
+          img="/assets/images/processCate/cate1.png"
           onClick={handleChangeCategory}
-        >
-          <img
-            src="/assets/images/processCate/cate1.png"
-            alt="categoryText.cate1"
-          />
-          <div className="info">
-            {category !== categoryText.cate1 ? <CheckGray /> : <CheckPrimary />}
-            <p className="title">{categoryText.cate1}</p>
-            {category === categoryText.cate1 && (
-              <p className="desc">직영점 1년 미만, 미운영</p>
-            )}
-          </div>
-        </div>
-        <div
-          className="category_card"
-          css={category_card}
-          data-category={categoryText.cate2}
+        />
+        <CategoryCard
+          category={category}
+          categoryText={categoryText.cate2}
+          img="/assets/images/processCate/cate2.png"
           onClick={handleChangeCategory}
-        >
-          <img src="/assets/images/processCate/cate2.png" alt="cate2" />
-          <div className="info">
-            {category !== categoryText.cate2 ? <CheckGray /> : <CheckPrimary />}
-            <p className="title">{categoryText.cate2}</p>
-            {category === categoryText.cate2 && (
-              <p className="desc">직영점 1년 미만, 미운영</p>
-            )}
-          </div>
-        </div>
-        <div
-          className="category_card"
-          css={category_card}
-          data-category={categoryText.cate3}
+        />
+        <CategoryCard
+          category={category}
+          categoryText={categoryText.cate3}
+          img="/assets/images/processCate/cate3.png"
           onClick={handleChangeCategory}
-        >
-          <img src="/assets/images/processCate/cate3.png" alt="cate3" />
-          <div className="info">
-            {category !== categoryText.cate3 ? <CheckGray /> : <CheckPrimary />}
-            <p className="title">{categoryText.cate3}</p>
-            {category === categoryText.cate3 && (
-              <p className="desc">직영점 1년 미만, 미운영</p>
-            )}
-          </div>
-        </div>
-        <div
-          className="category_card"
-          css={category_card}
-          data-category={categoryText.cate4}
+        />
+        <CategoryCard
+          category={category}
+          categoryText={categoryText.cate4}
+          img="/assets/images/processCate/cate4.png"
           onClick={handleChangeCategory}
-        >
-          <img src="/assets/images/processCate/cate4.png" alt="cate4" />
-          <div className="info">
-            {category !== categoryText.cate4 ? <CheckGray /> : <CheckPrimary />}
-            <p className="title">{categoryText.cate4}</p>
-            {category === categoryText.cate4 && (
-              <p className="desc">직영점 1년 미만, 미운영</p>
-            )}
-          </div>
-        </div>
+        />
       </div>
       {category === "" ? (
         <button type="button" css={next_button_disabled}>
@@ -118,11 +78,14 @@ const ctn = css`
   margin: 90px auto 0;
   padding: 160px 0 212px 0;
   .page_title {
-    color: var(--black, #111);
-    text-align: center;
-    font-size: 55px;
-    font-weight: 700;
   }
+`;
+
+const page_title = css`
+  color: var(--black, #111);
+  text-align: center;
+  font-size: 55px;
+  font-weight: 700;
 `;
 
 const category_card_ctn = css`
@@ -130,67 +93,6 @@ const category_card_ctn = css`
   flex-wrap: wrap;
   gap: 24px;
   max-width: 664px;
-`;
-
-const category_card = css`
-  position: relative;
-  width: 320px;
-  height: 200px;
-  border-radius: 20px;
-  cursor: pointer;
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    svg {
-      margin-bottom: 2px;
-    }
-    .title {
-      color: var(--black, #111);
-      text-align: center;
-      white-space: nowrap;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 30px;
-    }
-  }
-  &.selected {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    filter: drop-shadow(0px 6px 33px #e0d4e9);
-    img {
-      filter: blur(15px);
-    }
-    .desc {
-      color: var(--primary, #9627e7);
-      font-family: Pretendard;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-    &::before {
-      content: "";
-      display: block;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-      z-index: 1;
-      border-radius: 20px;
-      box-shadow: 0 0 0 1px var(--primary, #9627e7) inset;
-    }
-  }
 `;
 
 const next_button_disabled = css`
@@ -220,22 +122,22 @@ const next_button = css`
   max-width: 664px;
   text-decoration: none;
   button {
-    padding: 10px 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    box-sizing: border-box;
+    padding: 10px 20px;
     width: 100%;
+    height: 50px;
     border-radius: 80px;
     background: var(--primary);
-    display: flex;
-    height: 50px;
-    box-sizing: border-box;
+    color: #fff;
     font-family: Poppins;
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
-    color: #fff;
   }
 `;

@@ -2,23 +2,7 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ReactComponent as CheckOff } from "@svgs/ProcessDetailPage/checkOff.svg";
-import { ReactComponent as CheckOn } from "@svgs/ProcessDetailPage/checkOn.svg";
-
-function CheckBoxInput({ name, id, label, onClick, formData, isBig }) {
-  return (
-    <>
-      <label htmlFor={id} onClick={onClick} className={isBig && "big"}>
-        {formData[name][id] ? <CheckOn /> : <CheckOff />}
-        <span
-          className="text"
-          dangerouslySetInnerHTML={{ __html: label.replace(/\n/g, "<br/>") }}
-        ></span>
-      </label>
-      <input type="checkbox" name={name} id={id} />
-    </>
-  );
-}
+import CheckBoxInput from "./CheckBoxInput";
 
 export default function ProcessDetailPage() {
   const [formData, setFormData] = useState({
@@ -105,11 +89,11 @@ export default function ProcessDetailPage() {
 
   return (
     <main css={ctn}>
-      <h2 className="page_title">예비 가맹본부 준비 (직영점 1년 미만)</h2>
+      <h2 css={page_title}>예비 가맹본부 준비 (직영점 1년 미만)</h2>
       <form className="form" css={form_ctn} action="GET">
         <div css={group_ctn}>
-          <p className="group">창업컨설팅</p>
-          <div className="input_ctn">
+          <p css={group}>창업컨설팅</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="startUpConsulting"
               id="designFranchiseHeadquarters"
@@ -141,8 +125,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">창업법률 지원</p>
-          <div className="input_ctn">
+          <p css={group}>창업법률 지원</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="legalAssistance"
               id="fairTradeAct"
@@ -181,8 +165,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">인허가</p>
-          <div className="input_ctn">
+          <p css={group}>인허가</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="authorization"
               id="registrationIncorporatedBusinessEntity"
@@ -235,8 +219,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">지식재산권</p>
-          <div className="input_ctn">
+          <p css={group}>지식재산권</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="intellectualPropertyRights"
               id="patentUtilityModel"
@@ -282,8 +266,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">세무</p>
-          <div className="input_ctn">
+          <p css={group}>세무</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="taxation"
               id="accountBook"
@@ -301,8 +285,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">교육</p>
-          <div className="input_ctn">
+          <p css={group}>교육</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="education"
               id="startUpManagementTraining"
@@ -320,8 +304,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">창업 메뉴얼</p>
-          <div className="input_ctn">
+          <p css={group}>창업 메뉴얼</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="startUpManual"
               id="affiliateBusinessManual"
@@ -346,8 +330,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">레시피 개발</p>
-          <div className="input_ctn">
+          <p css={group}>레시피 개발</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="recipeDevelopment"
               id="food"
@@ -372,8 +356,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">행사 및 이벤트</p>
-          <div className="input_ctn">
+          <p css={group}>행사 및 이벤트</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="events"
               id=" planning"
@@ -398,8 +382,10 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group big">설명회</p>
-          <div className="input_ctn">
+          <p className="big" css={group}>
+            설명회
+          </p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="presentation"
               id=" operationFranchiseHeadquartersConsignmentExplanation"
@@ -419,8 +405,8 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group">포스</p>
-          <div className="input_ctn">
+          <p css={group}>포스</p>
+          <div css={input_ctn}>
             <CheckBoxInput
               name="force"
               id=" forceDesign"
@@ -438,13 +424,16 @@ export default function ProcessDetailPage() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="group gray">기타 문의</p>
+          <p className="gray" css={group}>
+            기타 문의
+          </p>
           <input
             type="text"
             name="etc"
             id="etc"
             placeholder="기타 문의사항을 직접 입력해 주세요."
             onChange={handleChangeInput}
+            css={text_input}
           />
           <label htmlFor="etc">기타 문의</label>
         </div>
@@ -468,16 +457,17 @@ const ctn = css`
   box-sizing: border-box;
   margin: 90px auto 0;
   padding: 80px 0 266px 220px;
-  .page_title {
-    width: 100%;
-    margin-bottom: 54px;
-    color: var(--black, #111);
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-align: left;
-  }
+`;
+
+const page_title = css`
+  width: 100%;
+  margin-bottom: 54px;
+  color: var(--black, #111);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
 `;
 
 const form_ctn = css`
@@ -487,110 +477,65 @@ const form_ctn = css`
   gap: 18px;
 `;
 
+const text_input = css`
+  display: flex;
+  width: calc(100% - 150.5px);
+  height: 50px;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 16px 14px;
+  border-radius: 5px;
+  border: 1px solid #cecece;
+  background: #fff;
+  &:placeholder {
+    color: #747474;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  & + label {
+    display: none;
+  }
+`;
+
 const group_ctn = css`
   display: flex;
   max-width: 1527.5px;
-  .group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150.5px;
-    height: 50px;
-    box-sizing: border-box;
-    padding: 20px;
-    gap: 6px;
-    border-radius: 5px;
-    background: var(--primary, #9627e7);
-    margin-right: 24px;
-    color: var(--white, #fff);
-    white-space: nowrap;
-    text-align: center;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    &.big {
-      height: 67px;
-    }
-    &.gray {
-      background-color: #e0e0e0;
-      color: var(--black-1, #111);
-    }
+`;
+
+const input_ctn = css`
+  display: flex;
+  gap: 12px;
+`;
+
+const group = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150.5px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 20px;
+  gap: 6px;
+  border-radius: 5px;
+  background: var(--primary, #9627e7);
+  margin-right: 24px;
+  color: var(--white, #fff);
+  white-space: nowrap;
+  text-align: center;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  &.big {
+    height: 67px;
   }
-  .input_ctn {
-    display: flex;
-    gap: 12px;
-  }
-  label {
-    cursor: pointer;
-    display: flex;
-    width: 183px;
-    height: 50px;
-    box-sizing: border-box;
-    padding: 20px 14px;
-    align-items: center;
-    gap: 6px;
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px #cecece inset;
-    background: #fff;
-    .text {
-      color: var(--black, #111);
-      text-align: left;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
-    &.big {
-      height: 100%;
-      padding: 16.5px 14px;
-    }
-    &.selected {
-      position: relative;
-      border-radius: 5px;
-      box-shadow: 0 0 0 1px var(--primary, #9627e7) inset;
-      background: #fff;
-      &:after {
-        position: absolute;
-        display: block;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        content: "";
-        box-shadow: 0px 6px 15px 0px rgba(224, 212, 233, 0.5);
-      }
-      .text {
-        color: var(--primary, #9627e7);
-        font-weight: 700;
-      }
-    }
-  }
-  input[type="checkbox"] {
-    display: none;
-  }
-  input[type="text"] {
-    display: flex;
-    width: calc(100% - 150.5px);
-    height: 50px;
-    align-items: center;
-    gap: 10px;
-    box-sizing: border-box;
-    padding: 16px 14px;
-    border-radius: 5px;
-    border: 1px solid #cecece;
-    background: #fff;
-    &:placeholder {
-      color: #747474;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      text-transform: uppercase;
-    }
-    & + label {
-      display: none;
-    }
+  &.gray {
+    background-color: #e0e0e0;
+    color: var(--black-1, #111);
   }
 `;
 

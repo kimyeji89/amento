@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { ReactComponent as CheckBefore } from "@svgs/checkBefore.svg";
-import { ReactComponent as CheckGray } from "@svgs/checkGray.svg";
+// import { ReactComponent as CheckGray } from "@svgs/checkGray.svg";
 import { ReactComponent as AngleRight } from "@svgs/angleRight.svg";
 
 export default function JoinTos() {
@@ -23,7 +23,7 @@ export function Tos() {
   return (
     <div css={tos_list}>
       <div css={required_tos}>
-        <CheckGray />
+        {/* <CheckGray /> */}
         <div>
           <span css={hightlight}>(필수)</span>서비스 이용약관
         </div>

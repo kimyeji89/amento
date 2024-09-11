@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { ReactComponent as UserDefault } from "@svgs/Header/userDefault.svg";
-import { ReactComponent as UserSelected } from "@svgs/Header/userSelected.svg";
-import { ReactComponent as ChevDown } from "@svgs/Header/chevDown.svg";
-import { ReactComponent as ChevUp } from "@svgs/Header/chevUp.svg";
+import { ReactComponent as UserDefault } from "@svgs/header/userDefault.svg";
+import { ReactComponent as UserSelected } from "@svgs/header/userSelected.svg";
+import { ReactComponent as ChevDown } from "@svgs/header/chevDown.svg";
+import { ReactComponent as ChevUp } from "@svgs/header/chevUp.svg";
 import { useState } from "react";
 
 export default function Header() {
@@ -56,18 +56,18 @@ export default function Header() {
           <button type="button" css={user_button} onClick={handleChangeOpen}>
             {isOpen === false ? (
               <>
-                <UserDefault />
+                <UserDefault css={user_icon} />
                 <p>
                   <span className="user_name" css={user_name}>
                     amento
                   </span>
                   <span className="user_call">님</span>
                 </p>
-                <ChevDown />
+                <ChevDown css={chev_icon} />
               </>
             ) : (
               <>
-                <UserSelected />
+                <UserSelected css={user_icon} />
                 <p>
                   <span className="user_name" css={user_name_selected}>
                     amento
@@ -76,7 +76,7 @@ export default function Header() {
                     님
                   </span>
                 </p>
-                <ChevUp />
+                <ChevUp css={chev_icon} />
               </>
             )}
           </button>
@@ -133,6 +133,21 @@ const header = css`
   height: 90px;
   box-shadow: 0px 4px 20px 0px #0000001a;
   background-color: var(--white);
+  @media (max-width: 1199px) {
+    height: 80px;
+  }
+  @media (max-width: 1024px) {
+    height: 70px;
+  }
+  @media (max-width: 767px) {
+    height: 60px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const ctn = css`
@@ -140,19 +155,50 @@ const ctn = css`
   width: 1500px;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1199px) {
+    width: 1000px;
+  }
+  @media (max-width: 1024px) {
+    width: 800px;
+  }
+  @media (max-width: 767px) {
+    width: 640px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const logo = css`
   height: 48px;
   a {
     display: flex;
+    height: 100%;
     h1 {
       display: none;
     }
     img {
-      width: 200px;
-      height: 48px;
+      height: 100%;
+      object-fit: cover;
     }
+  }
+  @media (max-width: 1199px) {
+    height: 36px;
+  }
+  @media (max-width: 1024px) {
+    height: 30px;
+  }
+  @media (max-width: 767px) {
+    height: 26px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
   }
 `;
 
@@ -161,13 +207,27 @@ const nav = css`
     display: flex;
     gap: 80px;
   }
-`;
-
-const link = css`
-  font-size: 17px;
-  line-height: 20.29px;
-  text-decoration: none;
-  color: #2c2825;
+  @media (max-width: 1199px) {
+    ul {
+      gap: 24px;
+    }
+  }
+  @media (max-width: 1024px) {
+    ul {
+      gap: 20px;
+    }
+  }
+  @media (max-width: 767px) {
+    ul {
+      gap: 16px;
+    }
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const nav_link = css`
@@ -177,6 +237,43 @@ const nav_link = css`
   text-align: left;
   text-decoration: none;
   color: #454545;
+  white-space: nowrap;
+  @media (max-width: 1199px) {
+    font-size: 18px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
+`;
+
+const link = css`
+  font-size: 17px;
+  line-height: 20.29px;
+  text-decoration: none;
+  color: #2c2825;
+  @media (max-width: 1199px) {
+    font-size: 16px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media (max-width: 767px) {
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const user = css`
@@ -184,12 +281,82 @@ const user = css`
   align-items: center;
   gap: 30px;
   position: relative;
+  @media (max-width: 1199px) {
+    gap: 24px;
+  }
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const user_button = css`
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 17px;
+  @media (max-width: 1199px) {
+    font-size: 16px;
+  }
+  @media (max-width: 1024px) {
+    gap: 6px;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+    gap: 4px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
+`;
+
+const user_icon = css`
+  @media (max-width: 1199px) {
+  }
+  @media (max-width: 1024px) {
+    width: 24px;
+    height: 24px;
+  }
+  @media (max-width: 767px) {
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
+`;
+
+const chev_icon = css`
+  @media (max-width: 1199px) {
+  }
+  @media (max-width: 1024px) {
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 767px) {
+    width: 18px;
+    height: 18px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const user_name = css`
@@ -211,19 +378,57 @@ const divider = css`
   height: 12px;
   background-color: #2c2825;
   opacity: 0.3;
+  @media (max-width: 1199px) {
+  }
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 767px) {
+    height: 10px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const user_menu = css`
-  position: absolute;
-  top: calc(100% + 30px);
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: calc(100% + 30px);
+  left: -8px;
+  width: calc(100% - 104px);
   gap: 20px;
-  border-radius: 15px;
-  padding: 24px 34px;
   box-sizing: border-box;
+  padding: 24px 34px;
+  border-radius: 15px;
   background-color: var(--primary);
   color: #ffffff;
+  @media (max-width: 1199px) {
+    top: calc(100% + 25px);
+    width: calc(100% - 48px - 55px + 16px);
+    padding: 24px 24px;
+  }
+  @media (max-width: 1024px) {
+    top: calc(100% + 24px);
+    width: calc(100% - 32px - 48px + 16px);
+    padding: 22px 20px;
+    gap: 16px;
+  }
+  @media (max-width: 767px) {
+    top: calc(100% + 20px);
+    width: calc(100% - 16px - 48px + 16px);
+    padding: 20px 16px;
+    gap: 14px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
+  }
 `;
 
 const user_link = css`
@@ -233,8 +438,23 @@ const user_link = css`
   line-height: 20.29px;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   &.selected {
     text-decoration: underline;
     font-weight: 700;
+  }
+  @media (max-width: 1199px) {
+    font-size: 16px;
+  }
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+  @media (max-width: 499px) {
+  }
+  @media (max-width: 374px) {
+  }
+  @media (max-width: 320px) {
   }
 `;
