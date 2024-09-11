@@ -2,8 +2,8 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Counsel } from "@svgs/counsel.svg";
-import { ReactComponent as DeleteInputValue } from "@svgs/deleteInputValue.svg";
+import { ReactComponent as Counsel } from "@svgs/sidePopUp/counsel.svg";
+import { ReactComponent as DeleteInputValue } from "@svgs/sidePopUp/deleteInputValue.svg";
 
 function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
   return (
