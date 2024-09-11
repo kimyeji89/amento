@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 export default function InProgress() {
   return (
     <div css={progress_wrap}>
-      <img src="/assets/images/inProgress.png" alt="inProgress" />
+      <img src="/assets/images/common/inProgress.png" alt="inProgress" />
       <p css={text}>
         <span>서비스 개발이 진행 중</span>입니다.
         <br />
