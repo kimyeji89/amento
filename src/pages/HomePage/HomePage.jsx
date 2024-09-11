@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, keyframes } from "@emotion/react";
-import { ReactComponent as CheckPurple } from "@svgs/checkPurple.svg";
-import { ReactComponent as ChevRight } from "@svgs/chevRight.svg";
+import { ReactComponent as CheckPurple } from "@svgs/HomePage/checkPurple.svg";
+import { ReactComponent as ChevRight } from "@svgs/HomePage/chevRight.svg";
 import partnerImageData from "@data/partnerImageData.json";
 
 export default function HomePage() {

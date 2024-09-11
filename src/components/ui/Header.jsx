@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { ReactComponent as UserDefault } from "@svgs/userDefault.svg";
-import { ReactComponent as UserSelected } from "@svgs/userSelected.svg";
-import { ReactComponent as ChevDown } from "@svgs/chevDown.svg";
-import { ReactComponent as ChevUp } from "@svgs/chevUp.svg";
+import { ReactComponent as UserDefault } from "@svgs/Header/userDefault.svg";
+import { ReactComponent as UserSelected } from "@svgs/Header/userSelected.svg";
+import { ReactComponent as ChevDown } from "@svgs/Header/chevDown.svg";
+import { ReactComponent as ChevUp } from "@svgs/Header/chevUp.svg";
 import { useState } from "react";
 
 export default function Header() {

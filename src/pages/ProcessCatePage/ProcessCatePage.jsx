@@ -2,8 +2,8 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ReactComponent as CheckGray } from "@svgs/checkGray.svg";
-import { ReactComponent as CheckPrimary } from "@svgs/checkPrimary.svg";
+import { ReactComponent as CheckGray } from "@svgs/ProcessCatePage/checkGray.svg";
+import { ReactComponent as CheckPrimary } from "@svgs/ProcessCatePage/checkPrimary.svg";
 
 export default function ProcessCatePage() {
   const [category, setCategory] = useState("");
