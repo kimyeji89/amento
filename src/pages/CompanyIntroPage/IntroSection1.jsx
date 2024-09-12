@@ -4,7 +4,12 @@ import { css } from "@emotion/react";
 export default function IntroSection1() {
   return (
     <section css={section_wrap}>
-      <div css={picture2}></div>
+      <div css={banner_img}>
+        <img
+          src="/assets/images/CompanyIntroPage/introBanner.png"
+          alt="gradient"
+        />
+      </div>
       <div css={gradient_img} />
 
       <div css={text_wrap}>
@@ -30,12 +35,15 @@ const section_wrap = css`
   display: flex;
 `;
 
-const picture2 = css`
+const banner_img = css`
   width: 78.39%;
   height: 100%;
-  background: url("${process.env
-      .PUBLIC_URL}/assets/images/CompanyIntroPage/introBanner.png")
-    lightgray 50% / cover no-repeat;
+
+  img {
+    width: 78.39%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const gradient_img = css`

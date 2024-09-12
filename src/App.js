@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <SidePopUp />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -63,7 +63,7 @@ function App() {
           <Route path="/changePwDetail" element={<ChangePwDetailPage />} />
           <Route path="/changePwDone" element={<ChangePwDonePage />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );

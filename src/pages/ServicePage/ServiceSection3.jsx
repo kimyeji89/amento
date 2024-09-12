@@ -21,7 +21,6 @@ const section_wrap = css`
   gap: 44px;
   padding: 120px 30px;
   margin: 0 auto;
-  width: 100%;
   max-width: 960px;
 
   h1 {
@@ -35,5 +34,22 @@ const section_wrap = css`
   img {
     width: 100%;
     height: auto;
+  }
+
+  @media (max-width: 1919px) {
+  }
+
+  @media (max-width: 1439px) {
+  }
+
+  @media (max-width: 1119px) {
+  }
+
+  @media (max-width: 1024px) {
+    padding: 120px 20px;
+
+    h1 {
+      font-size: 34px;
+    }
   }
 `;
