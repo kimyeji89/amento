@@ -47,11 +47,6 @@ export default function HomePage() {
             alt="section1Float3"
             css={section1_img_float3}
           />
-          {/* <img
-            src="/assets/images/homePage/section1bg.png"
-            alt="section1bg"
-            css={section1_img_bg}
-          /> */}
           <span className="bg" css={section1_img_bg}></span>
         </div>
       </section>
@@ -311,23 +306,20 @@ const section1 = css`
 `;
 
 const section1_text_ctn = css`
-  max-width: 40%;
+  width: 100%;
   height: auto;
 `;
 
 const section1_img_ctn = css`
-  max-width: 60%;
-  height: auto;
+  width: 100%;
   position: relative;
-  @media (max-width: 1919px) {
-    width: calc(60% * 0.7);
-  }
 `;
 
 const section1_img_main = css`
   position: relative;
   z-index: 1;
   width: 100%;
+  max-width: 693.91px;
   height: auto;
   object-fit: cover;
 `;
@@ -345,16 +337,16 @@ const section1_img_bg = css`
   background: linear-gradient(180deg, #ffcfeb 0.04%, #9da6f6 84.59%);
   filter: blur(100px);
   @media (max-width: 1919px) {
-    width: calc(680px * 0.8);
-    height: calc(680px * 0.8);
+    width: 80%;
+    height: 80%;
   }
   @media (max-width: 1280px) {
-    width: calc(680px * 0.7);
-    height: calc(680px * 0.7);
+    width: 70%;
+    height: 70%;
   }
   @media (max-width: 1024px) {
-    width: calc(680px * 0.6);
-    height: calc(680px * 0.6);
+    width: 60%;
+    height: 60%;
   }
   @media (max-width: 950px) {
     width: calc(680px * 0.55);
@@ -372,28 +364,23 @@ const section1_img_bg = css`
 
 const section1_img_float1 = css`
   position: absolute;
+  top: calc(50%);
+  left: calc(50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
   width: 177px;
+  height: auto;
   object-fit: cover;
-  top: -29px;
-  left: 0;
-  animation: ${float} 3s ease-in-out infinite;
+  // animation: ${float} 3s ease-in-out infinite;
   @media (max-width: 1919px) {
-    width: calc(177px * 0.7);
-    top: -10px;
   }
   @media (max-width: 1440px) {
-    width: calc(177px * 0.6);
   }
   @media (max-width: 1280px) {
-    width: calc(177px * 0.55);
-    top: -20px;
   }
   @media (max-width: 1024px) {
-    width: calc(177px * 0.5);
   }
   @media (max-width: 950px) {
-    width: calc(177px * 0.45);
   }
   @media (max-width: 767px) {
   }
