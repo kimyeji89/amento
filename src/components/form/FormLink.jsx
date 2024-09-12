@@ -28,8 +28,8 @@ export default function FormLink({
           <p css={p_style}>아이디 찾기</p>
         </Link>
         <div css={div_line}></div>
-        <Link to="/findPw">
-          <p css={p_style}>비밀번호 찾기</p>
+        <Link to="/changePw">
+          <p css={p_style}>비밀번호 변경</p>
         </Link>
       </div>
     </div>

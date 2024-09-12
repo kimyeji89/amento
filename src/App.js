@@ -12,7 +12,7 @@ import ApplicationPage from "@pages/ApplicationPage/ApplicationPage";
 import ConsultingPage from "@pages/ConsultingPage/ConsultingPage";
 import BusinessReviewPage from "@pages/BusinessReviewPage/BusinessReviewPage";
 import LoginPage from "@pages/LoginPage/LoginPage";
-import JoinTosPage from "@pages/JoinTosPage.jsx/JoinTosPage";
+import JoinTosPage from "@pages/JoinTosPage/JoinTosPage";
 import JoinDetailPage from "@pages/JoinDetailPage/JoinDetailPage";
 import JoinDonePage from "@pages/JoinDonePage/JoinDonePage";
 import EditUserPage from "@pages/EditUserPage/EditUserPage";
@@ -24,12 +24,14 @@ import FindIdDonePage from "@pages/FindIdDonePage/FindIdDonePage";
 import ChangePwPage from "@pages/ChangePwPage/ChangePwPage";
 import ChangePwDetailPage from "@pages/ChangePwDetailPage/ChangePwDetailPage";
 import ChangePwDonePage from "@pages/ChangePwDonePage/ChangePwDonePage";
-import SidePopUp from "./components/form/SidePopUp";
+import SidePopUp from "@components/form/SidePopUp";
+import ScrollToTop from "@components/ui/ScrollToTop";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Header />
         <SidePopUp />
         <Routes>

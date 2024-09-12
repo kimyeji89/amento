@@ -6,11 +6,12 @@ import FormInput from "@components/form/FormInput";
 import FormDatePicker from "@components/form/FormDatePicker";
 import Button from "@components/ui/Button";
 import FormLink from "@components/form/FormLink";
+import { PageWrapWide } from "../../components/form/PageWrap";
 
 export default function JoinDetailPage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrapWide pb="162">
         <FormHeader label="회원가입" />
 
         <div css={form_wrapper}>
@@ -42,16 +43,10 @@ export default function JoinDetailPage() {
 
         <Button label="회원가입" link="/" />
         <FormLink hasBorder />
-      </div>
+      </PageWrapWide>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 162px;
-  width: 800px;
-  margin: 0 auto;
-`;
 
 const form_wrapper = css`
   display: flex;

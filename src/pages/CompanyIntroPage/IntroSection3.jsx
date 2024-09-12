@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import Box from "./Box";
 
 export default function IntroSection3() {
   return (
     <section css={section_wrap}>
-      <div css={box}>
-        <p>실전형 창업&비즈니스 전문가의</p>
-        <p>원스톱 지원 상담</p>
-      </div>
+      <Box
+        firstText={"실전형 창업&비즈니스 전문가의"}
+        secondText={"원스톱 지원 상담"}
+      />
       <div css={box_wrap}>
         <div css={box_1}>
           <img
@@ -26,7 +27,7 @@ export default function IntroSection3() {
             src="/assets/images/companyIntroPage/handshaking.png"
             alt="hand"
           />
-          <p css={number}>02</p>
+          <p css={number_2}>02</p>
           <p css={des}>
             다양한 창업 및 가맹본부 설립 경험을 갖춘
             <br />
@@ -57,37 +58,6 @@ const section_wrap = css`
   gap: 34px;
 
   background: #f5f6f9;
-  // border: 1px solid red;
-`;
-
-const box = css`
-  padding: 40px;
-  display: flex;
-  width: 337px;
-  height: 131px;
-  padding: 0;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-
-  border-radius: 20px;
-  background: var(--white);
-  box-shadow: 0px 6px 33px 0px #e0d4e9;
-  text-align: center;
-
-  & > :first-child {
-    color: #732ea5;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  & > :nth-child(2) {
-    color: var(--black-1);
-    font-size: 24px;
-    font-weight: 700;
-  }
 `;
 
 const box_wrap = css`
@@ -95,7 +65,6 @@ const box_wrap = css`
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 34px;
-  // border: 1px solid blue;
   min-width: 1500px;
   min-height: 341.5px;
 
@@ -166,6 +135,17 @@ const box_3 = css`
 
 const number = css`
   color: var(--primary);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+
+  padding: 24px 0 14px;
+`;
+
+const number_2 = css`
+  color: #2768e7;
   text-align: center;
   font-family: Poppins;
   font-size: 15px;

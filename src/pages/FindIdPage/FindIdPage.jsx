@@ -6,6 +6,7 @@ import GradientBack from "@components/ui/GradientBack";
 import Button from "@components/ui/Button";
 import FormLink from "@components/form/FormLink";
 import { useState } from "react";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function FindIdPage() {
   const [showError, setShowError] = useState(false);
@@ -16,7 +17,7 @@ export default function FindIdPage() {
 
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrap pb="258">
         <FormHeader label="아이디 찾기" />
 
         <div css={form_wrapper(showError)}>
@@ -35,16 +36,10 @@ export default function FindIdPage() {
           label2="회원정보 수정"
           link2="/editUser"
         />
-      </div>
+      </PageWrap>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 258px;
-  width: 500px;
-  margin: 0 auto;
-`;
 
 const form_wrapper = (showError) => css`
   display: flex;

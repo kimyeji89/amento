@@ -1,14 +1,13 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import FormHeader from "@components/form/FormHeader";
 import CompleteMessage from "@components/form/CompleteMessage";
 import Button from "@components/ui/Button";
 import GradientBack from "@components/ui/GradientBack";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function EditUserDonePage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrap pb="406">
         <FormHeader label="회원가입 수정" />
         <CompleteMessage
           text="회원정보가 성공적으로 수정되었습니다."
@@ -16,13 +15,7 @@ export default function EditUserDonePage() {
           remainingText=" 확인해 주세요."
         />
         <Button label={"확인"} link="/" />
-      </div>
+      </PageWrap>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 406px;
-  width: 500px;
-  margin: 0 auto;
-`;

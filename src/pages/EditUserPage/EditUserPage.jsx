@@ -6,12 +6,13 @@ import FormInput from "@components/form/FormInput";
 import FormDatePicker from "@components/form/FormDatePicker";
 import Button from "@components/ui/Button";
 import FormLink from "@components/form/FormLink";
+import { PageWrapWide } from "@components/form/PageWrap";
 
 export default function EditUserPage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
-        <FormHeader label="회원정보 수정" />
+      <PageWrapWide pb="159">
+        <FormHeader />
 
         <div css={form_wrapper}>
           <FormInput label="이메일 아이디" required />
@@ -50,16 +51,10 @@ export default function EditUserPage() {
 
         <Button label="수정하기" link="/editUserDone" />
         <FormLink hasBorder label1="탈퇴하기" link1="/withdrawalUser" />
-      </div>
+      </PageWrapWide>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 159px;
-  width: 800px;
-  margin: 0 auto;
-`;
 
 const form_wrapper = css`
   display: flex;
