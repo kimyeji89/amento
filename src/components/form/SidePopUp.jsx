@@ -196,6 +196,7 @@ const side_popup_ctn = css`
   transition: left 0.4s ease-out;
   left: -359px;
   top: 108px;
+  bottom: 24px;
   &.open {
     left: 0;
   }
@@ -229,7 +230,7 @@ const tag_text = css`
 
 const form = css`
   width: 359px;
-  height: 800px;
+  height: 100%;
   padding: 30px 24px;
   box-sizing: border-box;
   display: flex;
