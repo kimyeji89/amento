@@ -3,7 +3,13 @@ import { css } from "@emotion/react";
 import { ReactComponent as CheckGray } from "@svgs/processCatePage/checkGray.svg";
 import { ReactComponent as CheckPrimary } from "@svgs/processCatePage/checkPrimary.svg";
 
-export default function CategoryCard({ category, categoryText, img, onClick }) {
+export default function CategoryCard({
+  category,
+  categoryText,
+  descText,
+  img,
+  onClick,
+}) {
   return (
     <div
       className="category_card"
@@ -19,9 +25,7 @@ export default function CategoryCard({ category, categoryText, img, onClick }) {
           <CheckPrimary css={svg} />
         )}
         <p css={title}>{categoryText}</p>
-        {category === categoryText && (
-          <p className="desc">직영점 1년 미만, 미운영</p>
-        )}
+        {category === categoryText && <p className="desc">{descText}</p>}
       </div>
     </div>
   );
@@ -76,6 +80,7 @@ const category_card = css`
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      text-align: center;
     }
     &::before {
       content: "";

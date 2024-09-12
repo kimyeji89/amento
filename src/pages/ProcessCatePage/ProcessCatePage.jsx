@@ -8,10 +8,22 @@ export default function ProcessCatePage() {
   const [category, setCategory] = useState("");
 
   const categoryText = {
-    cate1: "예비 가맹본부 준비",
-    cate2: "가맹본부 설립 희망",
-    cate3: "가맹본부 사업 전환",
-    cate4: "가맹본부 운영 컨설팅",
+    cate1: {
+      category: "예비 가맹본부 준비",
+      desc: "사업(직영점 등) 1년 미만 or 미운영",
+    },
+    cate2: {
+      category: "가맹본부 설립 희망",
+      desc: "직영점 1년 이상",
+    },
+    cate3: {
+      category: "가맹본부 사업 전환",
+      desc: "가맹본부 또는 가맹점 1년 이상 운영",
+    },
+    cate4: {
+      category: "가맹본부 운영 컨설팅",
+      desc: "가맹본부 운영중",
+    },
   };
 
   function handleChangeCategory(e) {
@@ -32,25 +44,29 @@ export default function ProcessCatePage() {
       <div css={category_card_ctn}>
         <CategoryCard
           category={category}
-          categoryText={categoryText.cate1}
+          categoryText={categoryText.cate1.category}
+          descText={categoryText.cate1.desc}
           img="/assets/images/processCate/cate1.png"
           onClick={handleChangeCategory}
         />
         <CategoryCard
           category={category}
-          categoryText={categoryText.cate2}
+          categoryText={categoryText.cate2.category}
+          descText={categoryText.cate2.desc}
           img="/assets/images/processCate/cate2.png"
           onClick={handleChangeCategory}
         />
         <CategoryCard
           category={category}
-          categoryText={categoryText.cate3}
+          categoryText={categoryText.cate3.category}
+          descText={categoryText.cate3.desc}
           img="/assets/images/processCate/cate3.png"
           onClick={handleChangeCategory}
         />
         <CategoryCard
           category={category}
-          categoryText={categoryText.cate4}
+          categoryText={categoryText.cate4.category}
+          descText={categoryText.cate4.desc}
           img="/assets/images/processCate/cate4.png"
           onClick={handleChangeCategory}
         />

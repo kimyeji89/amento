@@ -61,7 +61,7 @@ const footer = css`
     padding: 40px 100px;
   }
   @media (max-width: 1024px) {
-    padding: 36px 110px;
+    padding: 36px 60px;
   }
   @media (max-width: 767px) {
     padding: 32px 64px;
