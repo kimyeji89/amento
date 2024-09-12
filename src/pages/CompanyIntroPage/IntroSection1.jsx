@@ -6,7 +6,7 @@ export default function IntroSection1() {
     <section css={section_wrap}>
       <div css={banner_img}>
         <img
-          src="/assets/images/CompanyIntroPage/introBanner.png"
+          src="/assets/images/companyIntroPage/introBanner.png"
           alt="gradient"
         />
       </div>
@@ -33,6 +33,18 @@ const section_wrap = css`
   height: 586px;
   position: relative;
   display: flex;
+
+  @media (max-width: 1680px) {
+    height: 486px;
+  }
+
+  @media (max-width: 1280px) {
+    height: 406px;
+  }
+
+  @media (max-width: 1024px) {
+    height: 386px;
+  }
 `;
 
 const banner_img = css`
@@ -58,6 +70,10 @@ const gradient_img = css`
     rgba(254, 254, 255, 0) 21.12%,
     #f5f6f9 49.95%
   );
+
+  @media (max-width: 1024px) {
+    width: 86%;
+  }
 `;
 
 const text_wrap = css`
@@ -69,11 +85,41 @@ const text_wrap = css`
   right: 210px;
   transform: translateY(-50%);
 
+  // border: 1px solid red;
+
   h1 {
     color: var(--black-1);
     font-size: 55px;
     font-weight: 700;
     line-height: 120%; /* 66px */
+  }
+
+  @media (max-width: 1680px) {
+    right: 110px;
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 1520px) {
+    right: 70px;
+  }
+
+  @media (max-width: 1280px) {
+    text-align: end;
+    right: 40px;
+    h1 {
+      font-size: 34px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    right: 40px;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 `;
 
@@ -83,6 +129,15 @@ const p_1 = css`
   font-weight: 600;
   line-height: 140%; /* 28px */
   padding: 24px 0 14px;
+
+  // border: 1px solid;
+
+  @media (max-width: 1024px) {
+    // max-width: 350px;
+    // word-break: keep-all;
+    text-align: end;
+    right: 0;
+  }
 `;
 
 const p_2 = css`

@@ -45,6 +45,7 @@ const container = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 915px;
 
   h2 {
     color: var(--black-1);
@@ -53,6 +54,18 @@ const container = css`
     font-size: 40px;
     font-weight: 700;
     line-height: normal;
+
+    @media (max-width: 1280px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `;
 
@@ -64,13 +77,25 @@ const des = css`
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  @media (max-width: 1280px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 24px;
+    padding: 54px 20px 44px;
+  }
 `;
 
 const box = css`
   display: flex;
-  width: 337px;
+  max-width: 337px;
+  width: 37.24%;
   height: 131px;
-  padding: 0;
 
   flex-direction: column;
   justify-content: center;
@@ -86,6 +111,14 @@ const box = css`
     text-align: center;
     font-size: 20px;
     font-weight: 600;
+
+    @media (max-width: 1280px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
   }
 
   & > :nth-child(2) {
@@ -93,6 +126,24 @@ const box = css`
     text-align: center;
     font-size: 24px;
     font-weight: 700;
+
+    @media (max-width: 1280px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    height: 115px;
+    gap: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    min-width: 400px;
+    height: 131px;
   }
 `;
 
@@ -113,5 +164,10 @@ const des_2 = css`
 `;
 
 const about_img = css`
-  width: 595px;
+  max-width: 595px;
+  width: 65.03%;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
