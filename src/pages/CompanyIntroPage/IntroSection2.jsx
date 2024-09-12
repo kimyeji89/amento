@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { ReactComponent as ArrowImg } from "@svgs/companyIntroPage/arrow.svg";
+import Box from "./Box";
 
 export default function IntroSection2() {
   return (
@@ -12,10 +13,10 @@ export default function IntroSection2() {
           지원하는 <br /> “전문가 협업기업”으로 최적화된 창업 비즈니스 성공을
           위한 “프로젝트 FC” 솔루션을 제공합니다.
         </p>
-        <div css={box}>
-          <p>신뢰성을 기반으로 함께 참여하는</p>
-          <p>아멘토벤처스, 프로젝트 FC</p>
-        </div>
+        <Box
+          firstText={"신뢰성을 기반으로 함께 참여하는"}
+          secondText={"아멘토벤처스, 프로젝트 FC"}
+        />
         <ArrowImg alt="arrow" />
         <img
           src="/assets/images/companyIntroPage/amentoAbout.png"
@@ -60,7 +61,7 @@ const container = css`
     }
 
     @media (max-width: 1024px) {
-      font-size: 40px;
+      // font-size: 40px;
     }
   }
 
@@ -86,64 +87,11 @@ const des = css`
   }
 
   @media (max-width: 1024px) {
-    font-size: 24px;
-    padding: 54px 20px 44px;
-  }
-`;
-
-const box = css`
-  display: flex;
-  max-width: 337px;
-  width: 37.24%;
-  height: 131px;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-
-  border-radius: 20px;
-  background: var(--white);
-  box-shadow: 0px 6px 33px 0px #e0d4e9;
-
-  & > :first-child {
-    color: #732ea5;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-
-    @media (max-width: 1280px) {
-      font-size: 18px;
-    }
-
-    @media (max-width: 1024px) {
-      font-size: 20px;
-    }
+    padding: 54px 60px 44px;
   }
 
-  & > :nth-child(2) {
-    color: var(--black-1);
-    text-align: center;
-    font-size: 24px;
-    font-weight: 700;
-
-    @media (max-width: 1280px) {
-      font-size: 22px;
-    }
-
-    @media (max-width: 1024px) {
-      font-size: 24px;
-    }
-  }
-
-  @media (max-width: 1280px) {
-    height: 115px;
-    gap: 16px;
-  }
-
-  @media (max-width: 1024px) {
-    min-width: 400px;
-    height: 131px;
+  @media (max-width: 768px) {
+    font-size: 17px;
   }
 `;
 
@@ -158,16 +106,27 @@ const des_2 = css`
 
   span {
     color: var(--primary);
-    font-size: 20px;
     font-weight: 700;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
   }
 `;
 
 const about_img = css`
   max-width: 595px;
-  width: 65.03%;
+  width: 65.5%;
 
   @media (max-width: 1024px) {
-    width: 100%;
+    // width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    width: 70%;
   }
 `;

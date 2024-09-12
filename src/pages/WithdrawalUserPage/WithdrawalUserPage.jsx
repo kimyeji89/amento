@@ -6,11 +6,12 @@ import GradientBack from "@components/ui/GradientBack";
 import WarningBox from "./WarningBox";
 import Button from "@components/ui/Button";
 import { Link } from "react-router-dom";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function WithdrawalUserPage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrap pb="250">
         <FormHeader label="탈퇴하기" />
         <WarningMessage text="정말 탈퇴하시겠습니까?" />
         <WarningBox />
@@ -20,16 +21,10 @@ export default function WithdrawalUserPage() {
             <Link to="/withdrawalUserDone">탈퇴하기</Link>
           </div>
         </div>
-      </div>
+      </PageWrap>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 250px;
-  width: 500px;
-  margin: 0 auto;
-`;
 
 const link_wrap = css`
   display: flex;

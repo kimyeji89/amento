@@ -15,7 +15,7 @@ const container = css`
   position: relative;
 `;
 
-const gradient_wrap = (mt) => css`
+const gradient_wrap = css`
   position: absolute;
   bottom: 0px;
   z-index: -1;

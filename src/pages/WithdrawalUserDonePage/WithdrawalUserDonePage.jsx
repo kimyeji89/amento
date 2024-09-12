@@ -4,11 +4,12 @@ import FormHeader from "@components/form/FormHeader";
 import WarningMessage from "@components/form/WarningMessage";
 import GradientBack from "@components/ui/GradientBack";
 import Button from "@components/ui/Button";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function WithdrawalUserDonePage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrap pb="356">
         <FormHeader label="탈퇴하기" />
         <WarningMessage text="회원탈퇴가 완료되었습니다." />
         <div css={message}>
@@ -20,16 +21,10 @@ export default function WithdrawalUserDonePage() {
           문의사항이 있으시면 언제든지 고객센터로 연락해주시기 바랍니다.
         </div>
         <Button label="확인" link="/" />
-      </div>
+      </PageWrap>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 356px;
-  width: 500px;
-  margin: 0 auto;
-`;
 
 const message = css`
   display: flex;

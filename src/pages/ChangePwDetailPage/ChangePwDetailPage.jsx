@@ -5,11 +5,12 @@ import FormHeader from "@components/form/FormHeader";
 import FormInput from "@components/form/FormInput";
 import Button from "@components/ui/Button";
 import FormLink from "@components/form/FormLink";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function ChangePwDetailPage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrap pb="294">
         <FormHeader label="비밀번호 변경" />
 
         <div css={form_wrapper}>
@@ -32,16 +33,10 @@ export default function ChangePwDetailPage() {
           label2="회원정보 수정"
           link2="/editUser"
         />
-      </div>
+      </PageWrap>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 294px;
-  width: 500px;
-  margin: 0 auto;
-`;
 
 const form_wrapper = css`
   display: flex;

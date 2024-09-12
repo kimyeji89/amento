@@ -19,8 +19,12 @@ const header_wrap = css`
 
   img {
     width: 200px;
-    height: 48px;
+    height: auto;
     padding: 0 0 6px 0;
+
+    @media (max-width: 1024px) {
+      width: 180px;
+    }
   }
 
   h1 {
@@ -28,6 +32,10 @@ const header_wrap = css`
     font-weight: 800;
     color: #3c3c3c;
     line-height: 47.73px;
+
+    @media (max-width: 1024px) {
+      font-size: 30px;
+    }
   }
 `;
 

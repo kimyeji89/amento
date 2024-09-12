@@ -20,7 +20,8 @@ export default function IntroSection1() {
             디자인합니다.
           </p>
           <p css={p_2}>
-            Your Goal, Our Challenge AmentoVentures designs customized <br />
+            Your Goal, Our Challenge AmentoVentures designs customized
+            <br />
             startups & businesses for your success.
           </p>
         </div>
@@ -70,6 +71,10 @@ const gradient_img = css`
     rgba(254, 254, 255, 0) 21.12%,
     #f5f6f9 49.95%
   );
+
+  @media (max-width: 1280px) {
+    width: 86%;
+  }
 
   @media (max-width: 1024px) {
     width: 86%;
@@ -121,6 +126,10 @@ const text_wrap = css`
       align-items: flex-end;
     }
   }
+
+  @media (max-width: 768px) {
+    right: 20px;
+  }
 `;
 
 const p_1 = css`
@@ -133,8 +142,14 @@ const p_1 = css`
   // border: 1px solid;
 
   @media (max-width: 1024px) {
-    // max-width: 350px;
-    // word-break: keep-all;
+    font-size: 18px;
+    max-width: 300px;
+    right: 0;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+    word-break: keep-all;
     text-align: end;
     right: 0;
   }
@@ -145,4 +160,14 @@ const p_2 = css`
   color: #732ea5;
   font-size: 17px;
   font-weight: 700;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    font-weight: 600;
+  }
 `;
