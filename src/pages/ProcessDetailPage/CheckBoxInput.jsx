@@ -75,6 +75,15 @@ const label_css = css`
       font-weight: 700;
     }
   }
+  @media (max-width: 1024px) {
+    &.big {
+      br {
+        display: none;
+      }
+      height: 50px;
+      width: auto;
+    }
+  }
 `;
 
 const input = css`

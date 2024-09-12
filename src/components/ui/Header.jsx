@@ -133,7 +133,11 @@ const header = css`
   height: 90px;
   box-shadow: 0px 4px 20px 0px #0000001a;
   background-color: var(--white);
-  @media (max-width: 1199px) {
+  @media (max-width: 1919px) {
+    box-sizing: border-box;
+    padding: 0 40px;
+  }
+  @media (max-width: 1280px) {
     height: 80px;
   }
   @media (max-width: 1024px) {
@@ -155,21 +159,6 @@ const ctn = css`
   width: 1500px;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 1199px) {
-    width: 1000px;
-  }
-  @media (max-width: 1024px) {
-    width: 800px;
-  }
-  @media (max-width: 767px) {
-    width: 640px;
-  }
-  @media (max-width: 499px) {
-  }
-  @media (max-width: 374px) {
-  }
-  @media (max-width: 320px) {
-  }
 `;
 
 const logo = css`
@@ -185,7 +174,7 @@ const logo = css`
       object-fit: cover;
     }
   }
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     height: 36px;
   }
   @media (max-width: 1024px) {
@@ -207,7 +196,7 @@ const nav = css`
     display: flex;
     gap: 80px;
   }
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     ul {
       gap: 24px;
     }
@@ -233,16 +222,18 @@ const nav = css`
 const nav_link = css`
   font-size: 20px;
   font-weight: 500;
-  line-height: 23.87px;
   text-align: left;
   text-decoration: none;
   color: #454545;
   white-space: nowrap;
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     font-size: 18px;
   }
   @media (max-width: 1024px) {
     font-size: 16px;
+  }
+  @media (max-width: 950px) {
+    font-size: 15px;
   }
   @media (max-width: 767px) {
     font-size: 14px;
@@ -257,14 +248,13 @@ const nav_link = css`
 
 const link = css`
   font-size: 17px;
-  line-height: 20.29px;
   text-decoration: none;
   color: #2c2825;
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     font-size: 16px;
   }
-  @media (max-width: 1024px) {
-    font-size: 14px;
+  @media (max-width: 950px) {
+    font-size: 15px;
   }
   @media (max-width: 767px) {
   }
@@ -281,11 +271,14 @@ const user = css`
   align-items: center;
   gap: 30px;
   position: relative;
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     gap: 24px;
   }
   @media (max-width: 1024px) {
     gap: 16px;
+  }
+  @media (max-width: 950px) {
+    gap: 8px;
   }
   @media (max-width: 767px) {
     gap: 8px;
@@ -300,14 +293,18 @@ const user = css`
 
 const user_button = css`
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 8px;
   font-size: 17px;
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     font-size: 16px;
   }
   @media (max-width: 1024px) {
     gap: 6px;
+  }
+  @media (max-width: 950px) {
+    font-size: 15px;
   }
   @media (max-width: 767px) {
     font-size: 14px;
@@ -322,26 +319,19 @@ const user_button = css`
 `;
 
 const user_icon = css`
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
   }
   @media (max-width: 1024px) {
     width: 24px;
     height: 24px;
   }
-  @media (max-width: 767px) {
-    width: 20px;
-    height: 20px;
-  }
-  @media (max-width: 499px) {
-  }
-  @media (max-width: 374px) {
-  }
-  @media (max-width: 320px) {
+  @media (max-width: 950px) {
+    display: none;
   }
 `;
 
 const chev_icon = css`
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
   }
   @media (max-width: 1024px) {
     width: 20px;
@@ -378,7 +368,7 @@ const divider = css`
   height: 12px;
   background-color: #2c2825;
   opacity: 0.3;
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
   }
   @media (max-width: 1024px) {
   }
@@ -406,7 +396,7 @@ const user_menu = css`
   border-radius: 15px;
   background-color: var(--primary);
   color: #ffffff;
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     top: calc(100% + 25px);
     width: calc(100% - 48px - 55px + 16px);
     padding: 24px 24px;
@@ -435,7 +425,6 @@ const user_link = css`
   color: #ffffff;
   font-size: 17px;
   font-weight: 400;
-  line-height: 20.29px;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
@@ -443,7 +432,7 @@ const user_link = css`
     text-decoration: underline;
     font-weight: 700;
   }
-  @media (max-width: 1199px) {
+  @media (max-width: 1280px) {
     font-size: 16px;
   }
   @media (max-width: 1024px) {
