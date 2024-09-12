@@ -5,7 +5,7 @@ export default function IntroSection3() {
   return (
     <section css={section_wrap}>
       <div css={box}>
-        <p>실전형 창업%비즈니스 전문가의</p>
+        <p>실전형 창업&비즈니스 전문가의</p>
         <p>원스톱 지원 상담</p>
       </div>
       <div css={box_wrap}>
@@ -57,12 +57,12 @@ const section_wrap = css`
   gap: 34px;
 
   background: #f5f6f9;
+  // border: 1px solid red;
 `;
 
 const box = css`
   padding: 40px;
   display: flex;
-  margin-bottom: 60px;
   width: 337px;
   height: 131px;
   padding: 0;
@@ -75,39 +75,69 @@ const box = css`
   border-radius: 20px;
   background: var(--white);
   box-shadow: 0px 6px 33px 0px #e0d4e9;
+  text-align: center;
 
   & > :first-child {
     color: #732ea5;
-    text-align: center;
     font-size: 20px;
     font-weight: 600;
   }
 
   & > :nth-child(2) {
     color: var(--black-1);
-    text-align: center;
     font-size: 24px;
     font-weight: 700;
   }
 `;
 
 const box_wrap = css`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   gap: 34px;
+  // border: 1px solid blue;
+  min-width: 1500px;
+  min-height: 341.5px;
 
   div {
-    width: 477px;
-    height: 347px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
   }
+
+  @media (max-width: 1680px) {
+    min-width: 1400px;
+    min-height: 324px;
+  }
+
+  @media (max-width: 1520px) {
+    min-width: 1250px;
+    min-height: 300px;
+  }
+
+  @media (max-width: 1280px) {
+    min-width: 1000px;
+    // min-height: 400px;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(1, 1fr);
+    min-width: 0px;
+    min-height: 960px;
+    width: 90%;
+  }
+
+  @media (max-width: 950px) {
+  }
 `;
 
 const box_1 = css`
   background: #f2e8fa;
+  max-height: 335px;
 
   img {
     width: 146px;
@@ -117,6 +147,7 @@ const box_1 = css`
 
 const box_2 = css`
   background: #e4e8ff;
+  max-height: 348px;
 
   img {
     width: 137px;
@@ -126,10 +157,10 @@ const box_2 = css`
 
 const box_3 = css`
   background: #e5def2;
+  max-height: 335px;
 
   img {
     width: 126px;
-    // height: 144px;
   }
 `;
 
@@ -157,6 +188,27 @@ const des = css`
     font-size: 28px;
     font-weight: 700;
     line-height: 130%;
+  }
+
+  @media (max-width: 1520px) {
+    font-size: 18px;
+    span {
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 16px;
+    span {
+      font-size: 23px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+    span {
+      font-size: 28px;
+    }
   }
 `;
 

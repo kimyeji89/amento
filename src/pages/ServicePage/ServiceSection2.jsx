@@ -74,6 +74,12 @@ const section_wrap = css`
     font-weight: 700;
     line-height: normal;
   }
+
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 34px;
+    }
+  }
 `;
 
 const grid_container = css`
@@ -84,6 +90,10 @@ const grid_container = css`
   margin: 0 auto;
   padding: 0 40px;
   max-width: 1300px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const grid_item = css`
@@ -117,6 +127,38 @@ const grid_item = css`
 
     span {
       font-weight: 500;
+    }
+  }
+
+  @media (max-width: 1439px) and (min-width: 1200px) {
+    p {
+      font-size: 20px;
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    p {
+      font-size: 18px;
+      bottom: 35px;
+      left: 35px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    p {
+      font-size: 20px;
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    p {
+      font-size: 18px;
+      bottom: 30px;
+      left: 30px;
     }
   }
 `;

@@ -25,6 +25,22 @@ const title_wrap = (hasBorder) => css`
   padding: 0 0 0 210px;
   background-color: var(--white);
   border-bottom: ${hasBorder ? "1px solid #DBDBDB" : "none"};
+
+  @media (max-width: 1680px) {
+    padding: 0 0 0 160px;
+  }
+
+  @media (max-width: 1520px) {
+    padding: 0 0 0 140px;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 0 0 0 120px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 0 0 100px;
+  }
 `;
 
 const icon_wrap = css`
@@ -32,10 +48,8 @@ const icon_wrap = css`
   justify-content: center;
   align-items: center;
   gap: 20px;
-
   height: 18px;
   padding: 0 16px 0 0;
-
   font-size: 13px;
 `;
 
@@ -57,4 +71,12 @@ const title_h1 = css`
   font-weight: 500;
   line-height: 66px;
   color: var(--black-1);
+
+  @media (max-width: 1280px) {
+    font-size: 45px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 40px;
+  }
 `;
