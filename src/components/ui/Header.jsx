@@ -111,7 +111,7 @@ export default function Header() {
           )}
 
           <span className="divider" css={divider}></span>
-          <Link to="/" css={link}>
+          <Link to="/joinTos" css={link}>
             <p>회원가입</p>
           </Link>
         </div>
