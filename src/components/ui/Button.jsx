@@ -36,4 +36,8 @@ const button_wrap = (isWhite) => css`
     font-weight: 700;
     line-height: 20px;
   }
+
+  @media (max-width: 375px) {
+    max-height: 50px;
+  }
 `;

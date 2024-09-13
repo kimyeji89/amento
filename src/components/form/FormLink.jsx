@@ -51,6 +51,18 @@ const link_wrap = css`
     text-decoration: none;
     cursor: pointer;
   }
+
+  @media (max-width: 375px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 11px;
+  }
 `;
 
 const link_lhs = css`

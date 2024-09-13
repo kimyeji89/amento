@@ -37,4 +37,10 @@ const message = css`
   font-size: 15px;
   font-weight: 400;
   line-height: 140%; 
+  word-break: keep-all;
+
+  @media (max-width: 375px) {
+    font-size: 13px;
+      padding: 0 0 34px 0;
+  }
 `;

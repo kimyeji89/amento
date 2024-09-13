@@ -46,6 +46,10 @@ const form_wrapper = (showError) => css`
   flex-direction: column;
   gap: 24px;
   padding: 44px 0 ${showError ? "24px" : "34px"} 0;
+
+  @media (max-width: 375px) {
+    gap: 20px;
+  }
 `;
 
 const err_msg = css`
@@ -55,4 +59,9 @@ const err_msg = css`
   font-size: 16px;
   font-weight: 500;
   line-height: 140%;
+
+  @media (max-width: 375px) {
+    padding: 0 0 34px 0;
+    font-size: 15px;
+  }
 `;

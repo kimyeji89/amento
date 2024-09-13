@@ -29,6 +29,7 @@ const input_wrap = css`
   position: relative;
   flex-direction: column;
   gap: 14px;
+  width: 100%;
 
   input {
     placeholder: none;
@@ -50,25 +51,39 @@ const label_style = css`
   font-weight: 800;
   line-height: 20.4px;
   color: #3c3c3c;
+
+  @media (max-width: 375px) {
+    font-size: 15px;
+  }
 `;
 
 const input_style = (inputValue) => css`
-  border: 1px solid #ededed;
-  padding: 18px 15px;
-  border-radius: 10px;
+  padding: 19px 15px;
+
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
   color: #181818;
   font-size: 15px;
   font-weight: 400;
   line-height: 17.9px;
 
+  @media (max-width: 375px) {
+    font-size: 12px;
+    padding: 15px 13px;
+  }
+
   &::-webkit-calendar-picker-indicator {
     position: absolute;
-    bottom: 16px;
+    bottom: 18px;
     right: 14px;
     background: url(../../images/calendar.svg);
     background-repeat: no-repeat;
     z-index: 10;
     cursor: pointer;
+
+    @media (max-width: 375px) {
+      bottom: 13px;
+    }
   }
 
   &::-webkit-datetime-edit-text {
@@ -91,6 +106,10 @@ const input_style = (inputValue) => css`
 
 const calendar_icon = css`
   position: absolute;
-  bottom: 16px;
+  bottom: 18px;
   right: 14px;
+
+  @media (max-width: 375px) {
+    bottom: 13px;
+  }
 `;

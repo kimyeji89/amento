@@ -41,8 +41,8 @@ function App() {
     <>
       <Router>
         <ScrollToTop />
-        <Header />
-        <SidePopUp />
+        {/* <Header /> */}
+        {/* <SidePopUp /> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/processCate" element={<ProcessCatePage />} />
@@ -87,7 +87,7 @@ function App() {
             element={<BusinessReviewDetailPage />}
           />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );

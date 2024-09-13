@@ -43,4 +43,8 @@ const link_wrap = css`
   div {
     border-bottom: 1px solid var(--primary);
   }
+
+  @media (max-width: 375px) {
+    font-size: 13px;
+  }
 `;
