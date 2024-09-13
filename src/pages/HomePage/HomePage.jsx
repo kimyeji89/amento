@@ -2,6 +2,7 @@
 import { css, keyframes } from "@emotion/react";
 import { ReactComponent as CheckPurple } from "@svgs/homePage/checkPurple.svg";
 import { ReactComponent as ChevRight } from "@svgs/homePage/chevRight.svg";
+import { ReactComponent as ChevRightMobile } from "@svgs/homePage/chevRightMobile.svg";
 
 export default function HomePage() {
   return (
@@ -16,14 +17,16 @@ export default function HomePage() {
             <div css={question}>
               <p className="separate">q.</p>
               <p>
-                프랜차이즈 가맹본부, <br />
+                프랜차이즈 가맹본부,{" "}
+                <br css={br_desktop} className="br_desktop" />
                 어떻게 준비해야 할까요?
               </p>
             </div>
             <div css={answer}>
               <p className="separate">a.</p>
               <p>
-                전문가가 맞춤형으로 직접 <br /> 설계해드립니다.
+                전문가가 맞춤형으로 직접{" "}
+                <br css={br_desktop} className="br_desktop" /> 설계해드립니다.
               </p>
             </div>
           </div>
@@ -31,7 +34,9 @@ export default function HomePage() {
             <p className="separate">n.</p>
             <p>
               예비 가맹본부에게 필수적인 레서피, 지식재산권
-              <br /> (상표, 디자인,특허 등), 세무, 회계, 법률 등 <br />
+              <br css={br_desktop} className="br_desktop" /> (상표, 디자인,특허
+              등), 세무, 회계, 법률 등{" "}
+              <br css={br_desktop} className="br_desktop" />
               <span className="high_light"> 최적화된 방법을 제안드립니다.</span>
             </p>
           </div>
@@ -99,7 +104,8 @@ export default function HomePage() {
             <div css={question}>
               <p className="separate">q.</p>
               <p>
-                현재하고 있는 사업, 가맹본부 <br />
+                현재하고 있는 사업, 가맹본부{" "}
+                <br css={br_desktop} className="br_desktop" />
                 설립으로 시작할 수 있을까요?
               </p>
             </div>
@@ -107,7 +113,8 @@ export default function HomePage() {
               <p className="separate">a.</p>
               <p>
                 전문가가 직접 분석 및 진단하여
-                <br /> 최적화된 솔루션을 제공해드립니다.
+                <br css={br_desktop} className="br_desktop" /> 최적화된 솔루션을
+                제공해드립니다.
               </p>
             </div>
           </div>
@@ -115,7 +122,7 @@ export default function HomePage() {
             <p className="separate">n.</p>
             <p>
               신속한 가맹본부 설립에 필요한 레서피, 지식재산권(상품, 디자인,
-              <br />
+              <br css={br_desktop} className="br_desktop" />
               특허 등), 세무, 회계, 법률 등
               <span className="high_light"> 원스톱으로 진행해드립니다.</span>
             </p>
@@ -132,24 +139,28 @@ export default function HomePage() {
             <div css={question}>
               <p className="separate">q.</p>
               <p>
-                지금하고 있는 가맹사업이 잘 안돼요.
-                <br /> 어떻게 하면 좋을까요?
+                지금하고 있는 가맹사업이
+                <br css={br_desktop} className="br_desktop" /> 잘 안돼요.{" "}
+                <br css={br_mobile} className="br_mobile" />
+                어떻게 하면 좋을까요?
               </p>
             </div>
             <div css={answer}>
               <p className="separate">a.</p>
               <p>
                 전문가가 직접 현장 방문하여
-                <br /> 고민을 해결해드립니다.
+                <br css={br_desktop} className="br_desktop" /> 고민을
+                해결해드립니다.
               </p>
             </div>
           </div>
           <div css={text_bottom}>
             <p className="separate">n.</p>
             <p>
-              가맹본부 전환에 필요한 레서피, 브랜딩, 지식재산권 <br />
+              가맹본부 전환에 필요한 레서피, 브랜딩, 지식재산권{" "}
+              <br css={br_desktop} className="br_desktop" />
               (상표, 디자인, 특허등), 세무, 회계, 법 마케팅 등
-              <br />
+              <br css={br_desktop} className="br_desktop" />
               <span className="high_light">
                 &nbsp;최적화된 솔루션을 제안드립니다.
               </span>
@@ -178,20 +189,24 @@ export default function HomePage() {
           </p>
           <div css={text_mid}>
             <div css={[question, white, center]}>
-              <p>Q. 우리 프랜차이즈, 어떻게 하면 더 성공할 수 있을까요?</p>
+              <p className="separate_mobile">Q.</p>
+              <p>
+                <span className="separate_desktop">Q.</span> 우리 프랜차이즈,
+                어떻게 하면
+                <br css={br_mobile} />더 성공할 수 있을까요?
+              </p>
             </div>
             <div css={[answer, center]}>
+              <p className="separate_mobile">A.</p>
               <p>
-                A. 전문가가 가맹본부의 현향을 직접 진단 및 분석하여 개선방안을
-                제공해 드립니다.
+                <span className="separate_desktop">A.</span> 전문가가 가맹본부의
+                현향을 직접 진단 및 분석하여 개선방안을 제공해 드립니다.
               </p>
             </div>
           </div>
           <p css={[text_bottom_no_separate, white]}>
-            <span>
-              운영중인 가맹본부에 필요한 레서피, 브랜딩, 마케팅, 지식재산권 등
-            </span>
-            <br />
+            운영중인 가맹본부에 필요한 레서피, 브랜딩, 마케팅, 지식재산권 등
+            <br css={br_desktop} className="br_desktop" />
             <span className="high_light">
               &nbsp; 최적화된 성장 솔루션을 제안드립니다.
             </span>
@@ -200,14 +215,15 @@ export default function HomePage() {
         <img
           src="/assets/images/homePage/section4.png"
           alt="section4"
-          css={section5_img}
+          css={section4_img}
         />
       </section>
       <section css={section5} className="section5">
         <p css={section5_title}>
           프렌차이즈 시작,
-          <br />
-          어디서부터 해야할지 막막하신가요?
+          <br css={br_desktop} className="br_desktop" />
+          어디서부터 <br css={br_mobile} />
+          해야할지 막막하신가요?
         </p>
         <ul css={section5_card_ctn}>
           <li css={section5_card}>
@@ -259,7 +275,11 @@ export default function HomePage() {
       </section>
       <section css={section6} className="section6">
         <div css={section6_ctn}>
-          <p className="title">혼자서 모든걸 해결하려 하지 마세요.</p>
+          <p className="title">
+            혼자서 모든걸
+            <br css={br_mobile} className="br_mobile" />
+            해결하려 하지 마세요.
+          </p>
           <p className="content">
             <span> 전문가의 도움으로 문제를 하나씩 풀어가세요.</span>
             <span>가맹본부 설립에 필요한 법적 절차부터 운영 시스템까지.</span>
@@ -270,7 +290,8 @@ export default function HomePage() {
           </p>
           <button type="button" css={counsel_button}>
             <span className="text">상담신청</span>
-            <ChevRight />
+            <ChevRight className="chev_right_pc" />
+            <ChevRightMobile className="chev_right_mobile" />
             <p className="badge">
               <span>지금바로</span>
             </p>
@@ -295,15 +316,25 @@ const float = keyframes`
 const white = css`
   color: var(--white);
 `;
-
+const br_desktop = css`
+  @media (max-width: 1919px) {
+    display: none;
+  }
+  @media (max-width: 375px) {
+    display: block;
+  }
+`;
+const br_mobile = css`
+  @media (min-width: 376px) {
+    display: none;
+  }
+  @media (max-width: 375px) {
+    display: block;
+  }
+`;
 const ctn = css`
   margin-top: 90px;
   overflow: hidden;
-  @media (max-width: 1919px) {
-    br {
-      display: none;
-    }
-  }
   @media (max-width: 1024px) {
     margin-top: 80px;
   }
@@ -312,6 +343,9 @@ const ctn = css`
   }
   @media (max-width: 767px) {
     margin-top: 60px;
+  }
+  @media (max-width: 375px) {
+    margin-top: 66px;
   }
 `;
 
@@ -348,7 +382,8 @@ const section1 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    padding: 50px 20px 67px;
   }
   @media (max-width: 320px) {
   }
@@ -370,6 +405,9 @@ const section1_img_ctn = css`
   align-items: center;
   @media (max-width: 950px) {
     width: 70%;
+  }
+  @media (max-width: 375px) {
+    width: 90%;
   }
 `;
 
@@ -416,7 +454,12 @@ const section1_img_bg = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    width: 283px;
+    height: 282px;
+    border-radius: 283px;
+    background: linear-gradient(180deg, #ffcfeb 0.04%, #9da6f6 84.59%);
+    filter: blur(49.85994338989258px);
   }
   @media (max-width: 320px) {
   }
@@ -452,7 +495,9 @@ const section1_img_float1 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    top: calc(50% - 45%);
+    max-width: 25%;
   }
   @media (max-width: 320px) {
   }
@@ -491,7 +536,9 @@ const section1_img_float2 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    max-width: 50%;
+    left: calc(50% + 36%);
   }
   @media (max-width: 320px) {
   }
@@ -534,7 +581,11 @@ const section1_img_float3 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    max-width: 24%;
+    border-radius: 10px;
+    top: calc(50% - 10%);
+    left: calc(50% - 48%);
   }
   @media (max-width: 320px) {
   }
@@ -573,7 +624,10 @@ const section2 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    justify-content: start;
+    align-items: start;
+    padding: 80px 20px 108px;
   }
   @media (max-width: 320px) {
   }
@@ -597,12 +651,13 @@ const section2_img_ctn = css`
     order: 2;
     width: 70%;
   }
-  }
   @media (max-width: 767px) {
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    width: 80%;
+    padding-left: 12px;
   }
   @media (max-width: 320px) {
   }
@@ -612,6 +667,9 @@ const section2_img_inner_ctn = css`
   height: 100%;
   width: auto;
   position: relative;
+  @media (max-width: 375px) {
+    width: 100%;
+  }
 `;
 
 const section2_img_main = css`
@@ -634,7 +692,7 @@ const section2_img_main = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -656,6 +714,16 @@ const section2_img_bg = css`
   filter: blur(100px);
   @media (max-width: 1919px) {
     width: 90%;
+  }
+  @media (max-width: 375px) {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 283px;
+    height: 282px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ffcfeb 0.04%, #9da6f6 84.59%);
+    filter: blur(49.85994338989258px);
   }
 `;
 
@@ -685,7 +753,8 @@ const section2_img_float1 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    max-width: 34%;
   }
   @media (max-width: 320px) {
   }
@@ -718,7 +787,10 @@ const section2_img_float2 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    max-width: 30%;
+    top: calc(50% - 55%);
+    right: calc(50% - 80%);
   }
   @media (max-width: 320px) {
   }
@@ -750,7 +822,9 @@ const section2_img_float3 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    max-width: 28%;
+    right: calc(50% - 73%);
   }
   @media (max-width: 320px) {
   }
@@ -782,7 +856,8 @@ const section2_img_float4 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    max-width: 38%;
   }
   @media (max-width: 320px) {
   }
@@ -827,7 +902,8 @@ const section3 = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    padding: 80px 0px;
   }
   @media (max-width: 320px) {
   }
@@ -852,6 +928,9 @@ const section3_text_ctn = css`
   @media (max-width: 950px) {
     padding: 0;
   }
+  @media (max-width: 375px) {
+    padding: 0 20px;
+  }
 `;
 
 const section3_img_ctn = css`
@@ -864,6 +943,9 @@ const section3_img_ctn = css`
   }
   @media (max-width: 950px) {
     width: 90%;
+  }
+  @media (max-width: 375px) {
+    padding-right: 0px;
   }
 `;
 
@@ -890,6 +972,13 @@ const section3_img_bg = css`
     width: 100%;
     height: 100%;
   }
+  @media (max-width: 375px) {
+    width: 283px;
+    height: 282px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #ffcfeb 0.04%, #9da6f6 84.59%);
+    filter: blur(49.85994338989258px);
+  }
 `;
 
 const section3_img_float1 = css`
@@ -910,6 +999,10 @@ const section3_img_float1 = css`
     max-width: 26%;
     top: calc(50% + 26%);
   }
+  @media (max-width: 375px) {
+    max-width: 34%;
+    top: calc(50% + 26%);
+  }
 `;
 
 const section4 = css`
@@ -926,9 +1019,14 @@ const section4 = css`
   @media (max-width: 950px) {
     max-height: 900px;
   }
+  @media (max-width: 375px) {
+    padding: 80px 24px 0;
+    height: 788px;
+  }
 `;
 
 const section4_text_ctn = css`
+  width: 100%;
   position: absolute;
   top: 140px;
   left: 50%;
@@ -940,10 +1038,30 @@ const section4_text_ctn = css`
   justify-content: center;
   text-align: center;
   z-index: 1;
-  width: 100%;
   box-sizing: border-box;
   @media (max-width: 1280px) {
     padding: 0 100px;
+  }
+  @media (max-width: 375px) {
+    padding: 0px;
+    align-items: start;
+    width: calc(100% - 48px);
+    position: absolute;
+    top: 80px;
+    left: 24px;
+    transform: translateX(0);
+  }
+`;
+
+const section4_img = css`
+  width: auto;
+  max-height: 907px;
+  object-fit: cover;
+  @media (max-width: 950px) {
+    max-height: 600px;
+  }
+  @media (max-width: 375px) {
+    max-height: 500px;
   }
 `;
 
@@ -958,6 +1076,10 @@ const section5 = css`
   @media (max-width: 1919px) {
     padding: 140px 80px;
   }
+  @media (max-width: 375px) {
+    padding: 80px 20px;
+    gap: 24px;
+  }
 `;
 
 const section5_card_ctn = css`
@@ -966,6 +1088,9 @@ const section5_card_ctn = css`
   gap: 34px;
   width: 100%;
   flex-wrap: wrap;
+  @media (max-width: 375px) {
+    gap: 20px;
+  }
 `;
 
 const section5_card = css`
@@ -1002,6 +1127,18 @@ const section5_card = css`
   @media (max-width: 950px) {
     font-size: 20px;
   }
+  @media (max-width: 375px) {
+    font-size: 15px;
+    gap: 14px;
+    .check_ctn {
+      box-sizing: border-box;
+      padding-top: 2px;
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
 `;
 
 const section5_card_text = css`
@@ -1031,13 +1168,13 @@ const section5_title = css`
   @media (max-width: 950px) {
     font-size: 38px;
   }
-`;
-
-const section5_img = css`
-  max-height: 907px;
-  object-fit: cover;
-  @media (max-width: 950px) {
-    max-height: 600px;
+  @media (max-width: 375px) {
+    width: 100%;
+    font-size: 24px;
+    text-align: left;
+    br.br_desktop {
+      display: none;
+    }
   }
 `;
 
@@ -1052,6 +1189,13 @@ const section6 = css`
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 375px) {
+    height: auto;
+    padding: 80px 20px;
+    background-position: 40% 100%;
+    background-color: #edf0ff;
+  }
 `;
 
 const section6_ctn = css`
@@ -1064,7 +1208,7 @@ const section6_ctn = css`
     font-family: "Noto Sans", Noto Sans, sans-serif;
     font-size: 44px;
     font-weight: 700;
-    line-height: 52.8px;
+    line-height: 120%;
     text-align: center;
   }
   .content {
@@ -1079,6 +1223,19 @@ const section6_ctn = css`
   .high_light {
     color: var(--primary);
     font-weight: 800;
+  }
+  @media (max-width: 375px) {
+    gap: 20px;
+
+    .title {
+      font-size: 24px;
+      text-align: center;
+      line-height: 120%;
+    }
+    .content {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
   }
 `;
 
@@ -1104,6 +1261,12 @@ const counsel_button = css`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  .chev_right_pc {
+    display: block;
+  }
+  .chev_right_mobile {
+    display: none;
+  }
   .text {
     color: var(--primary, #9627e7);
     font-size: 32px;
@@ -1112,6 +1275,7 @@ const counsel_button = css`
     line-height: normal;
   }
   .badge {
+    width: auto;
     position: absolute;
     display: inline-flex;
     top: calc(-9px);
@@ -1129,6 +1293,28 @@ const counsel_button = css`
     line-height: normal;
   }
   animation: ${counsel_button_animation} 3s ease-in-out infinite;
+  @media (max-width: 375px) {
+    height: 50px;
+    padding: 20px 44px;
+    .text {
+      font-size: 17px;
+    }
+    .badge {
+      padding: 6px 14px;
+      max-width: 70px;
+      left: calc(100% - 70px);
+      top: -14px;
+      right: 0;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .chev_right_pc {
+      display: none;
+    }
+    .chev_right_mobile {
+      display: block;
+    }
+  }
 `;
 
 const text_top = css`
@@ -1166,7 +1352,12 @@ const text_top = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: start;
+    font-size: 14px;
   }
   @media (max-width: 320px) {
   }
@@ -1202,7 +1393,10 @@ const text_top_center = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: start;
   }
   @media (max-width: 320px) {
   }
@@ -1242,7 +1436,9 @@ const text_mid = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    font-size: 24px;
+    text-align: left;
   }
   @media (max-width: 320px) {
   }
@@ -1260,6 +1456,26 @@ const question = css`
     gap: 4px;
     flex-direction: column;
   }
+  @media (min-width: 376px) {
+    .separate_mobile {
+      display: none;
+    }
+    .separate_desktop {
+      display: inline;
+    }
+  }
+  @media (max-width: 375px) {
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 14px;
+    .separate_mobile {
+      display: block;
+    }
+    .separate_desktop {
+      display: none;
+    }
+  }
 `;
 
 const center = css`
@@ -1276,6 +1492,26 @@ const answer = css`
     justify-content: center;
     gap: 8px;
     flex-direction: column;
+  }
+  @media (min-width: 376px) {
+    .separate_mobile {
+      display: none;
+    }
+    .separate_desktop {
+      display: inline;
+    }
+  }
+  @media (max-width: 375px) {
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 14px;
+    .separate_mobile {
+      display: block;
+    }
+    .separate_desktop {
+      display: none;
+    }
   }
 `;
 
@@ -1314,7 +1550,14 @@ const text_bottom_no_separate = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    display: inline;
+    font-size: 14px;
+    text-align: left;
+
+    br {
+      display: none;
+    }
   }
   @media (max-width: 320px) {
   }
@@ -1379,7 +1622,8 @@ const text_bottom = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    text-align: left;
   }
   @media (max-width: 320px) {
   }
@@ -1409,13 +1653,13 @@ const text_block = css`
     font-size: 16px;
   }
   @media (max-width: 950px) {
-    font-size: 16px;
   }
   @media (max-width: 767px) {
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    font-size: 14px;
   }
   @media (max-width: 320px) {
   }

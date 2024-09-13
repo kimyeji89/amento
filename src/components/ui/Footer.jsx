@@ -10,13 +10,11 @@ export default function Footer() {
           <p>
             <span css={info_text}>대표이사: 박형미</span>
           </p>
-          <p css={info_text_ctn}>
-            <span css={info_text}>사업자 등록번호 : 246-86-02608</span>
+          <div css={info_text_ctn}>
+            <p css={info_text}>사업자 등록번호 : 246-86-02608</p>
             <span css={info_divider}></span>
-            <span css={info_text}>
-              통신판매신고번호 : 제 2024-서울영등포-1348
-            </span>
-          </p>
+            <p css={info_text}>통신판매신고번호 : 제 2024-서울영등포-1348</p>
+          </div>
           <div css={info_with_title}>
             <p css={info_title}>office</p>
             <p css={info_content}>
@@ -68,7 +66,8 @@ const footer = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    padding: 80px 20px;
   }
   @media (max-width: 320px) {
   }
@@ -89,7 +88,7 @@ const ctn = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -110,7 +109,8 @@ const info = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    gap: 14px;
   }
   @media (max-width: 320px) {
   }
@@ -128,7 +128,9 @@ const info_text_ctn = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    align-items: start;
+    flex-direction: column;
   }
   @media (max-width: 320px) {
   }
@@ -151,7 +153,7 @@ const info_text = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -162,10 +164,17 @@ const info_divider = css`
   width: 1px;
   height: 10px;
   background-color: #aaaaaa;
+  @media (max-width: 375px) {
+    display: none;
+  }
 `;
 
 const info_with_title = css`
   display: flex;
+  @media (max-width: 375px) {
+    flex-direction: column;
+    gap: 14px;
+  }
 `;
 
 const info_title = css`
@@ -194,7 +203,7 @@ const info_title = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -239,7 +248,11 @@ const info_content = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    line-height: 195%;
+    &:not(:last-child):after {
+      display: none;
+    }
   }
   @media (max-width: 320px) {
   }
@@ -261,7 +274,7 @@ const info_link_ctn = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -287,7 +300,7 @@ const info_link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -318,7 +331,7 @@ const copyright = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }

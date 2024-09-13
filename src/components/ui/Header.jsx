@@ -7,6 +7,7 @@ import { ReactComponent as UserDefault } from "@svgs/header/userDefault.svg";
 import { ReactComponent as UserSelected } from "@svgs/header/userSelected.svg";
 import { ReactComponent as ChevDown } from "@svgs/header/chevDown.svg";
 import { ReactComponent as ChevUp } from "@svgs/header/chevUp.svg";
+import { ReactComponent as Menu } from "@svgs/header/menu.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -137,6 +138,7 @@ export default function Header() {
             <p>회원가입</p>
           </Link>
         </div>
+        <Menu css={mobile_menu_button} />
       </div>
     </header>
   );
@@ -170,7 +172,10 @@ const header = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    padding: 10px 20px;
+    height: 66px;
+    justify-content: space-between;
   }
   @media (max-width: 320px) {
   }
@@ -207,7 +212,8 @@ const logo = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    height: 30px;
   }
   @media (max-width: 320px) {
   }
@@ -235,7 +241,8 @@ const nav = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    display: none;
   }
   @media (max-width: 320px) {
   }
@@ -262,7 +269,7 @@ const nav_link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -282,7 +289,7 @@ const link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -307,7 +314,8 @@ const user = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    display: none;
   }
   @media (max-width: 320px) {
   }
@@ -334,7 +342,7 @@ const user_button = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -365,7 +373,7 @@ const chev_icon = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -399,7 +407,7 @@ const divider = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -437,7 +445,7 @@ const user_menu = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -464,8 +472,17 @@ const user_link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
+  }
+`;
+
+const mobile_menu_button = css`
+  @media (min-width: 376px) {
+    display: none;
+  }
+  @media (max-width: 375px) {
+    display: block;
   }
 `;

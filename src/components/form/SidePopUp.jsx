@@ -189,6 +189,7 @@ export default function SidePopUp() {
     </div>
   );
 }
+
 const side_popup_ctn = css`
   display: flex;
   z-index: 10;
@@ -199,6 +200,9 @@ const side_popup_ctn = css`
   bottom: 24px;
   &.open {
     left: 0;
+  }
+  @media (max-width: 375px) {
+    display: none;
   }
 `;
 
