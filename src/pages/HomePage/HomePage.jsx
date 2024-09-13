@@ -31,7 +31,7 @@ export default function HomePage() {
             <p className="separate">n.</p>
             <p>
               예비 가맹본부에게 필수적인 레서피, 지식재산권
-              <br /> (상표, 디자인,특허 등), 세무, 회계, 법률 등<br />
+              <br /> (상표, 디자인,특허 등), 세무, 회계, 법률 등 <br />
               <span className="high_light"> 최적화된 방법을 제안드립니다.</span>
             </p>
           </div>
@@ -62,32 +62,34 @@ export default function HomePage() {
       </section>
       <section css={section2}>
         <div css={section2_img_ctn}>
-          <img
-            src="/assets/images/homePage/section2main.png"
-            alt="section2main"
-            css={section2_img_main}
-          />
-          <img
-            src="/assets/images/homePage/section2Float1.png"
-            alt="section2Float1"
-            css={section2_img_float1}
-          />
-          <img
-            src="/assets/images/homePage/section2Float2.png"
-            alt="section2Float2"
-            css={section2_img_float2}
-          />
-          <img
-            src="/assets/images/homePage/section2Float3.png"
-            alt="section2Float3"
-            css={section2_img_float3}
-          />
-          <img
-            src="/assets/images/homePage/section2Float4.png"
-            alt="section2Float4"
-            css={section2_img_float4}
-          />
-          <span css={section2_img_bg}></span>
+          <div css={section2_img_inner_ctn}>
+            <img
+              src="/assets/images/homePage/section2main.png"
+              alt="section2main"
+              css={section2_img_main}
+            />
+            <img
+              src="/assets/images/homePage/section2Float1.png"
+              alt="section2Float1"
+              css={section2_img_float1}
+            />
+            <img
+              src="/assets/images/homePage/section2Float2.png"
+              alt="section2Float2"
+              css={section2_img_float2}
+            />
+            <img
+              src="/assets/images/homePage/section2Float3.png"
+              alt="section2Float3"
+              css={section2_img_float3}
+            />
+            <img
+              src="/assets/images/homePage/section2Float4.png"
+              alt="section2Float4"
+              css={section2_img_float4}
+            />
+            <span css={section2_img_bg}></span>
+          </div>
         </div>
         <div css={section2_text_ctn}>
           <p css={text_top}>
@@ -149,7 +151,7 @@ export default function HomePage() {
               (상표, 디자인, 특허등), 세무, 회계, 법 마케팅 등
               <br />
               <span className="high_light">
-                최적화된 솔루션을 제안드립니다.
+                &nbsp;최적화된 솔루션을 제안드립니다.
               </span>
             </p>
           </div>
@@ -191,7 +193,7 @@ export default function HomePage() {
             </span>
             <br />
             <span className="high_light">
-              최적화된 성장 솔루션을 제안드립니다.
+              &nbsp; 최적화된 성장 솔루션을 제안드립니다.
             </span>
           </p>
         </div>
@@ -547,8 +549,8 @@ const section2 = css`
   width: 100%;
   background: linear-gradient(180deg, #fefeff 0%, #f5f6f9 100%);
   @media (max-width: 1919px) {
-    padding: 240px 140px;
-    gap: 80px;
+    padding: 240px 180px;
+    gap: 100px;
   }
   @media (max-width: 1440px) {
     padding: 220px 120px;
@@ -583,7 +585,7 @@ const section2_img_ctn = css`
   @media (max-width: 1919px) {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
   @media (max-width: 1440px) {
   }
@@ -606,11 +608,19 @@ const section2_img_ctn = css`
   }
 `;
 
+const section2_img_inner_ctn = css`
+  height: 100%;
+  width: auto;
+  position: relative;
+`;
+
 const section2_img_main = css`
   position: relative;
   z-index: 2;
+  height: auto;
+  width: 100%;
+  max-width: 617px;
   @media (max-width: 1919px) {
-    width: 90%;
   }
   @media (max-width: 1440px) {
   }
@@ -635,8 +645,8 @@ const section2_img_bg = css`
   position: absolute;
   z-index: 0;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  transform: translateY(-50%);
   width: 100%;
   height: 100%;
   max-width: 680px;
@@ -726,7 +736,7 @@ const section2_img_float3 = css`
   @media (max-width: 1919px) {
     max-width: 24%;
     top: calc(50% - 5%);
-    right: calc(50% - 65%);
+    right: calc(50% - 68%);
   }
   @media (max-width: 1440px) {
   }
@@ -1245,8 +1255,10 @@ const question = css`
   margin-bottom: 10px;
   word-break: keep-all;
   @media (max-width: 950px) {
+    display: inline-flex;
     justify-content: center;
     gap: 4px;
+    flex-direction: column;
   }
 `;
 
@@ -1263,6 +1275,7 @@ const answer = css`
   @media (max-width: 950px) {
     justify-content: center;
     gap: 8px;
+    flex-direction: column;
   }
 `;
 
@@ -1308,34 +1321,56 @@ const text_bottom_no_separate = css`
 `;
 
 const text_bottom = css`
-  ${text_bottom_no_separate};
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  color: #292929;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+  word-break: keep-all;
 
   .separate {
     font-size: 44px;
     color: transparent;
   }
 
+  .high_light {
+    color: #ec0d0d;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
   @media (max-width: 1919px) {
+    font-size: 19px;
     .separate {
       font-size: 42px;
     }
   }
   @media (max-width: 1440px) {
+    font-size: 18px;
     .separate {
       font-size: 36px;
     }
   }
   @media (max-width: 1280px) {
+    font-size: 17px;
     .separate {
       font-size: 32px;
     }
   }
   @media (max-width: 1024px) {
+    font-size: 16px;
     .separate {
       font-size: 28px;
     }
   }
   @media (max-width: 950px) {
+    justify-content: center;
+    text-align: center;
     .separate {
       display: none;
     }
