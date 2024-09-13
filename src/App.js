@@ -26,6 +26,14 @@ import ChangePwDetailPage from "@pages/ChangePwDetailPage/ChangePwDetailPage";
 import ChangePwDonePage from "@pages/ChangePwDonePage/ChangePwDonePage";
 import SidePopUp from "@components/form/SidePopUp";
 import ScrollToTop from "@components/ui/ScrollToTop";
+import PayHistoryPage from "@pages/PayHistoryPage/PayHistoryPage";
+import PayHistoryDetailPage from "@pages/PayHistoryDetailPage/PayHistoryDetailPage";
+import EstimateSheetPage from "@pages/EstimateSheetPage/EstimateSheetPage";
+import ConsultHistoryPage from "@pages/ConsultHistoryPage/ConsultHistoryPage";
+import ConsultDetailPage from "@pages/ConsultDetailPage/ConsultDetailPage";
+import ConsultWritePage from "@pages/ConsultWritePage/ConsultWritePage";
+import QnAPage from "@pages/QnAPage/QnAPage";
+import BusinessReviewDetailPage from "@pages/BusinessReviewDetailPage/BusinessReviewDetailPage";
 
 function App() {
   return (
@@ -64,6 +72,18 @@ function App() {
           <Route path="/changePw" element={<ChangePwPage />} />
           <Route path="/changePwDetail" element={<ChangePwDetailPage />} />
           <Route path="/changePwDone" element={<ChangePwDonePage />} />
+
+          <Route path="/payHistory" element={<PayHistoryPage />} />
+          <Route path="/payHistoryDetail" element={<PayHistoryDetailPage />} />
+          <Route path="/estimateSheet" element={<EstimateSheetPage />} />
+          <Route path="/consultHistory" element={<ConsultHistoryPage />} />
+          <Route path="/consultDetail" element={<ConsultDetailPage />} />
+          <Route path="/consultWrite" element={<ConsultWritePage />} />
+          <Route path="/QnA" element={<QnAPage />} />
+          <Route
+            path="/businessReviewDetail"
+            element={<BusinessReviewDetailPage />}
+          />
         </Routes>
         <Footer />
       </Router>
