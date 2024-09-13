@@ -1,14 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import useLocationControl from "@hooks/useLocationControl";
 import { ReactComponent as UserDefault } from "@svgs/header/userDefault.svg";
 import { ReactComponent as UserSelected } from "@svgs/header/userSelected.svg";
 import { ReactComponent as ChevDown } from "@svgs/header/chevDown.svg";
 import { ReactComponent as ChevUp } from "@svgs/header/chevUp.svg";
-import { useState } from "react";
+import { ReactComponent as Menu } from "@svgs/header/menu.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { includeLocation, checkLocation } = useLocationControl();
 
   function handleChangeOpen(e) {
     setIsOpen(!isOpen);
@@ -83,27 +86,47 @@ export default function Header() {
           {isOpen && (
             <ul className="user_menu" css={user_menu}>
               <li>
-                <Link to="/editUser" css={user_link}>
+                <Link
+                  to="/editUser"
+                  css={user_link}
+                  className={checkLocation(["/editUser"]) && "selected"}
+                >
                   <p>회원정보 수정</p>
                 </Link>
               </li>
               <li>
-                <Link to="/" css={user_link}>
+                <Link
+                  to="/consultHistory"
+                  css={user_link}
+                  className={checkLocation(["/consultHistory"]) && "selected"}
+                >
                   <p>상담내역</p>
                 </Link>
               </li>
               <li>
-                <Link to="/" css={user_link}>
+                <Link
+                  to="/estimateSheet"
+                  css={user_link}
+                  className={checkLocation(["/estimateSheet"]) && "selected"}
+                >
                   <p>견적서</p>
                 </Link>
               </li>
               <li>
-                <Link to="/" css={user_link} className="selected">
+                <Link
+                  to="/payHistory"
+                  css={user_link}
+                  className={checkLocation(["/payHistory"]) && "selected"}
+                >
                   <p>결제내역</p>
                 </Link>
               </li>
               <li>
-                <Link to="/" css={user_link}>
+                <Link
+                  to="/QnA"
+                  css={user_link}
+                  className={checkLocation(["/QnA"]) && "selected"}
+                >
                   <p>Q&A</p>
                 </Link>
               </li>
@@ -115,6 +138,7 @@ export default function Header() {
             <p>회원가입</p>
           </Link>
         </div>
+        <Menu css={mobile_menu_button} />
       </div>
     </header>
   );
@@ -148,7 +172,10 @@ const header = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    padding: 10px 20px;
+    height: 66px;
+    justify-content: space-between;
   }
   @media (max-width: 320px) {
   }
@@ -185,7 +212,8 @@ const logo = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    height: 30px;
   }
   @media (max-width: 320px) {
   }
@@ -213,7 +241,8 @@ const nav = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    display: none;
   }
   @media (max-width: 320px) {
   }
@@ -240,7 +269,7 @@ const nav_link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -260,7 +289,7 @@ const link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -285,7 +314,8 @@ const user = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
+    display: none;
   }
   @media (max-width: 320px) {
   }
@@ -312,7 +342,7 @@ const user_button = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -343,7 +373,7 @@ const chev_icon = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -377,7 +407,7 @@ const divider = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -415,7 +445,7 @@ const user_menu = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -442,8 +472,17 @@ const user_link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
+  }
+`;
+
+const mobile_menu_button = css`
+  @media (min-width: 376px) {
+    display: none;
+  }
+  @media (max-width: 375px) {
+    display: block;
   }
 `;
