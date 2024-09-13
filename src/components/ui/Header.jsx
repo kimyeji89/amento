@@ -26,27 +26,27 @@ export default function Header() {
         <nav className="nav" css={nav}>
           <ul>
             <li>
-              <Link to="/" css={nav_link}>
+              <Link to="/companyIntro" css={nav_link}>
                 <p>회사소개</p>
               </Link>
             </li>
             <li>
-              <Link to="/" css={nav_link}>
+              <Link to="/service" css={nav_link}>
                 <p>서비스</p>
               </Link>
             </li>
             <li>
-              <Link to="/" css={nav_link}>
+              <Link to="/application" css={nav_link}>
                 <p>설명회 신청</p>
               </Link>
             </li>
             <li>
-              <Link to="/" css={nav_link}>
+              <Link to="/consulting" css={nav_link}>
                 <p>창업 컨설팅</p>
               </Link>
             </li>
             <li>
-              <Link to="/" css={nav_link}>
+              <Link to="/businessReview" css={nav_link}>
                 <p>사업후기</p>
               </Link>
             </li>
@@ -83,7 +83,7 @@ export default function Header() {
           {isOpen && (
             <ul className="user_menu" css={user_menu}>
               <li>
-                <Link to="/" css={user_link}>
+                <Link to="/editUser" css={user_link}>
                   <p>회원정보 수정</p>
                 </Link>
               </li>

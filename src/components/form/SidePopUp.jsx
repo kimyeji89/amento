@@ -16,7 +16,7 @@ function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
         value={value}
         onChange={onChange}
       />
-      <DeleteInputValue onClick={onClick} />
+      {value !== "" && <DeleteInputValue onClick={onClick} />}
     </div>
   );
 }

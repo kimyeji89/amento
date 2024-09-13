@@ -610,7 +610,7 @@ const section2_img_main = css`
   position: relative;
   z-index: 2;
   @media (max-width: 1919px) {
-    width: 95%;
+    width: 90%;
   }
   @media (max-width: 1440px) {
   }
@@ -644,6 +644,9 @@ const section2_img_bg = css`
   border-radius: 50%;
   background: linear-gradient(180deg, #ffcfeb 0.04%, #9da6f6 84.59%);
   filter: blur(100px);
+  @media (max-width: 1919px) {
+    width: 90%;
+  }
 `;
 
 const section2_img_float1 = css`
@@ -656,7 +659,7 @@ const section2_img_float1 = css`
   max-width: 26%;
   animation: ${float} 3s 0.3s ease-in-out infinite;
   @media (max-width: 1919px) {
-    max-width: 36%;
+    max-width: 34%;
     top: calc(50% - 42%);
     left: calc(50% - 30%);
   }
@@ -1126,6 +1129,7 @@ const text_top = css`
   font-weight: 700;
   line-height: 140%;
   margin-bottom: 34px;
+  word-break: keep-all;
   @media (max-width: 1919px) {
     font-size: 23px;
   }
@@ -1167,6 +1171,7 @@ const text_top_center = css`
   font-weight: 700;
   line-height: 140%;
   margin-bottom: 34px;
+  word-break: keep-all;
   @media (max-width: 1919px) {
     font-size: 23px;
   }
@@ -1200,6 +1205,7 @@ const text_mid = css`
   line-height: 120%;
   margin-bottom: 34px;
   white-space: wrap;
+  word-break: keep-all;
   .separate {
     text-transform: uppercase;
   }
@@ -1237,6 +1243,7 @@ const question = css`
   gap: 14px;
   color: var(--black, #111);
   margin-bottom: 10px;
+  word-break: keep-all;
   @media (max-width: 950px) {
     justify-content: center;
     gap: 4px;
@@ -1252,6 +1259,7 @@ const answer = css`
   display: flex;
   gap: 14px;
   color: var(--primary, #9627e7);
+  word-break: keep-all;
   @media (max-width: 950px) {
     justify-content: center;
     gap: 8px;
@@ -1264,7 +1272,7 @@ const text_bottom_no_separate = css`
   font-style: normal;
   font-weight: 300;
   line-height: 140%;
-
+  word-break: keep-all;
   .high_light {
     color: #ec0d0d;
     font-weight: 700;

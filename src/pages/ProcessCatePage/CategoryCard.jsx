@@ -81,6 +81,7 @@ const category_card = css`
       font-weight: 700;
       line-height: normal;
       text-align: center;
+      white-space: nowrap;
     }
     &::before {
       content: "";
