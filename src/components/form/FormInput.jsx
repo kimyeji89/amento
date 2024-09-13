@@ -3,7 +3,12 @@ import { css } from "@emotion/react";
 import { ReactComponent as DeleteInputValue } from "@svgs/sidePopUp/deleteInputValue.svg";
 import { useState } from "react";
 
-export default function FormInput({ label, placeholder, required }) {
+export default function FormInput({
+  label,
+  placeholder,
+  required,
+  isDetailForm,
+}) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
@@ -24,7 +29,7 @@ export default function FormInput({ label, placeholder, required }) {
         placeholder={placeholder}
         value={inputValue}
         onChange={handleChange}
-        css={input_style}
+        css={input_style(isDetailForm)}
       />
       {inputValue && (
         <DeleteInputValue onClick={clearInput} css={delete_icon} />
@@ -34,6 +39,8 @@ export default function FormInput({ label, placeholder, required }) {
 }
 
 const input_wrap = css`
+  width: 100%;
+  min-width: 0;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -45,6 +52,10 @@ const label_style = css`
   font-weight: 800;
   line-height: 20.4px;
   color: #3c3c3c;
+
+  @media (max-width: 375px) {
+    font-size: 15px;
+  }
 `;
 
 const required_mark = css`
@@ -53,14 +64,19 @@ const required_mark = css`
   font-weight: 600;
 `;
 
-const input_style = css`
-  border: 1px solid #ededed;
-  padding: 18px 15px;
-  border-radius: 10px;
+const input_style = (isDetailForm) => css`
+  border: 1px solid ${isDetailForm ? "#D9D9D9" : "#ededed"};
+  padding: 20px 15px;
+  border-radius: ${isDetailForm ? "5px" : "10px"};
   color: #181818;
   font-size: 15px;
   font-weight: 400;
-  line-height: 17.9px;
+  line-height: 18px;
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+    padding: 15px 15px;
+  }
 `;
 
 const delete_icon = css`
@@ -68,4 +84,8 @@ const delete_icon = css`
   bottom: 16px;
   right: 14px;
   cursor: pointer;
+
+  @media (max-width: 375px) {
+    bottom: 13px;
+  }
 `;

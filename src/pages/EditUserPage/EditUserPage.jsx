@@ -15,8 +15,8 @@ export default function EditUserPage() {
         <FormHeader />
 
         <div css={form_wrapper}>
-          <FormInput label="이메일 아이디" required />
-          <FormInput label="비밀번호 확인" required />
+          <FormInput label="이메일 아이디" required isDetailForm />
+          <FormInput label="비밀번호 확인" required isDetailForm />
           <div css={login_btn_wrap}>
             <Button label="로그인 정보 확인" />
           </div>
@@ -26,25 +26,27 @@ export default function EditUserPage() {
         <div css={div_line} />
 
         <div css={form_wrapper_2}>
-          <FormInput label="성명" required />
-          <FormInput label="연락처" required />
+          <FormInput label="성명" required isDetailForm />
+          <FormInput label="연락처" required isDetailForm />
         </div>
 
         <div css={select_title}>선택입력</div>
         <div css={div_line} />
 
         <div css={form_wrapper_select}>
-          <FormInput label="업체명" />
-          <div css={row}>
-            <div css={col}>
-              <FormInput label="희망업종" />
-              <FormInput label="희망지역" />
-              <FormDatePicker label="희망 개업일" />
+          <FormInput label="업체명" isDetailForm />
+          <div css={col}>
+            <div css={row}>
+              <FormInput label="희망업종" isDetailForm />
+              <FormInput label="점포유무" isDetailForm />
             </div>
-            <div css={col}>
-              <FormInput label="점포유무" />
-              <FormInput label="점포수" />
-              <FormInput label="매출액" />
+            <div css={row}>
+              <FormInput label="희망지역" isDetailForm />
+              <FormInput label="점포수" isDetailForm />
+            </div>
+            <div css={row}>
+              <FormDatePicker label="희망 개업일" />
+              <FormInput label="매출액" isDetailForm />
             </div>
           </div>
         </div>
@@ -61,6 +63,10 @@ const form_wrapper = css`
   flex-direction: column;
   gap: 24px;
   padding: 44px 0 34px 0;
+
+  @media (max-width: 375px) {
+    gap: 20px;
+  }
 `;
 
 const form_wrapper_2 = css`
@@ -68,6 +74,10 @@ const form_wrapper_2 = css`
   flex-direction: column;
   gap: 24px;
   padding: 24px 0 44px 0;
+
+  @media (max-width: 375px) {
+    padding: 24px 0 34px 0;
+  }
 `;
 
 const login_btn_wrap = css`
@@ -80,6 +90,12 @@ const login_btn_wrap = css`
     text-align: center;
     line-height: 10px !important;
   }
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    margin: 4px 0 0;
+  }
 `;
 
 const edit_title = css`
@@ -87,6 +103,18 @@ const edit_title = css`
   font-size: 32px;
   font-weight: 700;
   padding: 0 0 14px 0;
+
+  @media (max-width: 1280px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 `;
 
 const div_line = css`
@@ -100,19 +128,36 @@ const select_title = css`
   font-size: 24px;
   font-weight: 700;
   padding: 0 0 14px 0;
+
+  @media (max-width: 1280px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
 `;
 
 const form_wrapper_select = css`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 44px 0;
+  padding: 24px 0 44px;
+
+  @media (max-width: 375px) {
+    padding: 24px 0 34px;
+    gap: 20px;
+  }
 `;
 
 const row = css`
   display: flex;
   width: 100%;
   gap: 14px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 const col = css`
@@ -120,4 +165,8 @@ const col = css`
   flex-direction: column;
   gap: 24px;
   width: 100%;
+
+  @media (max-width: 375px) {
+    gap: 20px;
+  }
 `;

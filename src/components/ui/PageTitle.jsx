@@ -40,6 +40,17 @@ const title_wrap = (hasBorder) => css`
 
   @media (max-width: 1024px) {
     padding: 0 0 0 100px;
+    height: 100px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 0 0 40px;
+    border-bottom: none;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0 0 20px;
+    height: 80px;
   }
 `;
 
@@ -51,6 +62,10 @@ const icon_wrap = css`
   height: 18px;
   padding: 0 16px 0 0;
   font-size: 13px;
+
+  @media (max-width: 375px) {
+    gap: 14px;
+  }
 `;
 
 const home_wrap = css`
@@ -63,6 +78,10 @@ const home_wrap = css`
     color: #58595b;
     font-weight: 400;
     font-size: 15px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 14px;
   }
 `;
 
@@ -78,5 +97,13 @@ const title_h1 = css`
 
   @media (max-width: 1024px) {
     font-size: 40px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 34px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 24px;
   }
 `;

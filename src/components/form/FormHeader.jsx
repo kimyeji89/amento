@@ -25,6 +25,10 @@ const header_wrap = css`
     @media (max-width: 1024px) {
       width: 180px;
     }
+
+    @media (max-width: 375px) {
+      width: 120px;
+    }
   }
 
   h1 {
@@ -35,6 +39,10 @@ const header_wrap = css`
 
     @media (max-width: 1024px) {
       font-size: 30px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 24px;
     }
   }
 `;
@@ -55,5 +63,9 @@ const line = css`
     width: 64px;
     height: 1px;
     background-color: var(--primary);
+  }
+
+  @media (max-width: 374px) {
+    margin: 34px 0 0 0;
   }
 `;
