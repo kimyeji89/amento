@@ -59,22 +59,24 @@ const box = css`
     }
 
     @media (max-width: 768px) {
-      font-size: 18px;
+      font-size: 17px;
     }
   }
-
-  // @media (max-width: 1280px) {
-  //   height: 115px;
-  //   gap: 16px;
-  // }
 
   @media (max-width: 1024px) {
     width: 310px;
     height: 120px;
+    gap: 18px;
   }
 
   @media (max-width: 768px) {
     width: 290px;
     height: 100px;
+  }
+
+  @media (max-width: 375px) {
+    width: 261px;
+    height: 84px;
+    gap: 14px;
   }
 `;

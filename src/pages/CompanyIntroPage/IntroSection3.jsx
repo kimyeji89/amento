@@ -58,6 +58,10 @@ const section_wrap = css`
   gap: 34px;
 
   background: #f5f6f9;
+
+  @media (max-width: 768px) {
+    padding: 70px 0;
+  }
 `;
 
 const box_wrap = css`
@@ -90,7 +94,6 @@ const box_wrap = css`
 
   @media (max-width: 1280px) {
     min-width: 1000px;
-    // min-height: 400px;
   }
 
   @media (max-width: 1024px) {
@@ -98,9 +101,15 @@ const box_wrap = css`
     min-width: 0px;
     min-height: 960px;
     width: 90%;
+    gap: 24px;
   }
 
-  @media (max-width: 950px) {
+  @media (max-width: 500px) {
+    min-height: 854px;
+  }
+
+  @media (max-width: 375px) {
+    gap: 20px;
   }
 `;
 
@@ -112,6 +121,14 @@ const box_1 = css`
     width: 146px;
     height: 134px;
   }
+
+  @media (max-width: 375px) {
+    max-height: 282px;
+    img {
+      width: 146px;
+      height: 120px;
+    }
+  }
 `;
 
 const box_2 = css`
@@ -122,6 +139,10 @@ const box_2 = css`
     width: 137px;
     height: 134px;
   }
+
+  @media (max-width: 375px) {
+    max-height: 282px;
+  }
 `;
 
 const box_3 = css`
@@ -131,9 +152,16 @@ const box_3 = css`
   img {
     width: 126px;
   }
+
+  @media (max-width: 375px) {
+    img {
+       width: 134px;
+  }
 `;
 
 const number = css`
+  padding: 24px 0 14px;
+
   color: var(--primary);
   text-align: center;
   font-family: Poppins;
@@ -141,10 +169,15 @@ const number = css`
   font-weight: 700;
   line-height: normal;
 
-  padding: 24px 0 14px;
+  @media (max-width: 500px) {
+    font-size: 14px;
+    padding: 18px 0 8px;
+  }
 `;
 
 const number_2 = css`
+  padding: 24px 0 14px;
+
   color: #2768e7;
   text-align: center;
   font-family: Poppins;
@@ -152,7 +185,10 @@ const number_2 = css`
   font-weight: 700;
   line-height: normal;
 
-  padding: 24px 0 14px;
+  @media (max-width: 500px) {
+    padding: 0px 0px 8px;
+    font-size: 14px;
+  }
 `;
 
 const des = css`
@@ -185,9 +221,32 @@ const des = css`
   }
 
   @media (max-width: 1024px) {
-    font-size: 20px;
+    font-size: 18px;
     span {
-      font-size: 28px;
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    font-size: 15px;
+    font-weight: 500;
+    span {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+    font-weight: 500;
+    span {
+      font-size: 17px;
     }
   }
 `;
@@ -197,9 +256,17 @@ const pro_span = css`
 `;
 
 const pro_p = css`
+  padding: 4px 0 0;
   color: #454c5a;
   font-size: 16px;
   font-weight: 700;
   line-height: 160%; /* 25.6px */
-  padding: 4px 0 0;
+
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
 `;
