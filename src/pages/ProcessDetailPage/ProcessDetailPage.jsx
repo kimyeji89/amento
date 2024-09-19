@@ -2,9 +2,11 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import CheckBoxInput from "./CheckBoxInput";
 
 export default function ProcessDetailPage() {
+  const { headerHeight } = useHeaderHeight();
   const [formData, setFormData] = useState({
     startUpConsulting: {
       designFranchiseHeadquarters: false,
@@ -86,6 +88,29 @@ export default function ProcessDetailPage() {
   function handleChangeInput(e) {
     setFormData({ ...formData, etc: e.currentTarget.value });
   }
+
+  const ctn = css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: ${headerHeight} auto 0;
+    box-sizing: border-box;
+    padding: 80px 0 266px 220px;
+    @media (max-width: 1919px) {
+      padding: 80px 100px 266px 100px;
+    }
+    @media (max-width: 768px) {
+      padding: 80px 80px 160px 80px;
+    }
+    @media (max-width: 400px) {
+      padding: 40px;
+    }
+    @media (max-width: 375px) {
+      padding: 34px 20px;
+    }
+  `;
 
   return (
     <main css={ctn}>
@@ -449,29 +474,24 @@ export default function ProcessDetailPage() {
   );
 }
 
-const ctn = css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 90px auto 0;
-  box-sizing: border-box;
-  padding: 80px 0 266px 220px;
-  @media (max-width: 1919px) {
-    padding: 80px 100px 266px 100px;
-  }
-`;
-
 const page_title = css`
   width: 100%;
   margin-bottom: 54px;
   color: var(--black, #111);
   font-size: 20px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+  word-break: keep-all;
+  @media (max-width: 375px) {
+    font-size: 17px;
+    line-height: 120%;
+    margin-bottom: 33px;
+  }
+  @media (max-width: 320px) {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
 `;
 
 const form_ctn = css`
@@ -521,6 +541,9 @@ const input_ctn = css`
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 const group = css`
@@ -552,10 +575,13 @@ const group = css`
   }
   @media (max-width: 1024px) {
     margin-right: 0;
-    max-width: 100%;
     &.big {
       height: 50px;
     }
+  }
+  @media (max-width: 375px) {
+    width: fit-content;
+    font-size: 15px;
   }
 `;
 
@@ -572,13 +598,24 @@ const submit_button_ctn = css`
 
 const submit_button = css`
   display: flex;
-  padding: 10px 20px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   width: 200px;
   height: 60px;
+  box-sizing: border-box;
+  padding: 10px 20px;
   border-radius: 80px;
   background: var(--primary, #9627e7);
   color: var(--white, #fff);
+  font-size: 17px;
+  font-weight: 600;
+  font-family: Poppins;
+  @media (max-width: 375px) {
+    height: 50px;
+    padding: 10px 34px;
+  }
+  @media (max-width: 320px) {
+    font-size: 16px;
+  }
 `;

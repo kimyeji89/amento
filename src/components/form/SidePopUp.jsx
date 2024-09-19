@@ -2,7 +2,9 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useIsMobile from "@hooks/useIsMobile";
 import { ReactComponent as Counsel } from "@svgs/sidePopUp/counsel.svg";
+import { ReactComponent as CounselWhite } from "@svgs/sidePopUp/counselWhite.svg";
 import { ReactComponent as DeleteInputValue } from "@svgs/sidePopUp/deleteInputValue.svg";
 
 function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
@@ -22,6 +24,7 @@ function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
 }
 
 export default function SidePopUp() {
+  const { isMobile } = useIsMobile();
   const [formData, setFormData] = useState({
     isFaceToFace: true,
     desireType: "회원가입 정보",
@@ -33,7 +36,7 @@ export default function SidePopUp() {
     phone: "연락처",
   });
 
-  function handleChangeIsOpen(e) {
+  function handleChangeIsOpen() {
     let target = document.querySelector(".side_popup_ctn");
     if (target.classList.contains("open")) {
       target.classList.remove("open");
@@ -46,149 +49,210 @@ export default function SidePopUp() {
     setFormData({ ...formData, isFaceToFace: !formData.isFaceToFace });
   }
 
-  function handleChangeDesireType(e) {
-    setFormData({ ...formData, desireType: e.target.value });
+  function handleChangeFormData(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  function handleDeleteDesireType(e) {
-    setFormData({ ...formData, desireType: "" });
-  }
-
-  function handleChangeDesireArea(e) {
-    setFormData({ ...formData, desireArea: e.target.value });
-  }
-
-  function handleDeleteDesireArea(e) {
-    setFormData({ ...formData, desireArea: "" });
-  }
-
-  function handleChangeIsStore(e) {
-    setFormData({ ...formData, isStore: e.target.value });
-  }
-
-  function handleDeleteIsStore(e) {
-    setFormData({ ...formData, isStore: "" });
-  }
-
-  function handleChangeStoreNum(e) {
-    setFormData({ ...formData, storeNum: e.target.value });
-  }
-
-  function handleDeleteStoreNum(e) {
-    setFormData({ ...formData, storeNum: "" });
-  }
-
-  function handleChangeSales(e) {
-    setFormData({ ...formData, sales: e.target.value });
-  }
-
-  function handleDeleteSales(e) {
-    setFormData({ ...formData, sales: "" });
-  }
-
-  function handleChangeName(e) {
-    setFormData({ ...formData, name: e.target.value });
-  }
-
-  function handleDeleteName(e) {
-    setFormData({ ...formData, name: "" });
-  }
-
-  function handleChangePhone(e) {
-    setFormData({ ...formData, phone: e.target.value });
-  }
-
-  function handleDeletePhone(e) {
-    setFormData({ ...formData, phone: "" });
+  function handleDeleteFormData(e) {
+    setFormData({
+      ...formData,
+      [e.currentTarget.previousElementSibling.name]: "",
+    });
   }
 
   return (
-    <div css={side_popup_ctn} className="side_popup_ctn">
-      <form className="form" css={form}>
-        <p css={form_title}>상담신청</p>
-        <div css={form_button_ctn}>
-          <button
-            type="button"
-            css={form_button}
-            className={formData.isFaceToFace === true && "selected"}
-            onClick={handleChangeIsFaceToFace}
-          >
-            대면상담
-          </button>
-          <button
-            type="button"
-            css={form_button}
-            className={formData.isFaceToFace === false && "selected"}
-            onClick={handleChangeIsFaceToFace}
-          >
-            비대면상담
-          </button>
+    <>
+      {isMobile === false && (
+        <div css={side_popup_ctn} className="side_popup_ctn">
+          <form className="form" css={form}>
+            <p css={form_title}>상담신청</p>
+            <div css={form_button_ctn}>
+              <button
+                type="button"
+                css={form_button}
+                className={formData.isFaceToFace === true && "selected"}
+                onClick={handleChangeIsFaceToFace}
+              >
+                대면상담
+              </button>
+              <button
+                type="button"
+                css={form_button}
+                className={formData.isFaceToFace === false && "selected"}
+                onClick={handleChangeIsFaceToFace}
+              >
+                비대면상담
+              </button>
+            </div>
+            <div css={form_input_ctn}>
+              <SidePopUpFormInput
+                name="desireType"
+                label="희망업종"
+                value={formData.desireType}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+              <SidePopUpFormInput
+                name="desireArea"
+                label="희망지역"
+                value={formData.desireArea}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+              <SidePopUpFormInput
+                name="isStore"
+                label="점포유무"
+                value={formData.isStore}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+              <SidePopUpFormInput
+                name="storeNum"
+                label="점포 수"
+                value={formData.storeNum}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+              <SidePopUpFormInput
+                name="sales"
+                label="매출액"
+                value={formData.sales}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+              <SidePopUpFormInput
+                name="name"
+                label="성명"
+                value={formData.name}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+              <SidePopUpFormInput
+                name="phone"
+                label="연락처"
+                value={formData.phone}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
+              />
+            </div>
+            <div css={form_submit_ctn}>
+              <p css={contact}>문의사항 : ddd@amento.com</p>
+              <Link to="/processCate" css={submit_button}>
+                <button type="submit">신청하기</button>
+              </Link>
+            </div>
+          </form>
+          <div className="tag" css={tag} onClick={handleChangeIsOpen}>
+            <Counsel />
+            <p css={tag_text}>상담신청</p>
+          </div>
         </div>
-        <div css={form_input_ctn}>
-          <SidePopUpFormInput
-            name="desireType"
-            label="희망업종"
-            value={formData.desireType}
-            onChange={handleChangeDesireType}
-            onClick={handleDeleteDesireType}
-          />
-          <SidePopUpFormInput
-            name="desireArea"
-            label="희망지역"
-            value={formData.desireArea}
-            onChange={handleChangeDesireArea}
-            onClick={handleDeleteDesireArea}
-          />
-          <SidePopUpFormInput
-            name="isStore"
-            label="점포유무"
-            value={formData.isStore}
-            onChange={handleChangeIsStore}
-            onClick={handleDeleteIsStore}
-          />
-          <SidePopUpFormInput
-            name="storeNum"
-            label="점포 수"
-            value={formData.storeNum}
-            onChange={handleChangeStoreNum}
-            onClick={handleDeleteStoreNum}
-          />
-          <SidePopUpFormInput
-            name="sales"
-            label="매출액"
-            value={formData.sales}
-            onChange={handleChangeSales}
-            onClick={handleDeleteSales}
-          />
-          <SidePopUpFormInput
-            name="name"
-            label="성명"
-            value={formData.name}
-            onChange={handleChangeName}
-            onClick={handleDeleteName}
-          />
-          <SidePopUpFormInput
-            name="phone"
-            label="연락처"
-            value={formData.phone}
-            onChange={handleChangePhone}
-            onClick={handleDeletePhone}
-          />
-        </div>
-        <div css={form_submit_ctn}>
-          <p css={contact}>문의사항 : ddd@amento.com</p>
-          <Link to="/processCate" css={submit_button}>
-            <button type="submit">신청하기</button>
-          </Link>
-        </div>
-      </form>
-      <div className="tag" css={tag} onClick={handleChangeIsOpen}>
-        <Counsel />
-        <p css={tag_text}>상담신청</p>
-      </div>
-    </div>
+      )}
+      {isMobile === true && (
+        <>
+          <div css={mobile_side_popup_button} onClick={handleChangeIsOpen}>
+            <CounselWhite />
+          </div>
+          <div css={mobile_side_popup_ctn} className="side_popup_ctn">
+            <form className="form" css={form}>
+              <p css={form_title}>상담신청</p>
+              <div css={form_button_ctn}>
+                <button
+                  type="button"
+                  css={form_button}
+                  className={formData.isFaceToFace === true && "selected"}
+                  onClick={handleChangeIsFaceToFace}
+                >
+                  대면상담
+                </button>
+                <button
+                  type="button"
+                  css={form_button}
+                  className={formData.isFaceToFace === false && "selected"}
+                  onClick={handleChangeIsFaceToFace}
+                >
+                  비대면상담
+                </button>
+              </div>
+              <div css={form_input_ctn}>
+                <SidePopUpFormInput
+                  name="desireType"
+                  label="희망업종"
+                  value={formData.desireType}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+                <SidePopUpFormInput
+                  name="desireArea"
+                  label="희망지역"
+                  value={formData.desireArea}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+                <SidePopUpFormInput
+                  name="isStore"
+                  label="점포유무"
+                  value={formData.isStore}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+                <SidePopUpFormInput
+                  name="storeNum"
+                  label="점포 수"
+                  value={formData.storeNum}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+                <SidePopUpFormInput
+                  name="sales"
+                  label="매출액"
+                  value={formData.sales}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+                <SidePopUpFormInput
+                  name="name"
+                  label="성명"
+                  value={formData.name}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+                <SidePopUpFormInput
+                  name="phone"
+                  label="연락처"
+                  value={formData.phone}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
+                />
+              </div>
+              <div css={form_submit_ctn} onClick={handleChangeIsOpen}>
+                <p css={contact}>문의사항 : ddd@amento.com</p>
+                <Link to="/processCate" css={submit_button}>
+                  <button type="submit">신청하기</button>
+                </Link>
+              </div>
+            </form>
+          </div>
+        </>
+      )}
+    </>
   );
 }
+const mobile_side_popup_button = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background-color: var(--primary, #9627e7);
+  box-shadow: 0px 6px 20px #d9c4e9;
+`;
 
 const side_popup_ctn = css`
   display: flex;
@@ -201,8 +265,23 @@ const side_popup_ctn = css`
   &.open {
     left: 0;
   }
-  @media (max-width: 375px) {
-    display: none;
+`;
+
+const mobile_side_popup_ctn = css`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 66px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  box-sizing: border-box;
+  padding: 38px 20px 60px;
+  background-color: var(--white);
+  &.open {
+    display: flex;
   }
 `;
 
@@ -335,6 +414,31 @@ const form_button = css`
     color: var(--primary);
     box-shadow: 0 0 0 1px var(--primary) inset;
   }
+  @media (max-width: 320px) {
+    padding: 16px;
+    font-size: 13px;
+  }
+`;
+
+const contact = css`
+  padding: 6px 34px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fbf5ff;
+  color: var(--primary);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20.29px;
+  text-align: center;
+  @media (max-width: 320px) {
+    font-size: 14px;
+  }
+`;
+
+const form_submit_ctn = css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const submit_button = css`
@@ -353,24 +457,10 @@ const submit_button = css`
     font-size: 17px;
     font-weight: 700;
     line-height: 20.29px;
+    @media (max-width: 320px) {
+      font-size: 14px;
+      height: auto;
+      padding: 10px;
+    }
   }
-`;
-
-const contact = css`
-  padding: 6px 34px;
-  box-sizing: border-box;
-  height: 32px;
-  border-radius: 5px;
-  background-color: #fbf5ff;
-  color: var(--primary);
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 20.29px;
-  text-align: center;
-`;
-
-const form_submit_ctn = css`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 `;
