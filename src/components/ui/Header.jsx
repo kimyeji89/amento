@@ -1,148 +1,344 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useLocationControl from "@hooks/useLocationControl";
 import { ReactComponent as UserDefault } from "@svgs/header/userDefault.svg";
 import { ReactComponent as UserSelected } from "@svgs/header/userSelected.svg";
 import { ReactComponent as ChevDown } from "@svgs/header/chevDown.svg";
 import { ReactComponent as ChevUp } from "@svgs/header/chevUp.svg";
 import { ReactComponent as Menu } from "@svgs/header/menu.svg";
+import { ReactComponent as Close } from "@svgs/header/close.svg";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { includeLocation, checkLocation } = useLocationControl();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 375);
+  const { checkLocation } = useLocationControl();
+  const [isDesktopUserOpen, setIsDesktopUserOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileUserOpen, setIsMobileUserOpen] = useState(false);
 
-  function handleChangeOpen(e) {
-    setIsOpen(!isOpen);
+  function handleOpenDesktopUser(e) {
+    setIsDesktopUserOpen(!isDesktopUserOpen);
   }
 
-  return (
-    <header css={header}>
-      <div css={ctn}>
-        <div className="logo" css={logo}>
-          <Link to="/">
-            <h1 className="text">AMENTO VENTURES</h1>
-            <img src="/assets/images/logoPicture.png" alt="logo" />
-          </Link>
-        </div>
-        <nav className="nav" css={nav}>
-          <ul>
-            <li>
-              <Link to="/companyIntro" css={nav_link}>
-                <p>회사소개</p>
-              </Link>
-            </li>
-            <li>
-              <Link to="/service" css={nav_link}>
-                <p>서비스</p>
-              </Link>
-            </li>
-            <li>
-              <Link to="/application" css={nav_link}>
-                <p>설명회 신청</p>
-              </Link>
-            </li>
-            <li>
-              <Link to="/consulting" css={nav_link}>
-                <p>창업 컨설팅</p>
-              </Link>
-            </li>
-            <li>
-              <Link to="/businessReview" css={nav_link}>
-                <p>사업후기</p>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="user" css={user}>
-          <button type="button" css={user_button} onClick={handleChangeOpen}>
-            {isOpen === false ? (
-              <>
-                <UserDefault css={user_icon} />
-                <p>
-                  <span className="user_name" css={user_name}>
-                    amento
-                  </span>
-                  <span className="user_call">님</span>
-                </p>
-                <ChevDown css={chev_icon} />
-              </>
-            ) : (
-              <>
-                <UserSelected css={user_icon} />
-                <p>
-                  <span className="user_name" css={user_name_selected}>
-                    amento
-                  </span>
-                  <span className="user_call" css={user_call_selected}>
-                    님
-                  </span>
-                </p>
-                <ChevUp css={chev_icon} />
-              </>
-            )}
-          </button>
-          {isOpen && (
-            <ul className="user_menu" css={user_menu}>
-              <li>
-                <Link
-                  to="/editUser"
-                  css={user_link}
-                  className={checkLocation(["/editUser"]) && "selected"}
-                >
-                  <p>회원정보 수정</p>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/consultHistory"
-                  css={user_link}
-                  className={checkLocation(["/consultHistory"]) && "selected"}
-                >
-                  <p>상담내역</p>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/estimateSheet"
-                  css={user_link}
-                  className={checkLocation(["/estimateSheet"]) && "selected"}
-                >
-                  <p>견적서</p>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/payHistory"
-                  css={user_link}
-                  className={checkLocation(["/payHistory"]) && "selected"}
-                >
-                  <p>결제내역</p>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/QnA"
-                  css={user_link}
-                  className={checkLocation(["/QnA"]) && "selected"}
-                >
-                  <p>Q&A</p>
-                </Link>
-              </li>
-            </ul>
-          )}
+  function handleOpenMobileMenu(e) {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  }
 
-          <span className="divider" css={divider}></span>
-          <Link to="/joinTos" css={link}>
-            <p>회원가입</p>
-          </Link>
-        </div>
-        <Menu css={mobile_menu_button} />
-      </div>
-    </header>
+  function handleOpenMobileUser(e) {
+    setIsMobileUserOpen(!isMobileUserOpen);
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 375);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <>
+      {isMobile === false && (
+        <header css={header} className="desktop_menu">
+          <div css={ctn}>
+            <div className="logo" css={logo}>
+              <Link to="/">
+                <h1 className="text">AMENTO VENTURES</h1>
+                <img src="/assets/images/logoPicture.png" alt="logo" />
+              </Link>
+            </div>
+            <nav className="nav" css={nav}>
+              <ul>
+                <li>
+                  <Link to="/companyIntro" css={nav_link}>
+                    <p>회사소개</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/consulting" css={nav_link}>
+                    <p>창업 컨설팅</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/service" css={nav_link}>
+                    <p>가맹사업 서비스</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/application" css={nav_link}>
+                    <p>설명회 신청</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/businessReview" css={nav_link}>
+                    <p>사업후기</p>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="user" css={user}>
+              <button
+                type="button"
+                css={user_button}
+                onClick={handleOpenDesktopUser}
+              >
+                {isDesktopUserOpen === false ? (
+                  <>
+                    <UserDefault css={user_icon} />
+                    <p>
+                      <span className="user_name" css={user_name}>
+                        amento
+                      </span>
+                      <span className="user_call">님</span>
+                    </p>
+                    <ChevDown css={chev_icon} />
+                  </>
+                ) : (
+                  <>
+                    <UserSelected css={user_icon} />
+                    <p>
+                      <span className="user_name" css={user_name_selected}>
+                        amento
+                      </span>
+                      <span className="user_call" css={user_call_selected}>
+                        님
+                      </span>
+                    </p>
+                    <ChevUp css={chev_icon} />
+                  </>
+                )}
+              </button>
+              {isDesktopUserOpen && (
+                <ul className="user_menu" css={user_menu}>
+                  <li>
+                    <Link
+                      to="/editUser"
+                      css={user_link}
+                      className={checkLocation(["/editUser"]) && "selected"}
+                    >
+                      <p>회원정보 수정</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/consultHistory"
+                      css={user_link}
+                      className={
+                        checkLocation(["/consultHistory"]) && "selected"
+                      }
+                    >
+                      <p>상담내역</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/estimateSheet"
+                      css={user_link}
+                      className={
+                        checkLocation(["/estimateSheet"]) && "selected"
+                      }
+                    >
+                      <p>견적서</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/payHistory"
+                      css={user_link}
+                      className={checkLocation(["/payHistory"]) && "selected"}
+                    >
+                      <p>결제내역</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/QnA"
+                      css={user_link}
+                      className={checkLocation(["/QnA"]) && "selected"}
+                    >
+                      <p>Q&A</p>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+
+              <span className="divider" css={divider}></span>
+              <Link to="/joinTos" css={link}>
+                <p>회원가입</p>
+              </Link>
+            </div>
+            <Menu css={mobile_menu_button} onClick={handleOpenMobileMenu} />
+          </div>
+        </header>
+      )}
+      {isMobile === true && (
+        <header css={mobile_header} className="mobile_menu">
+          <div css={ctn}>
+            <div className="logo" css={logo}>
+              <Link to="/">
+                <h1 className="text">AMENTO VENTURES</h1>
+                <img src="/assets/images/logoPicture.png" alt="logo" />
+              </Link>
+            </div>
+            {isMobileMenuOpen ? (
+              <Close onClick={handleOpenMobileMenu} />
+            ) : (
+              <Menu css={mobile_menu_button} onClick={handleOpenMobileMenu} />
+            )}
+          </div>
+          {isMobileMenuOpen && (
+            <div css={mobile_menu_ctn}>
+              <div className="user" css={user}>
+                <button
+                  type="button"
+                  css={user_button}
+                  onClick={handleOpenMobileUser}
+                >
+                  <UserDefault css={user_icon} />
+                  <p>
+                    <span className="user_name" css={user_name}>
+                      amento
+                    </span>
+                    <span className="user_call">님</span>
+                  </p>
+                  {isMobileUserOpen === false ? (
+                    <ChevDown css={chev_icon} />
+                  ) : (
+                    <ChevUp css={chev_icon} />
+                  )}
+                </button>
+              </div>
+              {isMobileUserOpen && (
+                <ul css={mobile_user_menu}>
+                  <li>UX/UI</li>
+                  <li>Branding</li>
+                  <li>Charactor</li>
+                  <li>Contents</li>
+                  <li>Photography</li>
+                </ul>
+              )}
+              <nav>
+                <ul css={mobile_menu}>
+                  <li>
+                    <Link to="/companyIntro">
+                      <p>회사소개</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/consulting">
+                      <p>창업 컨설팅</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/service">
+                      <p>가맹사업 서비스</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/application">
+                      <p>설명회 신청</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/businessReview">
+                      <p>사업후기</p>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+              <button css={mobile_logout_button}>로그아웃</button>
+            </div>
+          )}
+        </header>
+      )}
+    </>
   );
 }
+const mobile_header = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 66px;
+  box-shadow: 0px 4px 20px 0px #0000001a;
+  background-color: var(--white);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  justify-content: space-between;
+
+  @media (max-width: 320px) {
+  }
+`;
+const mobile_menu_ctn = css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 66px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 66px);
+  box-sizing: border-box;
+  padding: 34px;
+  background-color: var(--white);
+`;
+const mobile_user_menu = css`
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 14px 40px 0;
+  color: #454545;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 200%;
+`;
+
+const mobile_menu = css`
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  box-sizing: border-box;
+  padding: 34px 0;
+
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+`;
+
+const mobile_logout_button = css`
+  display: flex;
+  height: 40px;
+  padding: 16px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid var(--primary, #9627e7);
+  background: #fff;
+  color: var(--primary, #9627e7);
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
 
 const header = css`
   position: fixed;
@@ -171,13 +367,6 @@ const header = css`
     height: 60px;
   }
   @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
-    padding: 10px 20px;
-    height: 66px;
-    justify-content: space-between;
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -315,7 +504,6 @@ const user = css`
   @media (max-width: 499px) {
   }
   @media (max-width: 375px) {
-    display: none;
   }
   @media (max-width: 320px) {
   }
@@ -343,6 +531,8 @@ const user_button = css`
   @media (max-width: 499px) {
   }
   @media (max-width: 375px) {
+    font-size: 20px;
+    gap: 8px;
   }
   @media (max-width: 320px) {
   }
@@ -357,6 +547,11 @@ const user_icon = css`
   }
   @media (max-width: 950px) {
     display: none;
+  }
+  @media (max-width: 375px) {
+    display: block;
+    width: 30px;
+    height: 30px;
   }
 `;
 
