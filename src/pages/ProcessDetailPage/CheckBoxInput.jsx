@@ -76,13 +76,7 @@ const label_css = css`
     }
   }
   @media (max-width: 1024px) {
-    &.big {
-      br {
-        display: none;
-      }
-      height: 50px;
-      width: auto;
-    }
+    width: fit-content;
   }
 `;
 

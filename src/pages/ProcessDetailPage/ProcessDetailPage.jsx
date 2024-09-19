@@ -461,6 +461,10 @@ const ctn = css`
   @media (max-width: 1919px) {
     padding: 80px 100px 266px 100px;
   }
+  @media (max-width: 375px) {
+    margin: 66px auto 0;
+    padding: 34px 20px;
+  }
 `;
 
 const page_title = css`
@@ -468,10 +472,14 @@ const page_title = css`
   margin-bottom: 54px;
   color: var(--black, #111);
   font-size: 20px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+  @media (max-width: 375px) {
+    font-size: 17px;
+    line-height: 120%;
+    margin-bottom: 33px;
+  }
 `;
 
 const form_ctn = css`
@@ -521,6 +529,9 @@ const input_ctn = css`
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 const group = css`
@@ -552,10 +563,12 @@ const group = css`
   }
   @media (max-width: 1024px) {
     margin-right: 0;
-    max-width: 100%;
     &.big {
       height: 50px;
     }
+  }
+  @media (max-width: 375px) {
+    width: fit-content;
   }
 `;
 
