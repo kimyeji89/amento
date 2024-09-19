@@ -39,9 +39,8 @@ export default function IntroSection1() {
             디자인합니다.
           </p>
           <p css={p_2}>
-            Your Goal, Our Challenge AmentoVentures designs customized
-            {/* <br /> */}
-            startups & businesses for your success.
+            Your Goal, Our Challenge AmentoVentures designs customized startups
+            & businesses for your success.
           </p>
         </div>
       </div>
@@ -291,13 +290,11 @@ const p_2 = css`
 
   @media (max-width: 1024px) {
     font-size: 15px;
-    font-weight: 600;
   }
 
   @media (max-width: 768px) {
     max-width: 450px;
     font-size: 14px;
-    font-weight: 600;
   }
 
   @media (max-width: 375px) {

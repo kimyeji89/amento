@@ -97,6 +97,7 @@ const required_tos = css`
 
 const hightlight = css`
   color: var(--primary);
+  font-weight: 700;
 `;
 
 const angle_right = css`

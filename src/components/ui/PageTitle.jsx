@@ -87,7 +87,7 @@ const home_wrap = css`
 
 const title_h1 = css`
   font-size: 55px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 66px;
   color: var(--black-1);
 

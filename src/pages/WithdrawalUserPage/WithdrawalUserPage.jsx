@@ -36,12 +36,13 @@ const link_wrap = css`
   font-size: 15px;
   font-weight: 700;
 
-  a {
-    text-decoration: none;
-  }
-
   div {
     border-bottom: 1px solid var(--primary);
+
+    a {
+      text-decoration: none;
+      color: var(--primary);
+    }
   }
 
   @media (max-width: 375px) {
