@@ -197,7 +197,7 @@ const des = css`
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 140%; /* 28px */
+  line-height: 120%;
 
   span {
     color: var(--primary);

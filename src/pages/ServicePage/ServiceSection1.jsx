@@ -141,11 +141,6 @@ const gradient_img = css`
     left: 20px;
   }
 
-  @media (max-width: 500px) {
-    // left: 20px;
-    // height: 189px;
-  }
-
   @media (max-width: 375px) {
     left: 20px;
     height: 189px;
@@ -238,6 +233,14 @@ const content_box = css`
   @media (max-width: 768px) {
     gap: 20px;
   }
+
+  @media (max-width: 375px) {
+    gap: 20px;
+    div:nth-of-type(2) img {
+      width: 130px;
+      height: 120px;
+    }
+  }
 `;
 
 const content = css`
@@ -307,7 +310,6 @@ const content = css`
     }
 
     p {
-      // text-align: center;
       font-size: 20px;
     }
   }
@@ -333,10 +335,6 @@ const content = css`
     padding: 24px 50px;
     max-width: 335px;
 
-    img {
-      width: 100px;
-    }
-
     p {
       font-size: 14px;
     }
@@ -345,10 +343,6 @@ const content = css`
   @media (max-width: 375px) {
     gap: 24px;
     padding: 24px 50px;
-
-    img {
-      width: 100px;
-    }
 
     p {
       font-size: 14px;

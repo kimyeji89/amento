@@ -43,6 +43,7 @@ const header_wrap = css`
 
     @media (max-width: 375px) {
       font-size: 24px;
+      line-height: normal;
     }
   }
 `;
