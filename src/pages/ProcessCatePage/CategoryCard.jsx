@@ -102,6 +102,8 @@ const category_card = css`
   }
 
   @media (max-width: 375px) {
+    width: 100%;
+    height: auto;
     &.selected {
       filter: none;
       img {
@@ -111,10 +113,6 @@ const category_card = css`
         display: none;
       }
     }
-  }
-  @media (max-width: 320px) {
-    width: 100%;
-    height: auto;
   }
 `;
 

@@ -46,9 +46,8 @@ export default function Section3() {
             <br css={br_desktop} className="br_desktop" />
             (상표, 디자인, 특허등), 세무, 회계, 법 마케팅 등
             <br css={br_desktop} className="br_desktop" />
-            <span className="high_light">
-              &nbsp;최적화된 솔루션을 제안드립니다.
-            </span>
+            <br css={br_mobile} />
+            <span className="high_light">최적화된 솔루션을 제안드립니다.</span>
           </p>
         </div>
       </div>

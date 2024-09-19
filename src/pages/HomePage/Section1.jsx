@@ -9,6 +9,7 @@ import {
   text_mid,
   question,
   answer,
+  br_mobile,
 } from "./commonStyles";
 
 export default function Section1() {
@@ -23,7 +24,7 @@ export default function Section1() {
           <div css={question}>
             <p className="separate">q.</p>
             <p>
-              프랜차이즈 가맹본부,{" "}
+              프랜차이즈 가맹본부,
               <br css={br_desktop} className="br_desktop" />
               어떻게 준비해야 할까요?
             </p>
@@ -31,7 +32,7 @@ export default function Section1() {
           <div css={answer}>
             <p className="separate">a.</p>
             <p>
-              전문가가 맞춤형으로 직접{" "}
+              전문가가 맞춤형으로 직접
               <br css={br_desktop} className="br_desktop" /> 설계해드립니다.
             </p>
           </div>
@@ -40,9 +41,9 @@ export default function Section1() {
           <p className="separate">n.</p>
           <p>
             예비 가맹본부에게 필수적인 레서피, 지식재산권
-            <br css={br_desktop} className="br_desktop" /> (상표, 디자인,특허
-            등), 세무, 회계, 법률 등{" "}
-            <br css={br_desktop} className="br_desktop" />
+            <br css={br_desktop} /> (상표, 디자인,특허 등), 세무, 회계, 법률 등
+            <br css={br_desktop} />
+            <br css={br_mobile} />
             <span className="high_light"> 최적화된 방법을 제안드립니다.</span>
           </p>
         </div>

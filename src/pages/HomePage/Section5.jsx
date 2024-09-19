@@ -24,7 +24,7 @@ export default function Section5() {
   return (
     <section css={ctn} className="ctn">
       <p css={title}>
-        프랜차이즈 시작,
+        프랜차이즈 시작,&nbsp;
         <br css={br_desktop} className="br_desktop" />
         어디서부터 <br css={br_mobile} />
         해야할지 막막하신가요?

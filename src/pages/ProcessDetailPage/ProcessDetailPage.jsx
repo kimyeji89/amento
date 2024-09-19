@@ -95,7 +95,7 @@ export default function ProcessDetailPage() {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: ${headerHeight} auto 0;
+    margin: ${headerHeight}px auto 0;
     box-sizing: border-box;
     padding: 80px 0 266px 220px;
     @media (max-width: 1919px) {
@@ -534,6 +534,9 @@ const group_ctn = css`
   @media (max-width: 1024px) {
     flex-direction: column;
     gap: 24px;
+  }
+  @media (max-width: 375px) {
+    gap: 10px;
   }
 `;
 

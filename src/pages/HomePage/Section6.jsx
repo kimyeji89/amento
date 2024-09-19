@@ -9,13 +9,14 @@ export default function Section6() {
     <section css={ctn} className="section6">
       <div css={inner_ctn}>
         <p className="title" css={title}>
-          혼자서 모든걸
+          혼자서 모든걸&nbsp;
           <br css={br_mobile} className="br_mobile" />
           해결하려 하지 마세요.
         </p>
         <p className="content" css={content}>
           전문가의 도움으로 문제를 하나씩 풀어가세요.
-          <br css={br_desktop} /> 가맹본부 설립에 필요한 법적 절차부터 운영
+          <br css={br_desktop} />
+          <br css={br_mobile} /> 가맹본부 설립에 필요한 법적 절차부터 운영
           시스템까지. <br css={br_desktop} /> 상담을 예약하고, 프랜차이즈로
           성공하세요. <br css={br_desktop} />
           <span className="high_light">성공의 파트너, 바로 여기 있습니다.</span>
@@ -187,7 +188,7 @@ const badge = css`
     padding: 6px 14px;
     max-width: 70px;
     left: calc(100% - 70px);
-    top: -14px;
+    top: -20px;
     right: 0;
     font-size: 12px;
     white-space: nowrap;
@@ -196,7 +197,6 @@ const badge = css`
     padding: 6px 14px;
     max-width: 70px;
     left: calc(100% - 70px);
-    top: -20px;
     right: 0;
     font-size: 12px;
     white-space: nowrap;

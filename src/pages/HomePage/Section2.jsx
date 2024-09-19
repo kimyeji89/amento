@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import {
   float,
   br_desktop,
+  br_mobile,
   text_bottom,
   text_block,
   text_top,
@@ -60,7 +61,8 @@ export default function Section2() {
           <div css={answer}>
             <p className="separate">a.</p>
             <p>
-              전문가가 직접 분석 및 진단하여
+              전문가가 직접 분석 및 <br css={br_mobile} />
+              진단하여
               <br css={br_desktop} className="br_desktop" /> 최적화된 솔루션을
               제공해드립니다.
             </p>
@@ -72,6 +74,7 @@ export default function Section2() {
             신속한 가맹본부 설립에 필요한 레서피, 지식재산권(상품, 디자인,
             <br css={br_desktop} className="br_desktop" />
             특허 등), 세무, 회계, 법률 등
+            <br css={br_mobile} className="br_mobile" />
             <span className="high_light"> 원스톱으로 진행해드립니다.</span>
           </p>
         </div>

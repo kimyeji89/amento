@@ -5,19 +5,14 @@ import FormHeader from "@components/form/FormHeader";
 import CompleteMessage from "@components/form/CompleteMessage";
 import Button from "@components/ui/Button";
 import GradientBack from "@components/ui/GradientBack";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function ProcessDonePage() {
   const { headerHeight } = useHeaderHeight();
 
-  const ctn = css`
-    padding: 250px 0 406px;
-    width: 500px;
-    margin: ${headerHeight}px auto 0;
-  `;
-
   return (
     <GradientBack>
-      <main css={ctn}>
+      <PageWrap pb="362">
         <FormHeader label="상담신청" />
         <CompleteMessage
           text="상담신청서가"
@@ -25,7 +20,7 @@ export default function ProcessDonePage() {
           remainingText=""
         />
         <Button label={"확인"} link="/" />
-      </main>
+      </PageWrap>
     </GradientBack>
   );
 }

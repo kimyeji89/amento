@@ -47,7 +47,7 @@ export default function ProcessCatePage() {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: ${headerHeight} auto 0;
+    margin: ${headerHeight}px auto 0;
     padding: 160px 0 212px 0;
     width: 100%;
 
@@ -62,7 +62,6 @@ export default function ProcessCatePage() {
     }
     @media (max-width: 375px) {
       gap: 20px;
-
       padding: 44px 48px;
     }
     @media (max-width: 320px) {

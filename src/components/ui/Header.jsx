@@ -87,7 +87,7 @@ export default function Header() {
                       </span>
                       <span className="user_call">님</span>
                     </p>
-                    <ChevDown css={chev_icon} />
+                    <ChevUp css={chev_icon} />
                   </>
                 ) : (
                   <>
@@ -100,7 +100,7 @@ export default function Header() {
                         님
                       </span>
                     </p>
-                    <ChevUp css={chev_icon} />
+                    <ChevDown css={chev_icon} />
                   </>
                 )}
               </button>
@@ -201,9 +201,9 @@ export default function Header() {
                     <span className="user_call">님</span>
                   </p>
                   {isMobileUserOpen === false ? (
-                    <ChevDown css={chev_icon} />
-                  ) : (
                     <ChevUp css={chev_icon} />
+                  ) : (
+                    <ChevDown css={chev_icon} />
                   )}
                 </button>
               </div>
@@ -604,7 +604,6 @@ const mobile_header = css`
 const mobile_menu_ctn = css`
   display: flex;
   flex-direction: column;
-  gap: 20px;
   position: absolute;
   top: 66px;
   left: 0;

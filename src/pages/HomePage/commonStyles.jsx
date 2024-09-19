@@ -14,10 +14,10 @@ export const float = keyframes`
 
 export const br_desktop = css`
   @media (max-width: 1919px) {
-    display: none;
+    display: block;
   }
   @media (max-width: 375px) {
-    display: block;
+    display: none;
   }
 `;
 
