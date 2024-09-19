@@ -34,6 +34,11 @@ const warning_header = css`
   text-align: center;
   font-size: 16px;
   font-weight: 600;
+  word-break: keep-all;
+
+  @media (max-width: 375px) {
+    font-size: 15px;
+  }
 `;
 
 const warning_list = css`
@@ -43,4 +48,8 @@ const warning_list = css`
   color: #333;
   font-size: 14px;
   line-height: 1.6;
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 `;

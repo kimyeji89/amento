@@ -9,9 +9,15 @@ const page_wrap = (pt, pb) => css`
   width: 500px;
   padding: ${pt}px 0 ${pb}px;
   margin: 0 auto;
+  box-sizing: border-box;
 
   @media (max-width: 1024px) {
-    width: 95%;
+    width: 90%;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    padding: 146px 20px 333px;
   }
 `;
 
@@ -23,8 +29,14 @@ const page_wrap_wide = (pt, pb) => css`
   width: 800px;
   padding: ${pt}px 0 ${pb}px;
   margin: 0 auto;
+  box-sizing: border-box;
 
   @media (max-width: 1024px) {
-    width: 95%;
+    width: 90%;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    padding: 146px 20px 333px;
   }
 `;

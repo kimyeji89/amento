@@ -43,4 +43,9 @@ const form_wrapper = css`
   flex-direction: column;
   gap: 24px;
   padding: 44px 0 34px 0;
+
+  @media (max-width: 375px) {
+    gap: 20px;
+    padding: 44px 0 24px 0;
+  }
 `;

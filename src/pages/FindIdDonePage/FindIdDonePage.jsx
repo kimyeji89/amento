@@ -1,15 +1,14 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import FormHeader from "@components/form/FormHeader";
 import CompleteMessage from "@components/form/CompleteMessage";
 import Button from "@components/ui/Button";
 import FormLink from "@components/form/FormLink";
 import GradientBack from "@components/ui/GradientBack";
+import { PageWrap } from "@components/form/PageWrap";
 
 export default function FindIdDonePage() {
   return (
     <GradientBack>
-      <div css={page_wrap}>
+      <PageWrap pb="362">
         <FormHeader label="아이디 찾기" />
         <CompleteMessage
           text="회원님의 아이디는"
@@ -23,13 +22,7 @@ export default function FindIdDonePage() {
           label2="회원정보 수정"
           link="/editUser"
         />
-      </div>
+      </PageWrap>
     </GradientBack>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 0 362px;
-  width: 500px;
-  margin: 0 auto;
-`;

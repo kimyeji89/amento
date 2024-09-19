@@ -44,6 +44,13 @@ const tos_container = css`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  font-size: 16px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+    font-size: 15px;
+  }
 `;
 
 const check_all = css`
@@ -61,6 +68,11 @@ const check_all = css`
   color: #3b3b3b;
   font-size: 15px;
   font-weight: 500;
+
+  @media (max-width: 375px) {
+    padding: 8px;
+    font-size: 13px;
+  }
 `;
 
 const tos_list = css`

@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+### 퍼블리싱 확인용 URL (페이지 완료 시마다 업데이트)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1차 PC + 반응형
 
-## Available Scripts
+## 메인
+https://amento.vercel.app/
 
-In the project directory, you can run:
+## 프로세스
 
-### `npm start`
+1. 프로세스 카테고리: https://amento.vercel.app/processCate
+2. 프로세스 디테일: https://amento.vercel.app/processDetail
+3. 프로세스 완료: https://amento.vercel.app/processDone
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 카테고리
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. 회사소개 (CompanyIntroPage): https://amento.vercel.app/companyIntro
+2. 서비스 (ServicePage): https://amento.vercel.app/service
+3. 설명회 신청 (ApplicationPage) : https://amento.vercel.app/application
+4. 창업 컨설팅 (ConsultingPage) : https://amento.vercel.app/consulting
+5. 사업후기 (BusinessReviewPage): https://amento.vercel.app/businessReview
 
-### `npm test`
+## 회원관리
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. 로그인 (LoginPage) : https://amento.vercel.app/login
+2. 회원가입 
+    1. 이용약관 (JoinTosPage) : https://amento.vercel.app/joinTos
+    2. 회원가입 폼 (JoinDetailPage) : https://amento.vercel.app/joinDetail
+    3. 회원 가입 완료 (JoinDonePage) : https://amento.vercel.app/joinDone
+3. 회원정보 수정
+    1. 회원정보 수정 (EditUserPage) : https://amento.vercel.app/editUser
+    2. 회원정보 수정 완료 (EditUserDonePage) : https://amento.vercel.app/editUserDone
+4. 회원 탈퇴
+    1. 회원 탈퇴 (WithdrawalUserPage) : https://amento.vercel.app/withdrawalUser
+    2. 회원 탈퇴 완료 (WithdrawalUserDonePage) : https://amento.vercel.app/withdrawalUserDone
+5. 아이디 찾기
+    1. 아이디 찾기 (FindIdPage) : https://amento.vercel.app/findId
+    2. 아이디 찾기 완료 (FindIdDonePage) : https://amento.vercel.app/findIdDone
+6. 비밀번호 변경 
+    1. 비밀번호 변경 (ChangePwPage) : https://amento.vercel.app/changePw
+    2. 비밀번호 변경 (새 비밀번호) (ChangePwDetailPage) : https://amento.vercel.app/changePwDetail
+    3. 비밀번호 변경 완료 (ChangePwDonePage)  : https://amento.vercel.app/changePwDone
