@@ -93,7 +93,9 @@ const ctn = css`
   box-sizing: border-box;
   margin: 90px auto 0;
   padding: 160px 0 212px 0;
-  .page_title {
+  @media (max-width: 375px) {
+    margin: 66px auto 0;
+    padding: 44px 48px;
   }
 `;
 
@@ -102,6 +104,11 @@ const page_title = css`
   text-align: center;
   font-size: 55px;
   font-weight: 700;
+  @media (max-width: 375px) {
+    color: var(--black, #111);
+    font-size: 24px;
+    line-height: 120%;
+  }
 `;
 
 const category_card_ctn = css`

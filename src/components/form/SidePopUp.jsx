@@ -279,7 +279,7 @@ export default function SidePopUp() {
                   onClick={handleDeletePhone}
                 />
               </div>
-              <div css={form_submit_ctn}>
+              <div css={form_submit_ctn} onClick={handleChangeIsOpen}>
                 <p css={contact}>문의사항 : ddd@amento.com</p>
                 <Link to="/processCate" css={submit_button}>
                   <button type="submit">신청하기</button>
