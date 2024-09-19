@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./common/globalStyles.css";
+import { HeaderHeightProvider } from "./hooks/useHeaderHeight";
 import Header from "@components/ui/Header";
 import Footer from "@components/ui/Footer";
 import HomePage from "@pages/HomePage/HomePage";
@@ -39,53 +40,58 @@ function App() {
   return (
     <>
       <Router>
-        <ScrollToTop />
-        <Header />
-        <SidePopUp />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/processCate" element={<ProcessCatePage />} />
-          <Route path="/processDetail" element={<ProcessDetailPage />} />
-          <Route path="/processDone" element={<ProcessDonePage />} />
+        <HeaderHeightProvider>
+          <ScrollToTop />
+          <Header />
+          <SidePopUp />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/processCate" element={<ProcessCatePage />} />
+            <Route path="/processDetail" element={<ProcessDetailPage />} />
+            <Route path="/processDone" element={<ProcessDonePage />} />
 
-          {/* 게시판 */}
-          <Route path="/companyIntro" element={<CompanyIntroPage />} />
-          <Route path="/service" element={<ServicePage />} />
-          <Route path="/application" element={<ApplicationPage />} />
-          <Route path="/consulting" element={<ConsultingPage />} />
-          <Route path="/businessReview" element={<BusinessReviewPage />} />
+            {/* 게시판 */}
+            <Route path="/companyIntro" element={<CompanyIntroPage />} />
+            <Route path="/service" element={<ServicePage />} />
+            <Route path="/application" element={<ApplicationPage />} />
+            <Route path="/consulting" element={<ConsultingPage />} />
+            <Route path="/businessReview" element={<BusinessReviewPage />} />
 
-          {/* 회원 관리 */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/joinTos" element={<JoinTosPage />} />
-          <Route path="/joinDetail" element={<JoinDetailPage />} />
-          <Route path="/joinDone" element={<JoinDonePage />} />
-          <Route path="/editUser" element={<EditUserPage />} />
-          <Route path="/editUserDone" element={<EditUserDonePage />} />
-          <Route path="/withdrawalUser" element={<WithdrawalUserPage />} />
-          <Route
-            path="/withdrawalUserDone"
-            element={<WithdrawalUserDonePage />}
-          />
-          <Route path="/findId" element={<FindIdPage />} />
-          <Route path="/findIdDone" element={<FindIdDonePage />} />
-          <Route path="/changePw" element={<ChangePwPage />} />
-          <Route path="/changePwDetail" element={<ChangePwDetailPage />} />
-          <Route path="/changePwDone" element={<ChangePwDonePage />} />
+            {/* 회원 관리 */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/joinTos" element={<JoinTosPage />} />
+            <Route path="/joinDetail" element={<JoinDetailPage />} />
+            <Route path="/joinDone" element={<JoinDonePage />} />
+            <Route path="/editUser" element={<EditUserPage />} />
+            <Route path="/editUserDone" element={<EditUserDonePage />} />
+            <Route path="/withdrawalUser" element={<WithdrawalUserPage />} />
+            <Route
+              path="/withdrawalUserDone"
+              element={<WithdrawalUserDonePage />}
+            />
+            <Route path="/findId" element={<FindIdPage />} />
+            <Route path="/findIdDone" element={<FindIdDonePage />} />
+            <Route path="/changePw" element={<ChangePwPage />} />
+            <Route path="/changePwDetail" element={<ChangePwDetailPage />} />
+            <Route path="/changePwDone" element={<ChangePwDonePage />} />
 
-          <Route path="/payHistory" element={<PayHistoryPage />} />
-          <Route path="/payHistoryDetail" element={<PayHistoryDetailPage />} />
-          <Route path="/estimateSheet" element={<EstimateSheetPage />} />
-          <Route path="/consultHistory" element={<ConsultHistoryPage />} />
-          <Route path="/consultDetail" element={<ConsultDetailPage />} />
-          <Route path="/consultWrite" element={<ConsultWritePage />} />
-          <Route path="/QnA" element={<QnAPage />} />
-          <Route
-            path="/businessReviewDetail"
-            element={<BusinessReviewDetailPage />}
-          />
-        </Routes>
-        <Footer />
+            <Route path="/payHistory" element={<PayHistoryPage />} />
+            <Route
+              path="/payHistoryDetail"
+              element={<PayHistoryDetailPage />}
+            />
+            <Route path="/estimateSheet" element={<EstimateSheetPage />} />
+            <Route path="/consultHistory" element={<ConsultHistoryPage />} />
+            <Route path="/consultDetail" element={<ConsultDetailPage />} />
+            <Route path="/consultWrite" element={<ConsultWritePage />} />
+            <Route path="/QnA" element={<QnAPage />} />
+            <Route
+              path="/businessReviewDetail"
+              element={<BusinessReviewDetailPage />}
+            />
+          </Routes>
+          <Footer />
+        </HeaderHeightProvider>
       </Router>
     </>
   );

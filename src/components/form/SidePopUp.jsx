@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useIsMobile from "@hooks/useIsMobile";
 import { ReactComponent as Counsel } from "@svgs/sidePopUp/counsel.svg";
 import { ReactComponent as CounselWhite } from "@svgs/sidePopUp/counselWhite.svg";
 import { ReactComponent as DeleteInputValue } from "@svgs/sidePopUp/deleteInputValue.svg";
@@ -23,7 +24,7 @@ function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
 }
 
 export default function SidePopUp() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 375);
+  const { isMobile } = useIsMobile();
   const [formData, setFormData] = useState({
     isFaceToFace: true,
     desireType: "회원가입 정보",
@@ -35,7 +36,7 @@ export default function SidePopUp() {
     phone: "연락처",
   });
 
-  function handleChangeIsOpen(e) {
+  function handleChangeIsOpen() {
     let target = document.querySelector(".side_popup_ctn");
     if (target.classList.contains("open")) {
       target.classList.remove("open");
@@ -48,71 +49,16 @@ export default function SidePopUp() {
     setFormData({ ...formData, isFaceToFace: !formData.isFaceToFace });
   }
 
-  function handleChangeDesireType(e) {
-    setFormData({ ...formData, desireType: e.target.value });
+  function handleChangeFormData(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  function handleDeleteDesireType(e) {
-    setFormData({ ...formData, desireType: "" });
+  function handleDeleteFormData(e) {
+    setFormData({
+      ...formData,
+      [e.currentTarget.previousElementSibling.name]: "",
+    });
   }
-
-  function handleChangeDesireArea(e) {
-    setFormData({ ...formData, desireArea: e.target.value });
-  }
-
-  function handleDeleteDesireArea(e) {
-    setFormData({ ...formData, desireArea: "" });
-  }
-
-  function handleChangeIsStore(e) {
-    setFormData({ ...formData, isStore: e.target.value });
-  }
-
-  function handleDeleteIsStore(e) {
-    setFormData({ ...formData, isStore: "" });
-  }
-
-  function handleChangeStoreNum(e) {
-    setFormData({ ...formData, storeNum: e.target.value });
-  }
-
-  function handleDeleteStoreNum(e) {
-    setFormData({ ...formData, storeNum: "" });
-  }
-
-  function handleChangeSales(e) {
-    setFormData({ ...formData, sales: e.target.value });
-  }
-
-  function handleDeleteSales(e) {
-    setFormData({ ...formData, sales: "" });
-  }
-
-  function handleChangeName(e) {
-    setFormData({ ...formData, name: e.target.value });
-  }
-
-  function handleDeleteName(e) {
-    setFormData({ ...formData, name: "" });
-  }
-
-  function handleChangePhone(e) {
-    setFormData({ ...formData, phone: e.target.value });
-  }
-
-  function handleDeletePhone(e) {
-    setFormData({ ...formData, phone: "" });
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 375);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <>
@@ -143,50 +89,50 @@ export default function SidePopUp() {
                 name="desireType"
                 label="희망업종"
                 value={formData.desireType}
-                onChange={handleChangeDesireType}
-                onClick={handleDeleteDesireType}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
               <SidePopUpFormInput
                 name="desireArea"
                 label="희망지역"
                 value={formData.desireArea}
-                onChange={handleChangeDesireArea}
-                onClick={handleDeleteDesireArea}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
               <SidePopUpFormInput
                 name="isStore"
                 label="점포유무"
                 value={formData.isStore}
-                onChange={handleChangeIsStore}
-                onClick={handleDeleteIsStore}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
               <SidePopUpFormInput
                 name="storeNum"
                 label="점포 수"
                 value={formData.storeNum}
-                onChange={handleChangeStoreNum}
-                onClick={handleDeleteStoreNum}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
               <SidePopUpFormInput
                 name="sales"
                 label="매출액"
                 value={formData.sales}
-                onChange={handleChangeSales}
-                onClick={handleDeleteSales}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
               <SidePopUpFormInput
                 name="name"
                 label="성명"
                 value={formData.name}
-                onChange={handleChangeName}
-                onClick={handleDeleteName}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
               <SidePopUpFormInput
                 name="phone"
                 label="연락처"
                 value={formData.phone}
-                onChange={handleChangePhone}
-                onClick={handleDeletePhone}
+                onChange={handleChangeFormData}
+                onClick={handleDeleteFormData}
               />
             </div>
             <div css={form_submit_ctn}>
@@ -233,50 +179,50 @@ export default function SidePopUp() {
                   name="desireType"
                   label="희망업종"
                   value={formData.desireType}
-                  onChange={handleChangeDesireType}
-                  onClick={handleDeleteDesireType}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
                 <SidePopUpFormInput
                   name="desireArea"
                   label="희망지역"
                   value={formData.desireArea}
-                  onChange={handleChangeDesireArea}
-                  onClick={handleDeleteDesireArea}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
                 <SidePopUpFormInput
                   name="isStore"
                   label="점포유무"
                   value={formData.isStore}
-                  onChange={handleChangeIsStore}
-                  onClick={handleDeleteIsStore}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
                 <SidePopUpFormInput
                   name="storeNum"
                   label="점포 수"
                   value={formData.storeNum}
-                  onChange={handleChangeStoreNum}
-                  onClick={handleDeleteStoreNum}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
                 <SidePopUpFormInput
                   name="sales"
                   label="매출액"
                   value={formData.sales}
-                  onChange={handleChangeSales}
-                  onClick={handleDeleteSales}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
                 <SidePopUpFormInput
                   name="name"
                   label="성명"
                   value={formData.name}
-                  onChange={handleChangeName}
-                  onClick={handleDeleteName}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
                 <SidePopUpFormInput
                   name="phone"
                   label="연락처"
                   value={formData.phone}
-                  onChange={handleChangePhone}
-                  onClick={handleDeletePhone}
+                  onChange={handleChangeFormData}
+                  onClick={handleDeleteFormData}
                 />
               </div>
               <div css={form_submit_ctn} onClick={handleChangeIsOpen}>
@@ -379,8 +325,6 @@ const form = css`
   box-shadow: 0 0 0 1px #dbdbdb inset;
 `;
 
-const mobile_form = css``;
-
 const form_input_ctn = css`
   display: flex;
   flex-direction: column;
@@ -470,6 +414,31 @@ const form_button = css`
     color: var(--primary);
     box-shadow: 0 0 0 1px var(--primary) inset;
   }
+  @media (max-width: 320px) {
+    padding: 16px;
+    font-size: 13px;
+  }
+`;
+
+const contact = css`
+  padding: 6px 34px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fbf5ff;
+  color: var(--primary);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20.29px;
+  text-align: center;
+  @media (max-width: 320px) {
+    font-size: 14px;
+  }
+`;
+
+const form_submit_ctn = css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const submit_button = css`
@@ -488,24 +457,10 @@ const submit_button = css`
     font-size: 17px;
     font-weight: 700;
     line-height: 20.29px;
+    @media (max-width: 320px) {
+      font-size: 14px;
+      height: auto;
+      padding: 10px;
+    }
   }
-`;
-
-const contact = css`
-  padding: 6px 34px;
-  box-sizing: border-box;
-  height: 32px;
-  border-radius: 5px;
-  background-color: #fbf5ff;
-  color: var(--primary);
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 20.29px;
-  text-align: center;
-`;
-
-const form_submit_ctn = css`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 `;

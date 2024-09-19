@@ -25,7 +25,11 @@ export default function CategoryCard({
           <CheckPrimary css={svg} />
         )}
         <p css={title}>{categoryText}</p>
-        {category === categoryText && <p className="desc">{descText}</p>}
+        {category === categoryText && (
+          <p className="desc" css={desc}>
+            {descText}
+          </p>
+        )}
       </div>
     </div>
   );
@@ -55,7 +59,14 @@ const title = css`
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 30px;
+  line-height: 150%;
+  @media (max-width: 375px) {
+    font-size: 20px;
+    line-height: 100%;
+  }
+  @media (max-width: 320px) {
+    font-size: 18px;
+  }
 `;
 
 const category_card = css`
@@ -64,7 +75,10 @@ const category_card = css`
   height: 200px;
   border-radius: 20px;
   cursor: pointer;
-
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
   &.selected {
     position: relative;
     border-radius: 20px;
@@ -72,16 +86,6 @@ const category_card = css`
     filter: drop-shadow(0px 6px 33px #e0d4e9);
     img {
       filter: blur(15px);
-    }
-    .desc {
-      color: var(--primary, #9627e7);
-      font-family: Pretendard;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      text-align: center;
-      white-space: nowrap;
     }
     &::before {
       content: "";
@@ -95,5 +99,39 @@ const category_card = css`
       border-radius: 20px;
       box-shadow: 0 0 0 1px var(--primary, #9627e7) inset;
     }
+  }
+
+  @media (max-width: 375px) {
+    &.selected {
+      filter: none;
+      img {
+        filter: blur(10px);
+      }
+      &::before {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 320px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const desc = css`
+  color: var(--primary, #9627e7);
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  word-break: keep-all;
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
+  @media (max-width: 320px) {
+    white-space: wrap;
   }
 `;

@@ -65,9 +65,9 @@ const footer = css`
     padding: 32px 64px;
   }
   @media (max-width: 499px) {
+    padding: 80px 20px;
   }
   @media (max-width: 375px) {
-    padding: 80px 20px;
   }
   @media (max-width: 320px) {
   }
@@ -108,9 +108,9 @@ const info = css`
     gap: 8px;
   }
   @media (max-width: 499px) {
+    gap: 14px;
   }
   @media (max-width: 375px) {
-    gap: 14px;
   }
   @media (max-width: 320px) {
   }
@@ -127,10 +127,10 @@ const info_text_ctn = css`
   @media (max-width: 767px) {
   }
   @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
     align-items: start;
     flex-direction: column;
+  }
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }
@@ -164,14 +164,14 @@ const info_divider = css`
   width: 1px;
   height: 10px;
   background-color: #aaaaaa;
-  @media (max-width: 375px) {
+  @media (max-width: 499px) {
     display: none;
   }
 `;
 
 const info_with_title = css`
   display: flex;
-  @media (max-width: 375px) {
+  @media (max-width: 499px) {
     flex-direction: column;
     gap: 14px;
   }
@@ -247,12 +247,12 @@ const info_content = css`
     font-size: 12px;
   }
   @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
     line-height: 195%;
     &:not(:last-child):after {
       display: none;
     }
+  }
+  @media (max-width: 375px) {
   }
   @media (max-width: 320px) {
   }

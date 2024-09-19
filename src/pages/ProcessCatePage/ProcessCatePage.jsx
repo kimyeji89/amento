@@ -2,9 +2,11 @@
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import CategoryCard from "./CategoryCard";
 
 export default function ProcessCatePage() {
+  const { headerHeight } = useHeaderHeight();
   const [category, setCategory] = useState("");
 
   const categoryText = {
@@ -38,6 +40,36 @@ export default function ProcessCatePage() {
     }
   }
 
+  const ctn = css`
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: ${headerHeight} auto 0;
+    padding: 160px 0 212px 0;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      padding: 120px 80px;
+    }
+    @media (max-width: 768px) {
+      padding: 80px 60px;
+    }
+    @media (max-width: 500px) {
+      padding: 80px 50px;
+    }
+    @media (max-width: 375px) {
+      gap: 20px;
+
+      padding: 44px 48px;
+    }
+    @media (max-width: 320px) {
+      padding: 40px 24px;
+    }
+  `;
+
   return (
     <main css={ctn}>
       <h2 css={page_title}>컨설팅 프로세스</h2>
@@ -70,40 +102,34 @@ export default function ProcessCatePage() {
           img="/assets/images/processCate/cate4.png"
           onClick={handleChangeCategory}
         />
+        {category === "" ? (
+          <button type="button" css={next_button_disabled}>
+            next
+          </button>
+        ) : (
+          <Link to="/processDetail" css={next_button}>
+            <button type="button">next</button>
+          </Link>
+        )}
       </div>
-      {category === "" ? (
-        <button type="button" css={next_button_disabled}>
-          next
-        </button>
-      ) : (
-        <Link to="/processDetail" css={next_button}>
-          <button type="button">next</button>
-        </Link>
-      )}
     </main>
   );
 }
-
-const ctn = css`
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  margin: 90px auto 0;
-  padding: 160px 0 212px 0;
-  @media (max-width: 375px) {
-    margin: 66px auto 0;
-    padding: 44px 48px;
-  }
-`;
 
 const page_title = css`
   color: var(--black, #111);
   text-align: center;
   font-size: 55px;
   font-weight: 700;
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
+  @media (max-width: 767px) {
+    font-size: 40px;
+  }
+  @media (max-width: 499px) {
+    font-size: 34px;
+  }
   @media (max-width: 375px) {
     color: var(--black, #111);
     font-size: 24px;
@@ -115,7 +141,10 @@ const category_card_ctn = css`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  justify-content: center;
+  align-items: center;
   max-width: 664px;
+  width: 100%;
 `;
 
 const next_button_disabled = css`
@@ -150,6 +179,7 @@ const next_button = css`
     align-items: center;
     gap: 10px;
     box-sizing: border-box;
+    margin-top: 20px;
     padding: 10px 20px;
     width: 100%;
     height: 50px;
@@ -162,5 +192,8 @@ const next_button = css`
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
+  }
+  @media (max-width: 823px) {
+    max-width: 320px;
   }
 `;

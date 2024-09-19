@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useLocationControl from "@hooks/useLocationControl";
+import useIsMobile from "@hooks/useIsMobile";
+import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import { ReactComponent as UserDefault } from "@svgs/header/userDefault.svg";
 import { ReactComponent as UserSelected } from "@svgs/header/userSelected.svg";
 import { ReactComponent as ChevDown } from "@svgs/header/chevDown.svg";
@@ -11,8 +13,9 @@ import { ReactComponent as Menu } from "@svgs/header/menu.svg";
 import { ReactComponent as Close } from "@svgs/header/close.svg";
 
 export default function Header() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 375);
+  const { isMobile } = useIsMobile();
   const { checkLocation } = useLocationControl();
+  const { headerRef } = useHeaderHeight();
   const [isDesktopUserOpen, setIsDesktopUserOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileUserOpen, setIsMobileUserOpen] = useState(false);
@@ -29,20 +32,10 @@ export default function Header() {
     setIsMobileUserOpen(!isMobileUserOpen);
   }
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 375);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
       {isMobile === false && (
-        <header css={header} className="desktop_menu">
+        <header css={header} className="desktop_menu header" ref={headerRef}>
           <div css={ctn}>
             <div className="logo" css={logo}>
               <Link to="/">
@@ -170,13 +163,16 @@ export default function Header() {
                 <p>회원가입</p>
               </Link>
             </div>
-            <Menu css={mobile_menu_button} onClick={handleOpenMobileMenu} />
           </div>
         </header>
       )}
       {isMobile === true && (
-        <header css={mobile_header} className="mobile_menu">
-          <div css={ctn}>
+        <header
+          css={mobile_header}
+          className="mobile_menu header"
+          ref={headerRef}
+        >
+          <div css={mobile_ctn}>
             <div className="logo" css={logo}>
               <Link to="/">
                 <h1 className="text">AMENTO VENTURES</h1>
@@ -223,27 +219,27 @@ export default function Header() {
               <nav>
                 <ul css={mobile_menu}>
                   <li>
-                    <Link to="/companyIntro">
+                    <Link to="/companyIntro" onClick={handleOpenMobileMenu}>
                       <p>회사소개</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/consulting">
+                    <Link to="/consulting" onClick={handleOpenMobileMenu}>
                       <p>창업 컨설팅</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/service">
+                    <Link to="/service" onClick={handleOpenMobileMenu}>
                       <p>가맹사업 서비스</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/application">
+                    <Link to="/application" onClick={handleOpenMobileMenu}>
                       <p>설명회 신청</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/businessReview">
+                    <Link to="/businessReview" onClick={handleOpenMobileMenu}>
                       <p>사업후기</p>
                     </Link>
                   </li>
@@ -282,9 +278,8 @@ const header = css`
     height: 70px;
   }
   @media (max-width: 767px) {
-    height: 60px;
-  }
-  @media (max-width: 499px) {
+    height: fit-content;
+    padding: 18px 10px;
   }
 `;
 
@@ -293,6 +288,13 @@ const ctn = css`
   width: 1500px;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1919px) {
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const logo = css`
@@ -309,7 +311,7 @@ const logo = css`
     }
   }
   @media (max-width: 1280px) {
-    height: 36px;
+    height: 32px;
   }
   @media (max-width: 1024px) {
     height: 30px;
@@ -317,28 +319,34 @@ const logo = css`
   @media (max-width: 767px) {
     height: 26px;
   }
-  @media (max-width: 499px) {
-  }
   @media (max-width: 375px) {
     height: 30px;
   }
   @media (max-width: 320px) {
+  26px;
   }
 `;
 
 const nav = css`
   ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 80px;
+  }
+  @media (max-width: 1919px) {
+    ul {
+      gap: 40px;
+    }
   }
   @media (max-width: 1280px) {
     ul {
-      gap: 24px;
+      gap: 20px;
     }
   }
   @media (max-width: 1024px) {
     ul {
-      gap: 20px;
+      gap: 18px;
     }
   }
   @media (max-width: 767px) {
@@ -363,9 +371,6 @@ const nav_link = css`
   color: #454545;
   white-space: nowrap;
   @media (max-width: 1280px) {
-    font-size: 18px;
-  }
-  @media (max-width: 1024px) {
     font-size: 16px;
   }
   @media (max-width: 950px) {
@@ -408,10 +413,10 @@ const user = css`
   gap: 30px;
   position: relative;
   @media (max-width: 1280px) {
-    gap: 24px;
+    gap: 14px;
   }
   @media (max-width: 1024px) {
-    gap: 16px;
+    gap: 12px;
   }
   @media (max-width: 950px) {
     gap: 8px;
@@ -435,6 +440,7 @@ const user_button = css`
   font-size: 17px;
   @media (max-width: 1280px) {
     font-size: 16px;
+    gap: 7px;
   }
   @media (max-width: 1024px) {
     gap: 6px;
@@ -562,13 +568,19 @@ const user_link = css`
   }
 `;
 
+/* mobile */
+
 const mobile_menu_button = css`
-  @media (min-width: 376px) {
-    display: none;
-  }
   @media (max-width: 375px) {
     display: block;
   }
+`;
+
+const mobile_ctn = css`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const mobile_header = css`
@@ -587,9 +599,6 @@ const mobile_header = css`
   box-sizing: border-box;
   padding: 10px 20px;
   justify-content: space-between;
-
-  @media (max-width: 320px) {
-  }
 `;
 
 const mobile_menu_ctn = css`
@@ -605,6 +614,7 @@ const mobile_menu_ctn = css`
   box-sizing: border-box;
   padding: 34px;
   background-color: var(--white);
+  overflow-y: scroll;
 `;
 
 const mobile_user_menu = css`
