@@ -76,9 +76,18 @@ const section_wrap = css`
   }
 
   @media (max-width: 1024px) {
+    padding: 80px 0;
     h1 {
-      font-size: 34px;
+      font-size: 30px;
     }
+  }
+
+  @media (max-width: 768px) {
+    gap: 34px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 24px;
   }
 `;
 
@@ -93,6 +102,11 @@ const grid_container = css`
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 20px;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -156,9 +170,25 @@ const grid_item = css`
 
   @media (max-width: 767px) {
     p {
+      font-size: 16px;
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    p {
       font-size: 18px;
       bottom: 30px;
       left: 30px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    p {
+      font-size: 17px;
+      bottom: 30px;
+      left: 40px;
     }
   }
 `;

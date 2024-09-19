@@ -1,11 +1,32 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState, useEffect } from "react";
 
 export default function ServiceSection1() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+  const [showBr, setShowBr] = useState(window.innerWidth >= 1025);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+      setShowBr(window.innerWidth >= 1025);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section css={section_wrap}>
       <img
-        src="/assets/images/servicePage/serviceGradient.png"
+        src={
+          isMobile
+            ? "/assets/images/servicePage/serviceGradientMo.png"
+            : "/assets/images/servicePage/serviceGradient.png"
+        }
         alt="serviceGradient"
         css={gradient_img}
       />
@@ -39,7 +60,7 @@ export default function ServiceSection1() {
               />
               <p>
                 <span>
-                  사업계획서 및<br />
+                  사업계획서 및 {showBr && <br />}
                   IR 컨설팅
                 </span>
               </p>
@@ -59,7 +80,7 @@ export default function ServiceSection1() {
               />
               <p>
                 <span>피칭</span>
-                <br />
+                {showBr && <br />}
                 (사업계획서, IR, R&D 등)
               </p>
             </div>
@@ -70,8 +91,7 @@ export default function ServiceSection1() {
               />
               <p>
                 <span>
-                  인증 및 정책에 따른
-                  <br />
+                  인증 및 정책에 따른 {showBr && <br />}
                   경영계획 설계 등
                 </span>
               </p>
@@ -85,6 +105,7 @@ export default function ServiceSection1() {
 
 const section_wrap = css`
   position: relative;
+  overflow: hidden;
 `;
 
 const gradient_img = css`
@@ -105,13 +126,29 @@ const gradient_img = css`
     left: 50px;
   }
 
-  @media (max-width: 1119px) {
+  @media (max-width: 1240px) {
     height: 250px;
   }
 
   @media (max-width: 1024px) {
+    height: 250px;
     width: calc(100% - 30px);
     left: 30px;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 20px);
+    left: 20px;
+  }
+
+  @media (max-width: 500px) {
+    // left: 20px;
+    // height: 189px;
+  }
+
+  @media (max-width: 375px) {
+    left: 20px;
+    height: 189px;
   }
 `;
 
@@ -121,6 +158,8 @@ const content_wrap = css`
   gap: 50px;
   padding: 120px 180px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 
   h1 {
     color: var(--black-1);
@@ -143,11 +182,20 @@ const content_wrap = css`
   }
 
   @media (max-width: 1024px) {
-    padding: 70px 10px;
+    padding: 80px 20px;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+    }
   }
 
   @media (max-width: 768px) {
-    padding: 70px 50px;
+  }
+
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 24px;
+    }
   }
 `;
 
@@ -157,12 +205,22 @@ const content_container = css`
   gap: 50px;
   max-width: 1300px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    gap: 34px;
+  }
 `;
 
 const content_box = css`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  width: 100%;
 
   div:first-of-type {
     background-color: var(--primary);
@@ -174,6 +232,11 @@ const content_box = css`
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
   }
 `;
 
@@ -205,6 +268,7 @@ const content = css`
     font-size: 20px;
     font-weight: 400;
     line-height: 140%;
+    flex-grow: 1;
 
     span {
       font-weight: 700;
@@ -243,20 +307,51 @@ const content = css`
     }
 
     p {
+      // text-align: center;
       font-size: 20px;
     }
   }
 
   @media (max-width: 768px) {
-    padding: 25px 80px;
+    flex-direction: column;
+    padding: 24px 50px;
+    gap: 24px;
 
     img {
-      width: 157.5px;
-      height: 150px;
+      width: 100px;
+      height: auto;
     }
 
     p {
-      font-size: 20px;
+      font-size: 16px;
+      word-break: keep-all;
+    }
+  }
+
+  @media (max-width: 375px) {
+    gap: 24px;
+    padding: 24px 50px;
+    max-width: 335px;
+
+    img {
+      width: 100px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    gap: 24px;
+    padding: 24px 50px;
+
+    img {
+      width: 100px;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
 `;

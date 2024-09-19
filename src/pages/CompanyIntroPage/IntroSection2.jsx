@@ -10,8 +10,8 @@ export default function IntroSection2() {
         <h2>ABOUT</h2>
         <p css={des}>
           아멘토벤처스는 창업과 프랜차이즈 전문가들이 직접 창업자를 상담하고
-          지원하는 <br /> “전문가 협업기업”으로 최적화된 창업 비즈니스 성공을
-          위한 “프로젝트 FC” 솔루션을 제공합니다.
+          지원하는 “전문가 협업기업”으로 최적화된 창업 비즈니스 성공을 위한
+          “프로젝트 FC” 솔루션을 제공합니다.
         </p>
         <Box
           firstText={"신뢰성을 기반으로 함께 참여하는"}
@@ -39,6 +39,10 @@ const section_wrap = css`
   justify-content: center;
   align-items: center;
   padding: 120px 0;
+
+  @media (max-width: 768px) {
+    padding: 80px 0;
+  }
 `;
 
 const container = css`
@@ -46,6 +50,7 @@ const container = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   max-width: 915px;
 
   h2 {
@@ -61,7 +66,15 @@ const container = css`
     }
 
     @media (max-width: 1024px) {
-      // font-size: 40px;
+      font-size: 30px;
+    }
+
+    @media (max-width: 765px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 24px;
     }
   }
 
@@ -91,7 +104,17 @@ const des = css`
   }
 
   @media (max-width: 768px) {
+    padding: 34px 20px 44px;
     font-size: 17px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 34px 20px 44px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 340px) {
+    font-size: 13px;
   }
 `;
 
@@ -116,6 +139,10 @@ const des_2 = css`
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
 `;
 
 const about_img = css`
@@ -128,5 +155,11 @@ const about_img = css`
 
   @media (max-width: 768px) {
     width: 70%;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 `;

@@ -1,13 +1,32 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState, useEffect } from "react";
 
 export default function IntroSection1() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 520);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 520);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section css={section_wrap}>
       <div css={banner_img}>
         <img
-          src="/assets/images/companyIntroPage/introBanner.png"
-          alt="gradient"
+          src={
+            isMobile
+              ? "/assets/images/companyIntroPage/introBanner_mo.png"
+              : "/assets/images/companyIntroPage/introBanner.png"
+          }
+          alt="introBanner"
         />
       </div>
       <div css={gradient_img} />
@@ -21,7 +40,7 @@ export default function IntroSection1() {
           </p>
           <p css={p_2}>
             Your Goal, Our Challenge AmentoVentures designs customized
-            <br />
+            {/* <br /> */}
             startups & businesses for your success.
           </p>
         </div>
@@ -46,6 +65,11 @@ const section_wrap = css`
   @media (max-width: 1024px) {
     height: 386px;
   }
+
+  @media (max-width: 520px) {
+    height: 488px;
+    background: linear-gradient(180deg, #fefeff 0%, #f5f6f9 100%);
+  }
 `;
 
 const banner_img = css`
@@ -56,6 +80,36 @@ const banner_img = css`
     width: 78.39%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 520px) {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 345px) {
+    img {
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -79,6 +133,30 @@ const gradient_img = css`
   @media (max-width: 1024px) {
     width: 86%;
   }
+
+  @media (max-width: 520px) {
+    width: 100%;
+    top: 231px;
+    height: 201px;
+
+    background: linear-gradient(
+      179deg,
+      rgba(254, 254, 255, 0) 0.75%,
+      #f6f7fa 30.89%
+    );
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    top: 231px;
+    height: 201px;
+
+    background: linear-gradient(
+      179deg,
+      rgba(254, 254, 255, 0) 0.75%,
+      #f6f7fa 30.89%
+    );
+  }
 `;
 
 const text_wrap = css`
@@ -90,13 +168,12 @@ const text_wrap = css`
   right: 210px;
   transform: translateY(-50%);
 
-  // border: 1px solid red;
-
   h1 {
     color: var(--black-1);
     font-size: 55px;
     font-weight: 700;
     line-height: 120%; /* 66px */
+    word-break: keep-all;
   }
 
   @media (max-width: 1680px) {
@@ -125,10 +202,56 @@ const text_wrap = css`
       flex-direction: column;
       align-items: flex-end;
     }
+    h1 {
+      font-size: 30px;
+    }
   }
 
   @media (max-width: 768px) {
     right: 20px;
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    padding: 0 20px;
+    left: 0px;
+    text-align: start;
+    top: 330px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+    left: 0px;
+    text-align: start;
+    top: 340px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 23px;
+    }
   }
 `;
 
@@ -139,8 +262,6 @@ const p_1 = css`
   line-height: 140%; /* 28px */
   padding: 24px 0 14px;
 
-  // border: 1px solid;
-
   @media (max-width: 1024px) {
     font-size: 18px;
     max-width: 300px;
@@ -148,10 +269,17 @@ const p_1 = css`
   }
 
   @media (max-width: 768px) {
-    max-width: 350px;
+    max-width: 280px;
+    font-size: 16px;
     word-break: keep-all;
     text-align: end;
     right: 0;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 14px;
+    max-width: 250px;
+    text-align: start;
   }
 `;
 
@@ -167,7 +295,12 @@ const p_2 = css`
   }
 
   @media (max-width: 768px) {
+    max-width: 450px;
     font-size: 14px;
     font-weight: 600;
+  }
+
+  @media (max-width: 375px) {
+    max-width: 390px;
   }
 `;

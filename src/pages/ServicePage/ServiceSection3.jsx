@@ -46,10 +46,22 @@ const section_wrap = css`
   }
 
   @media (max-width: 1024px) {
-    padding: 120px 20px;
+    padding: 80px 15px;
 
     h1 {
-      font-size: 34px;
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 24px;
     }
   }
 `;
