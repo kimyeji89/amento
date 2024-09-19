@@ -194,10 +194,10 @@ export default function Header() {
               <div className="user" css={user}>
                 <button
                   type="button"
-                  css={user_button}
+                  css={mobile_user_button}
                   onClick={handleOpenMobileUser}
                 >
-                  <UserDefault css={user_icon} />
+                  <UserDefault css={mobile_user_icon} />
                   <p>
                     <span className="user_name" css={user_name}>
                       amento
@@ -257,88 +257,6 @@ export default function Header() {
     </>
   );
 }
-const mobile_header = css`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 66px;
-  box-shadow: 0px 4px 20px 0px #0000001a;
-  background-color: var(--white);
-  box-sizing: border-box;
-  padding: 10px 20px;
-  justify-content: space-between;
-
-  @media (max-width: 320px) {
-  }
-`;
-const mobile_menu_ctn = css`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  position: absolute;
-  top: 66px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: calc(100vh - 66px);
-  box-sizing: border-box;
-  padding: 34px;
-  background-color: var(--white);
-`;
-const mobile_user_menu = css`
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 14px 40px 0;
-  color: #454545;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 200%;
-`;
-
-const mobile_menu = css`
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
-  box-sizing: border-box;
-  padding: 34px 0;
-
-  font-family: Pretendard;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  a {
-    text-decoration: none;
-    color: #222;
-  }
-`;
-
-const mobile_logout_button = css`
-  display: flex;
-  height: 40px;
-  padding: 16px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  align-self: stretch;
-  border-radius: 5px;
-  border: 1px solid var(--primary, #9627e7);
-  background: #fff;
-  color: var(--primary, #9627e7);
-  font-family: Pretendard;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`;
 
 const header = css`
   position: fixed;
@@ -530,12 +448,6 @@ const user_button = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 375px) {
-    font-size: 20px;
-    gap: 8px;
-  }
-  @media (max-width: 320px) {
-  }
 `;
 
 const user_icon = css`
@@ -547,11 +459,6 @@ const user_icon = css`
   }
   @media (max-width: 950px) {
     display: none;
-  }
-  @media (max-width: 375px) {
-    display: block;
-    width: 30px;
-    height: 30px;
   }
 `;
 
@@ -565,12 +472,6 @@ const chev_icon = css`
   @media (max-width: 767px) {
     width: 18px;
     height: 18px;
-  }
-  @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -601,10 +502,6 @@ const divider = css`
     height: 10px;
   }
   @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -640,10 +537,6 @@ const user_menu = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
-  }
 `;
 
 const user_link = css`
@@ -667,10 +560,6 @@ const user_link = css`
   }
   @media (max-width: 499px) {
   }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
-  }
 `;
 
 const mobile_menu_button = css`
@@ -680,4 +569,102 @@ const mobile_menu_button = css`
   @media (max-width: 375px) {
     display: block;
   }
+`;
+
+const mobile_header = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 66px;
+  box-shadow: 0px 4px 20px 0px #0000001a;
+  background-color: var(--white);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  justify-content: space-between;
+
+  @media (max-width: 320px) {
+  }
+`;
+
+const mobile_menu_ctn = css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 66px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 66px);
+  box-sizing: border-box;
+  padding: 34px;
+  background-color: var(--white);
+`;
+
+const mobile_user_menu = css`
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 14px 40px 0;
+  color: #454545;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 200%;
+`;
+
+const mobile_menu = css`
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  box-sizing: border-box;
+  padding: 34px 0;
+
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+`;
+
+const mobile_logout_button = css`
+  display: flex;
+  height: 40px;
+  padding: 16px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid var(--primary, #9627e7);
+  background: #fff;
+  color: var(--primary, #9627e7);
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
+const mobile_user_icon = css`
+  width: 30px;
+  height: 30px;
+`;
+
+const mobile_user_button = css`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 20px;
+  gap: 8px;
 `;
