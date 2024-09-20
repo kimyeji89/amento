@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 import PostTitle from "@components/post/PostTitle";
 import WriteInputText from "@components/post/WriteInputText";
 import Button from "@components/ui/Button";
+import TitleInput from "./TitleInput";
+import SelectBox from "./SelectBox";
 
 export default function ConsultWritePage() {
   return (
@@ -14,7 +16,11 @@ export default function ConsultWritePage() {
         views={"3"}
         isPost={false}
       />
-      <WriteInputText />
+      <div css={form_container}>
+        <SelectBox />
+        <TitleInput />
+        <WriteInputText />
+      </div>
 
       <div css={btn_wrap}>
         <Button label="작성하기" />
@@ -26,6 +32,28 @@ export default function ConsultWritePage() {
 
 const page_wrap = css`
   padding: 250px 210px 353px;
+
+  @media (max-width: 1280px) {
+    padding: 250px 100px 353px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 250px 65px 353px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 250px 20px 353px;
+  }
+`;
+
+const form_container = css`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  align-self: stretch;
+
+  padding: 24px 0 0 0;
 `;
 
 const btn_wrap = css`
@@ -40,5 +68,11 @@ const btn_wrap = css`
   a {
     flex-grow: 1;
     flex-basis: 0;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    gap: 10px;
+    padding: 44px 0 0;
   }
 `;

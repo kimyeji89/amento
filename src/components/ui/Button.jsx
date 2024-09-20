@@ -40,4 +40,11 @@ const button_wrap = (isWhite) => css`
   @media (max-width: 375px) {
     max-height: 50px;
   }
+
+  @media (max-width: 335px) {
+    padding: 15px;
+    p {
+      font-size: 14px;
+    }
+  }
 `;

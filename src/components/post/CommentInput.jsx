@@ -8,7 +8,9 @@ export default function CommentInput({ isBlIcon }) {
     <div css={comment_wrap}>
       <div css={input_header}>
         {isBlIcon ? <ProfileIconBl /> : <ProfileIcon />}
-        <span>amento님</span> 댓글을 남겨 보세요.
+        <div>
+          <span>amento님</span> 댓글을 남겨 보세요.
+        </div>
       </div>
       <input placeholder="댓글을 남겨보세요." css={input}></input>
     </div>
@@ -19,6 +21,10 @@ const comment_wrap = css`
   display: flex;
   flex-direction: column;
   gap: 14px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 const input_header = css`
@@ -33,6 +39,15 @@ const input_header = css`
   span {
     font-weight: 800;
   }
+
+  @media (max-width: 375px) {
+    font-size: 16px;
+
+    svg {
+      width: 16.941px;
+      height: 16.941px;
+    }
+  }
 `;
 
 const input = css`
@@ -45,4 +60,10 @@ const input = css`
   background: #fff;
 
   font-size: 15px;
+
+  @media (max-width: 375px) {
+    padding: 16.5px 20px;
+    font-size: 13px;
+    max-height: 50px;
+  }
 `;
