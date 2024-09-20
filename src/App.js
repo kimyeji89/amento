@@ -10,6 +10,7 @@ import ProcessDonePage from "@pages/ProcessDonePage/ProcessDonePage";
 import CompanyIntroPage from "@pages/CompanyIntroPage/CompanyIntroPage";
 import ServicePage from "@pages/ServicePage/ServicePage";
 import ApplicationPage from "@pages/ApplicationPage/ApplicationPage";
+import ApplicationPage2 from "@pages/ApplicationPage/ApplicationPage2";
 import ConsultingPage from "@pages/ConsultingPage/ConsultingPage";
 import BusinessReviewPage from "@pages/BusinessReviewPage/BusinessReviewPage";
 import LoginPage from "@pages/LoginPage/LoginPage";
@@ -51,15 +52,18 @@ function App() {
             <Route path="/processDetail" element={<ProcessDetailPage />} />
             <Route path="/processDone" element={<ProcessDonePage />} />
 
-
-          {/* 게시판 */}
-          <Route path="/companyIntro" element={<CompanyIntroPage />} />
-          <Route path="/service" element={<ServicePage />} />
-          <Route path="/application" element={<ApplicationPage />} />
-          <Route path="/consulting" element={<ConsultingPage />} />
-          <Route path="/businessReview" element={<BusinessReviewPage />} />
-          <Route path="/businessReview2" element={<BusinessReviewPage2 />} />
-
+            {/* 게시판 */}
+            <Route path="/companyIntro" element={<CompanyIntroPage />} />
+            <Route path="/service" element={<ServicePage />} />
+            <Route path="/application" element={<ApplicationPage />} />
+            <Route path="/application2" element={<ApplicationPage2 />} />
+            <Route path="/consulting" element={<ConsultingPage />} />
+            <Route path="/businessReview" element={<BusinessReviewPage />} />
+            <Route path="/businessReview2" element={<BusinessReviewPage2 />} />
+            <Route
+              path="/businessReviewDetail"
+              element={<BusinessReviewDetailPage />}
+            />
 
             {/* 회원 관리 */}
             <Route path="/login" element={<LoginPage />} />
