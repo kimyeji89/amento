@@ -10,6 +10,7 @@ export default function ApplicationPage() {
   const page_wrap = css`
     padding-top: ${headerHeight}px;
   `;
+
   return (
     <div css={page_wrap}>
       <PageTitle title="설명회 신청" hasBorder />

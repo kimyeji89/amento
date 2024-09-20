@@ -2,12 +2,12 @@
 import { css } from "@emotion/react";
 
 export default function WriteInputText() {
-  return <textarea css={textarea}></textarea>;
+  return <textarea css={textarea}>asdf</textarea>;
 }
 
 const textarea = css`
   padding: 34px;
-  margin: 44px 0;
+  // margin: 44px 0;
   width: 100%;
   height: auto;
   min-height: 300px;
@@ -21,4 +21,11 @@ const textarea = css`
   font-size: 17px;
   font-weight: 400;
   line-height: 160%;
+
+  resize: none;
+
+  @media (max-width: 375px) {
+    font-size: 15px;
+    padding: 20px;
+  }
 `;
