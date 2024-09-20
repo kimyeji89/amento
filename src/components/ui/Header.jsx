@@ -81,13 +81,13 @@ export default function Header() {
                 {isDesktopUserOpen === false ? (
                   <>
                     <UserDefault css={user_icon} />
-                    <p>
+                    <p css={user_text}>
                       <span className="user_name" css={user_name}>
                         amento
                       </span>
                       <span className="user_call">님</span>
                     </p>
-                    <ChevUp css={chev_icon} />
+                    <ChevDown css={chev_icon} />
                   </>
                 ) : (
                   <>
@@ -100,7 +100,7 @@ export default function Header() {
                         님
                       </span>
                     </p>
-                    <ChevDown css={chev_icon} />
+                    <ChevUp css={chev_icon} />
                   </>
                 )}
               </button>
@@ -194,16 +194,16 @@ export default function Header() {
                   onClick={handleOpenMobileUser}
                 >
                   <UserDefault css={mobile_user_icon} />
-                  <p>
+                  <p css={user_text}>
                     <span className="user_name" css={user_name}>
                       amento
                     </span>
                     <span className="user_call">님</span>
                   </p>
                   {isMobileUserOpen === false ? (
-                    <ChevUp css={chev_icon} />
-                  ) : (
                     <ChevDown css={chev_icon} />
+                  ) : (
+                    <ChevUp css={chev_icon} />
                   )}
                 </button>
               </div>
@@ -479,6 +479,10 @@ const chev_icon = css`
     width: 18px;
     height: 18px;
   }
+`;
+
+const user_text = css`
+  color: var(--2C2825, #2c2825);
 `;
 
 const user_name = css`

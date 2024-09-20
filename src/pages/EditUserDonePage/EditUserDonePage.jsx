@@ -8,7 +8,7 @@ export default function EditUserDonePage() {
   return (
     <GradientBack>
       <PageWrap pb="406">
-        <FormHeader label="회원가입 수정" />
+        <FormHeader label="회원정보 수정" />
         <CompleteMessage
           text="회원정보가 성공적으로 수정되었습니다."
           highlight="변경된 내용을"
