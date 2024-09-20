@@ -128,6 +128,12 @@ table {
   border-spacing: 0;
 }
 
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 /* default variable */
 :root {
   /* point color */

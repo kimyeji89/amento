@@ -58,14 +58,22 @@ const label_style = css`
 `;
 
 const input_style = (inputValue) => css`
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+
   padding: 19px 15px;
 
   border: 1px solid #d9d9d9;
+  background-color: #fff;
+  height: 100%;
   border-radius: 5px;
   color: #181818;
   font-size: 15px;
   font-weight: 400;
   line-height: 17.9px;
+  text-align: start;
 
   @media (max-width: 375px) {
     font-size: 12px;
