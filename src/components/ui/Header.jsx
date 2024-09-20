@@ -319,7 +319,7 @@ const logo = css`
   @media (max-width: 767px) {
     height: 26px;
   }
-  @media (max-width: 375px) {
+  @media (max-width: 430px) {
     height: 30px;
   }
   @media (max-width: 320px) {

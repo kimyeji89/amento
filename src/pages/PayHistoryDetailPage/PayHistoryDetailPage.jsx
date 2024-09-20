@@ -13,15 +13,15 @@ export default function PayHistoryDetailPage() {
     background: #f6f7fa;
 
     @media (max-width: 1280px) {
-      padding: ${headerHeight + 120}px 100px 353px;
+      padding: ${headerHeight + 120}px 100px;
     }
 
     @media (max-width: 1024px) {
-      padding: ${headerHeight + 60}px 65px 353px;
+      padding: ${headerHeight + 120}px 65px;
     }
 
     @media (max-width: 768px) {
-      padding: ${headerHeight + 60}px 20px 353px;
+      padding: ${headerHeight + 60}px 20px;
     }
   `;
 
