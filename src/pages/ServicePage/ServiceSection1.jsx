@@ -40,9 +40,11 @@ export default function ServiceSection1() {
                 alt="handshake"
               />
               <p>
-                일반창업, 기술창업, 소상공인 창업,
-                <br />
-                소셜벤처 등을 지원
+                <span>
+                  일반창업, 기술창업, 소상공인 창업,
+                  <br />
+                  소셜벤처 등을 지원
+                </span>
               </p>
             </div>
             <div css={content}>
