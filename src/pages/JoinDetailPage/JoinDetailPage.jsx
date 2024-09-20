@@ -26,7 +26,7 @@ export default function JoinDetailPage() {
         <div css={div_line} />
 
         <div css={form_wrapper_select}>
-          <FormInput label="업체명" />
+          <FormInput label="업체명" isDetailForm />
           <div css={col}>
             <div css={row}>
               <FormInput label="희망업종" isDetailForm />
