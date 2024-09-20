@@ -314,7 +314,7 @@ const logo = css`
     height: 32px;
   }
   @media (max-width: 1024px) {
-    height: 30px;
+    height: 26px;
   }
   @media (max-width: 767px) {
     height: 26px;
@@ -323,7 +323,7 @@ const logo = css`
     height: 30px;
   }
   @media (max-width: 320px) {
-  26px;
+    height: 26px;
   }
 `;
 
@@ -395,7 +395,7 @@ const link = css`
     font-size: 16px;
   }
   @media (max-width: 950px) {
-    font-size: 15px;
+    font-size: 14px;
   }
   @media (max-width: 767px) {
   }
@@ -419,10 +419,9 @@ const user = css`
     gap: 12px;
   }
   @media (max-width: 950px) {
-    gap: 8px;
+    gap: 6px;
   }
   @media (max-width: 767px) {
-    gap: 8px;
   }
   @media (max-width: 499px) {
   }
@@ -446,10 +445,10 @@ const user_button = css`
     gap: 6px;
   }
   @media (max-width: 950px) {
-    font-size: 15px;
+    font-size: 14px;
+    gap: 5px;
   }
   @media (max-width: 767px) {
-    font-size: 14px;
     gap: 4px;
   }
   @media (max-width: 499px) {
@@ -537,7 +536,7 @@ const user_menu = css`
     top: calc(100% + 24px);
     width: calc(100% - 32px - 48px + 16px);
     padding: 22px 20px;
-    gap: 16px;
+    gap: 10px;
   }
   @media (max-width: 767px) {
     top: calc(100% + 20px);
@@ -555,7 +554,7 @@ const user_link = css`
   font-weight: 400;
   text-align: center;
   text-decoration: none;
-  white-space: nowrap;
+  word-break: keep-all;
   &.selected {
     text-decoration: underline;
     font-weight: 700;
@@ -564,9 +563,10 @@ const user_link = css`
     font-size: 16px;
   }
   @media (max-width: 1024px) {
+    font-size: 14px;
   }
   @media (max-width: 767px) {
-    font-size: 14px;
+    font-size: 13px;
   }
   @media (max-width: 499px) {
   }

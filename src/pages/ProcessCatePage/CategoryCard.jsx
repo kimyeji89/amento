@@ -100,10 +100,11 @@ const category_card = css`
       box-shadow: 0 0 0 1px var(--primary, #9627e7) inset;
     }
   }
-
-  @media (max-width: 375px) {
+  @media (max-width: 450px) {
     width: 100%;
     height: auto;
+  }
+  @media (max-width: 375px) {
     &.selected {
       filter: none;
       img {
