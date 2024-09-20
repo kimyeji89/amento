@@ -1,6 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ReactComponent as ChevLeft } from "@svgs/common/chevLeft.svg";
+import { ReactComponent as ChevRight } from "@svgs/common/chevRight.svg";
 
 function Table() {
   const tableData = [
@@ -131,8 +134,8 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        {reversedData.map((data) => (
-          <tr>
+        {reversedData.map((data, idx) => (
+          <tr key={data.title + idx}>
             <td css={[th_td, td]}>{data.no}</td>
             <td css={[th_td, td]}>{data.category}</td>
             <td css={[th_td, td]}>{data.title}</td>
@@ -148,6 +151,13 @@ function Table() {
 
 function TablePagination() {
   const [currentPage, setCurrentPage] = useState(1);
+  const pageToShow = [1, 2, 3, 4, 5];
+
+  const ctn = css`
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  `;
 
   const pagination_list = css`
     display: flex;
@@ -164,39 +174,105 @@ function TablePagination() {
     justify-content: center;
     align-items: center;
     border-radius: 40px;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    &.selected {
+      color: var(--white, #ffffff);
+      border-radius: 40px;
+      background: var(--primary, #9627e7);
+    }
+  `;
+
+  const icon_button = css`
+    cursor: pointer;
   `;
 
   function handlePageChange(e) {
-    setCurrentPage(parseInt(e.currenTarget.innerText));
-    e.currenTarget.classList.add("selected");
+    [...e.target.parentNode.children].forEach((li) => {
+      li.classList.remove("selected");
+    });
+    e.target.classList.add("selected");
+    setCurrentPage(Number(e.target.textContent));
   }
 
   return (
-    <ul css={pagination_list}>
-      <li css={pagination_item} onClick={handlePageChange}>
-        1
-      </li>
-    </ul>
+    <div css={ctn}>
+      <ChevLeft css={icon_button} />
+      <ul css={pagination_list}>
+        {pageToShow.map((page, idx) => (
+          <li
+            css={pagination_item}
+            onClick={handlePageChange}
+            key={idx + page}
+            className={currentPage === page ? "selected" : ""}
+          >
+            {page}
+          </li>
+        ))}
+      </ul>
+      <ChevRight css={icon_button} />
+    </div>
   );
 }
 
-export default function TablePageTable() {
+function TableWriteButton({ link }) {
+  const link_style = css`
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: var(--white, #fff);
+  `;
+  const button = css`
+    display: flex;
+    width: 200px;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 80px;
+    background: var(--primary, #9627e7);
+    color: var(--white, #fff);
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 160%;
+  `;
+  return (
+    <Link to={link} css={link_style}>
+      <button type="button" css={button}>
+        글쓰기
+      </button>
+    </Link>
+  );
+}
+
+export default function TablePageTable({ link }) {
+  const ctn = css`
+    margin-top: 20px;
+  `;
+
+  const table_control_ctn = css`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 59px;
+    width: 100%;
+  `;
   return (
     <div css={ctn}>
       <Table />
       <div css={table_control_ctn}>
         <TablePagination />
+        <TableWriteButton link={link} />
       </div>
     </div>
   );
 }
-
-const ctn = css`
-  margin-top: 20px;
-`;
-
-const table_control_ctn = css`
-  display: flex;
-  justify-content: center;
-  margin-top: 59px;
-`;

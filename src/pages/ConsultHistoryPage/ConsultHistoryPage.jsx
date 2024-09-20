@@ -10,7 +10,7 @@ export default function ConsultHistoryPage() {
     <TablePageWrap>
       <TablePageTitle title="상담내역" />
       <TablePageForm />
-      <TablePageTable />
+      <TablePageTable link="/consultWrite" />
     </TablePageWrap>
   );
 }

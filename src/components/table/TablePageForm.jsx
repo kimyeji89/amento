@@ -81,8 +81,9 @@ function TablePageSelect() {
     justify-content: center;
     align-items: center;
     align-items: center;
-    border-radius: 10px;
-    border: 1px solid #cecece;
+    position: relative;
+    border-radius: ${viewOption ? "10px 10px 0 0" : "10px"};
+    box-shadow: 0 0 0 1px #cecece inset;
     background: var(--fff, #fff);
   `;
   const selected_option = css`
@@ -101,10 +102,9 @@ function TablePageSelect() {
     font-weight: 500;
     line-height: 22px;
   `;
-  const chev_down = css``;
   const options_ctn = css`
     width: 100%;
-    border-top: 1px solid #cecece;
+    height: auto;
   `;
   const options = css`
     display: flex;
@@ -112,13 +112,22 @@ function TablePageSelect() {
     gap: 8px;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: calc(50px - 1px);
+    width: 100%;
+    height: auto;
     box-sizing: border-box;
     padding: 16px 0;
+    background-color: var(--white, #fff);
+    box-shadow: 0 0 0 1px #cecece inset;
+    border-radius: 0px 0px 10px 10px;
   `;
 
   const option = css`
+    width: 100%;
     box-sizing: border-box;
     padding: 4px;
+    text-align: center;
     cursor: pointer;
   `;
 
@@ -126,7 +135,7 @@ function TablePageSelect() {
     <div css={select_box}>
       <div css={selected_option} onClick={handleViewOption}>
         <p css={value}>{selected}</p>
-        <ChevDown css={chev_down} />
+        <ChevDown />
       </div>
       {viewOption && (
         <div css={options_ctn}>
