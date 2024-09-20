@@ -86,6 +86,9 @@ function Table() {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    @media (max-width: 700px) {
+      overflow: scroll;
+    }
   `;
 
   const small_cell = css`
@@ -107,6 +110,26 @@ function Table() {
     border-bottom: 1px solid var(--stroke, #e8e8e8);
     font-size: 17px;
     line-height: calc(55px - 20px);
+    white-space: nowrap;
+    overflow: ellipsis;
+    word-break: keep-all;
+    @media (max-width: 1280px) {
+      height: 50px;
+      padding: 8px 12px;
+      font-size: 16px;
+      line-height: calc(50px - 16px);
+    }
+    @media (max-width: 1024px) {
+      height: 48px;
+      padding: 6px 12px;
+      font-size: 15px;
+      line-height: calc(48px - 12px);
+    }
+    @media (max-width: 767px) {
+      height: 42px;
+      font-size: 14px;
+      line-height: calc(42px - 12px);
+    }
   `;
 
   const th = css`
@@ -190,22 +213,30 @@ function TablePagination() {
     cursor: pointer;
   `;
 
-  function handlePageChange(e) {
-    [...e.target.parentNode.children].forEach((li) => {
-      li.classList.remove("selected");
-    });
-    e.target.classList.add("selected");
+  function handleChangePage(e) {
     setCurrentPage(Number(e.target.textContent));
+  }
+
+  function handlePrevPage() {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+
+  function handleNextPage() {
+    if (currentPage < pageToShow.length) {
+      setCurrentPage(currentPage + 1);
+    }
   }
 
   return (
     <div css={ctn}>
-      <ChevLeft css={icon_button} />
+      <ChevLeft css={icon_button} onClick={handlePrevPage} />
       <ul css={pagination_list}>
         {pageToShow.map((page, idx) => (
           <li
             css={pagination_item}
-            onClick={handlePageChange}
+            onClick={handleChangePage}
             key={idx + page}
             className={currentPage === page ? "selected" : ""}
           >
@@ -213,7 +244,7 @@ function TablePagination() {
           </li>
         ))}
       </ul>
-      <ChevRight css={icon_button} />
+      <ChevRight css={icon_button} onClick={handleNextPage} />
     </div>
   );
 }
@@ -226,13 +257,18 @@ function TableWriteButton({ link }) {
     transform: translateY(-50%);
     text-decoration: none;
     color: var(--white, #fff);
+    @media (max-width: 768px) {
+      position: static;
+      top: 0;
+      transform: none;
+    }
   `;
   const button = css`
     display: flex;
-    width: 200px;
-    height: 60px;
     box-sizing: border-box;
     padding: 20px;
+    width: 200px;
+    height: 60px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -243,7 +279,19 @@ function TableWriteButton({ link }) {
     text-edge: cap;
     font-size: 17px;
     font-weight: 700;
-    line-height: 160%;
+    line-height: 100%;
+    @media (max-width: 1280px) {
+      padding: 16px;
+      width: 160px;
+      height: 52px;
+      font-size: 16px;
+    }
+    @media (max-width: 1024px) {
+      padding: 14px;
+      width: 140px;
+      height: 42px;
+      font-size: 14px;
+    }
   `;
   return (
     <Link to={link} css={link_style}>
@@ -256,7 +304,13 @@ function TableWriteButton({ link }) {
 
 export default function TablePageTable({ link }) {
   const ctn = css`
+    width: 100%;
+    height: 100%;
     margin-top: 20px;
+  `;
+
+  const table_ctn = css`
+    overflow: scroll;
   `;
 
   const table_control_ctn = css`
@@ -265,10 +319,19 @@ export default function TablePageTable({ link }) {
     position: relative;
     margin-top: 59px;
     width: 100%;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 32px;
+    }
   `;
   return (
     <div css={ctn}>
-      <Table />
+      <div css={table_ctn}>
+        <Table />
+      </div>
       <div css={table_control_ctn}>
         <TablePagination />
         <TableWriteButton link={link} />

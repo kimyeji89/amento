@@ -11,17 +11,22 @@ export default function TablePageWrap({ children }) {
     width: 100%;
     margin-top: ${headerHeight}px;
     box-sizing: border-box;
-    padding: 160px 205px 160px 210px;
-    /* 임시 */
-    min-height: 100vh;
+    padding: 160px 205px 216px 210px;
+    @media (max-width: 1280px) {
+      padding: 120px 160px 196px 160px;
+    }
+    @media (max-width: 1024px) {
+      padding: 100px 100px 176px 100px;
+    }
+    @media (max-width: 767px) {
+      padding: 80px 80px 156px 80px;
+    }
   `;
   const ctn_mobile = css`
     width: 100%;
     margin-top: ${headerHeight}px;
     box-sizing: border-box;
-    padding: 160px 205px 160px 210px;
-    /* 임시 */
-    min-height: 100vh;
+    padding: 160px 205px 216px 210px;
   `;
 
   return <main css={isMobile === false ? ctn_pc : ctn_mobile}>{children}</main>;

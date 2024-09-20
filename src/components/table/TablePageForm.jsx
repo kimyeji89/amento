@@ -16,6 +16,12 @@ function TablePageSearchBar() {
     right: 20px;
     transform: translateY(-50%);
     cursor: pointer;
+    @media (max-width: 1024px) {
+      right: 16px;
+    }
+    @media (max-width: 768px) {
+      right: 14px;
+    }
   `;
 
   const label_text = css`
@@ -43,13 +49,33 @@ function TablePageSearchBar() {
       font-weight: 500;
       opacity: 0.5;
     }
+    @media (max-width: 1024px) {
+      padding: 10px 16px;
+      width: 280px;
+      height: 42px;
+      font-size: 14px;
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 768px) {
+      padding: 10px 14px;
+      width: 100%;
+    }
+  `;
+
+  const search_icon = css`
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
   `;
 
   return (
     <div css={ctn}>
       <label htmlFor="search" css={label}>
         <span css={label_text}>검색</span>
-        <Search />
+        <Search css={search_icon} />
       </label>
       <input
         type="text"
@@ -85,22 +111,59 @@ function TablePageSelect() {
     border-radius: ${viewOption ? "10px 10px 0 0" : "10px"};
     box-shadow: 0 0 0 1px #cecece inset;
     background: var(--fff, #fff);
+    @media (max-width: 767px) {
+      width: 100%;
+      max-width: 148px;
+      min-width: 148px;
+    }
+    @media (max-width: 499px) {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
   `;
   const selected_option = css`
     display: flex;
-    justify-content: space-between;
     algin-align: center;
+    position: relative;
     width: 100%;
     height: 50px;
     box-sizing: border-box;
-    padding: 13px 20px;
     cursor: pointer;
+    @media (max-width: 1024px) {
+      height: 42px;
+    }
   `;
+
   const value = css`
+    box-sizing: border-box;
+    padding: 13px 0 13px 20px;
     color: var(--black, #111);
     font-size: 15px;
     font-weight: 500;
-    line-height: 22px;
+    @media (max-width: 1024px) {
+      padding: 14px 0 14px 16px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+    @media (max-width: 767px) {
+      padding: 14px 0 14px 14px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  `;
+
+  const chev_down = css`
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    @media (max-width: 1024px) {
+      right: 16px;
+    }
+    @media (max-width: 767px) {
+      right: 14px;
+    }
   `;
   const options_ctn = css`
     width: 100%;
@@ -121,21 +184,36 @@ function TablePageSelect() {
     background-color: var(--white, #fff);
     box-shadow: 0 0 0 1px #cecece inset;
     border-radius: 0px 0px 10px 10px;
+    @media (max-width: 1024px) {
+      top: calc(42px - 1px);
+      border-radius: 0px 0px 10px 10px;
+    }
   `;
 
   const option = css`
     width: 100%;
     box-sizing: border-box;
     padding: 4px;
-    text-align: center;
     cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    @media (max-width: 1024px) {
+      font-size: 15px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+    @media (max-width: 499px) {
+      text-align: left;
+      padding: 4px 0 4px 14px;
+    }
   `;
 
   return (
     <div css={select_box}>
       <div css={selected_option} onClick={handleViewOption}>
         <p css={value}>{selected}</p>
-        <ChevDown />
+        <ChevDown css={chev_down} />
       </div>
       {viewOption && (
         <div css={options_ctn}>
@@ -166,4 +244,10 @@ const form = css`
   justify-content: end;
   width: 100%;
   gap: 14px;
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+  @media (max-width: 499px) {
+    flex-direction: column;
+  }
 `;

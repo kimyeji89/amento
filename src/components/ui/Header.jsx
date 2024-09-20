@@ -111,6 +111,7 @@ export default function Header() {
                       to="/editUser"
                       css={user_link}
                       className={checkLocation(["/editUser"]) && "selected"}
+                      onClick={handleOpenDesktopUser}
                     >
                       <p>회원정보 수정</p>
                     </Link>
@@ -122,6 +123,7 @@ export default function Header() {
                       className={
                         checkLocation(["/consultHistory"]) && "selected"
                       }
+                      onClick={handleOpenDesktopUser}
                     >
                       <p>상담내역</p>
                     </Link>
@@ -133,6 +135,7 @@ export default function Header() {
                       className={
                         checkLocation(["/estimateSheet"]) && "selected"
                       }
+                      onClick={handleOpenDesktopUser}
                     >
                       <p>견적서</p>
                     </Link>
@@ -142,6 +145,7 @@ export default function Header() {
                       to="/payHistory"
                       css={user_link}
                       className={checkLocation(["/payHistory"]) && "selected"}
+                      onClick={handleOpenDesktopUser}
                     >
                       <p>결제내역</p>
                     </Link>
@@ -151,13 +155,13 @@ export default function Header() {
                       to="/QnA"
                       css={user_link}
                       className={checkLocation(["/QnA"]) && "selected"}
+                      onClick={handleOpenDesktopUser}
                     >
                       <p>Q&A</p>
                     </Link>
                   </li>
                 </ul>
               )}
-
               <span className="divider" css={divider}></span>
               <Link to="/joinTos" css={link}>
                 <p>회원가입</p>

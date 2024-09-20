@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import TablePageTitle from "@components/table/TablePageTitle";
 import TablePageWrap from "@components/table/TablePageWrap";
 import TablePageForm from "@components/table/TablePageForm";
