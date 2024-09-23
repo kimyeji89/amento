@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useLocationControl from "@hooks/useLocationControl";
 import useIsMobile from "@hooks/useIsMobile";
 import { useHeaderHeight } from "@hooks/useHeaderHeight";

@@ -1,0 +1,16 @@
+[
+  {
+    "category": "결제 완료",
+    "product": "연말 업무성과표 작성 양식 공유",
+    "date": "2024.04.01 16:03",
+    "des": "직영점 1년 미만, 미운영",
+    "img": "/assets/images/payHistoryDetailPage/payProduct.png"
+  },
+  {
+    "category": "결제 취소",
+    "product": "연말 업무성과표 작성 양식 공유",
+    "date": "2024.04.01 15:00",
+    "des": "직영점 1년 미만",
+    "img": "/assets/images/payHistoryDetailPage/payProduct.png"
+  }
+]
