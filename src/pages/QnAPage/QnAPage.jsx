@@ -9,7 +9,7 @@ export default function QnAPage() {
     <TablePageWrap>
       <TablePageTitle title="Q&A" />
       <TablePageForm />
-      <TablePageTable link="/" />
+      <TablePageTable buttonLink="/" detailLink="/" />
     </TablePageWrap>
   );
 }

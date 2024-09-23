@@ -19,7 +19,7 @@ export default function ConsultingPage2() {
       <div css={ctn}>
         <TablePageTitle title="리스트" />
         <TablePageForm />
-        <TablePageTable link="/" />
+        <TablePageTable buttonLink="/" detailLink="/" />
       </div>
     </div>
   );
