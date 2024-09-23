@@ -12,7 +12,7 @@ export default function PayHistoryDetailPage() {
     padding: ${headerHeight + 160}px 210px;
     background: #f6f7fa;
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1480px) {
       padding: ${headerHeight + 120}px 100px;
     }
 
@@ -20,8 +20,8 @@ export default function PayHistoryDetailPage() {
       padding: ${headerHeight + 120}px 65px;
     }
 
-    @media (max-width: 430px) {
-      padding: ${headerHeight + 120}px 20px;
+    @media (max-width: 768px) {
+      padding: ${headerHeight + 34}px 20px;
     }
   `;
 

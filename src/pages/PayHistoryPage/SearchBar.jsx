@@ -25,11 +25,14 @@ export default function SearchBar() {
           ))}
         </div>
       </div>
+      <div css={vertical_line}></div>
+
       <div css={calendar}>
-        <FormDatePicker />
+        <FormDatePicker isSearchBar />
         <span>~</span>
-        <FormDatePicker />
+        <FormDatePicker isSearchBar />
       </div>
+
       <div css={button_wrap}>
         <button css={search_btn}>
           <div>검색</div>
@@ -43,11 +46,31 @@ export default function SearchBar() {
 
 const search_wrap = css`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   margin: 34px 0 0 0;
-  padding: 24px 20px;
+  padding: 24px 58.5px;
   border-top: 1px solid #000;
   background: #f7f0ff;
+
+  @media (max-width: 1680px) {
+    padding: 20px 20px;
+  }
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 20px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 10px 10px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 10px 10px;
+  }
 `;
 
 const period = css`
@@ -56,13 +79,28 @@ const period = css`
   justify-content: center;
   align-items: center;
   gap: 24px;
-  border: 1px solid red;
 
   span {
     color: #131313;
     font-size: 20px;
     font-weight: 600;
     line-height: normal;
+  }
+
+  @media (max-width: 1440px) {
+    gap: 18px;
+    padding: 0 16px 0 0;
+    span {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    padding: 0;
+    width: 100%;
+    span {
+      display: none;
+    }
   }
 `;
 
@@ -75,7 +113,6 @@ const btn_group = css`
 
   button {
     flex: 1;
-    padding: 5px 17px;
     width: 70px;
     height: 50px;
     border: none;
@@ -108,6 +145,29 @@ const btn_group = css`
   &. .button:last-child {
     border-right: none;
   }
+
+  @media (max-width: 1280px) {
+    width: 100%;
+  }
+
+  @media (max-width: 430px) {
+    button {
+      width: 63px;
+      height: 40px;
+      font-size: 13px;
+    }
+  }
+`;
+
+const vertical_line = css`
+  width: 1px;
+  height: 28px;
+  margin: 0 20px;
+  background: #cecece;
+
+  @media (max-width: 1440px) {
+    display: none;
+  }
 `;
 
 const calendar = css`
@@ -116,51 +176,82 @@ const calendar = css`
   justify-content: center;
   align-items: center;
   gap: 4px;
-  border: 1px solid blue;
+  flex-grow: 1;
+  max-height: 50px;
+
+  color: #131313;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+
+  div {
+    gap: 0;
+  }
+
+  @media (max-width: 1280px) {
+    width: 100%;
+  }
 `;
 
 const button_wrap = css`
   display: flex;
   flex-direction: row;
   gap: 10px;
-  border: 1px solid green;
+  padding: 0 0 0 24px;
+
+  button {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  @media (max-width: 1680px) {
+    button {
+      width: 100px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    width: 100%;
+    padding: 0px;
+    button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 430px) {
+    button {
+      width: 100%;
+      height: 40px;
+      gap: 5px;
+      font-size: 15px;
+    }
+  }
 `;
 
 const search_btn = css`
-  display: flex;
-  flex-direction: row;
-  width: 120px;
-  height: 50px;
-  //   padding: 20px 34px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 10px;
   background: #111;
-
   color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: normal;
+
+  @media (max-width: 1280px) {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 const reset_btn = css`
-  display: flex;
-  width: 120px;
-  height: 50px;
-  //   padding: 20px 34px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 10px;
-  border: 1px solid #bcbcbc;
   background: #fff;
-
   color: #111;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 `;

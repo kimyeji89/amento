@@ -3,11 +3,12 @@ import { css } from "@emotion/react";
 import { ReactComponent as CalendarIcon } from "@svgs/joinDetailPage/calendar.svg";
 import { useState } from "react";
 
-export default function FormDatePicker({ label }) {
+export default function FormDatePicker({ label, isSearchBar }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
-    setInputValue(e.target.value);
+    const value = e.target.value.trim();
+    setInputValue(value);
   };
 
   return (
@@ -17,9 +18,9 @@ export default function FormDatePicker({ label }) {
         type="date"
         value={inputValue}
         onChange={handleChange}
-        css={input_style(inputValue)}
+        css={input_style(inputValue, isSearchBar)}
       />
-      <CalendarIcon css={calendar_icon} />
+      <CalendarIcon css={calendar_icon(isSearchBar)} />
     </div>
   );
 }
@@ -57,27 +58,37 @@ const label_style = css`
   }
 `;
 
-const input_style = (inputValue) => css`
+const input_style = (inputValue, isSearchBar) => css`
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
 
-  padding: 19px 15px;
+  padding: ${isSearchBar ? "15px 14px" : "19px 15px"};
 
   border: 1px solid #d9d9d9;
   background-color: #fff;
   height: 100%;
-  border-radius: 5px;
-  color: #181818;
+  border-radius: ${isSearchBar ? "10px" : "5px"};
+  color: ${isSearchBar ? "#6a6a6a" : "#181818"};
   font-size: 15px;
   font-weight: 400;
   line-height: 17.9px;
   text-align: start;
 
+  @media (max-width: 430px) {
+    font-size: 13px;
+    padding: ${isSearchBar ? "10px 14px" : "13px 14px"};
+  }
+
   @media (max-width: 375px) {
     font-size: 12px;
-    padding: 15px 13px;
+    padding: ${isSearchBar ? "10px 14px" : "15px 13px"};
+  }
+
+  @media (max-width: 350px) {
+    font-size: 11px;
+    padding: ${isSearchBar ? "10px 4px" : "15px 13px"};
   }
 
   &::-webkit-calendar-picker-indicator {
@@ -112,12 +123,22 @@ const input_style = (inputValue) => css`
   }
 `;
 
-const calendar_icon = css`
+const calendar_icon = (isSearchBar) => css`
   position: absolute;
-  bottom: 18px;
+  bottom: ${isSearchBar ? "14px" : "18px"};
   right: 14px;
 
+  @media (max-width: 430px) {
+    width: ${isSearchBar ? "20px" : ""};
+    height: ${isSearchBar ? "20px" : ""};
+    bottom: ${isSearchBar ? "12px" : ""};
+  }
+
   @media (max-width: 375px) {
-    bottom: 13px;
+    bottom: ${isSearchBar ? "12px" : "13px"};
+  }
+
+  @media (max-width: 350px) {
+    right: ${isSearchBar ? "8px" : "14px"};
   }
 `;
