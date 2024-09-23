@@ -19,7 +19,7 @@ export default function BusinessReviewPage2() {
       <PageTitle title="사업후기" hasBorder />
       <BusinessExample />
       <div css={table_ctn}>
-        <TablePageTitle title="리스트" />
+        <TablePageTitle title="사업후기" />
         <TablePageForm />
         <TablePageTable link="/" />
       </div>
@@ -27,9 +27,19 @@ export default function BusinessReviewPage2() {
   );
 }
 
-
 const table_ctn = css`
   box-sizing: border-box;
   padding: 120px 210px 176px;
-
+  @media (max-width: 1280px) {
+    padding: 120px 160px 166px;
+  }
+  @media (max-width: 1024px) {
+    padding: 100px 100px 176px 100px;
+  }
+  @media (max-width: 767px) {
+    padding: 80px 80px 156px 80px;
+  }
+  @media (max-width: 375px) {
+    padding: 34px 20px 267px 20px;
+  }
 `;

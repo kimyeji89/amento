@@ -46,6 +46,9 @@ const th = css`
   @media (max-width: 1919px) {
     font-size: 16px;
   }
+  @media (max-width: 375px) {
+    font-size: 15px;
+  }
 `;
 
 const td = css`
@@ -62,12 +65,19 @@ const td = css`
     font-size: 16px;
     white-space: nowrap;
   }
+  @media (max-width: 375px) {
+    font-size: 15px;
+  }
 `;
 
 const small_td = css`
   width: 16%;
   text-align: center;
+  @media (max-width: 375px) {
+    min-width: 120px;
+  }
 `;
 const large_td = css`
   width: 84%;
+  padding: 10px 20px;
 `;

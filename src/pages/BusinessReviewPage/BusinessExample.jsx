@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useEffect, useState } from "react";
 import { ReactComponent as ArrowLeft } from "@svgs/businessReview/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "@svgs/businessReview/arrowRight.svg";
 
@@ -13,7 +14,7 @@ function ExampleCard({ image, name, company, tags }) {
     width: 360px;
     height: 356px;
     box-sizing: border-box;
-    padding: 0px 58px 24px 58pxz;
+    padding: 0px 24px 24px 24px;
     gap: 14px;
     border-radius: 30px;
     background: var(--white, #fff);
@@ -22,10 +23,18 @@ function ExampleCard({ image, name, company, tags }) {
     &:hover {
       transform: translateY(-8px);
     }
-  `;
-
-  const img_area = css`
-    width: 100%;
+    @media (max-width: 700px) {
+      width: 232px;
+      height: 262px;
+      padding: 0 20px 20px 20px;
+      gap: 15px;
+    }
+    @media (max-width: 350px) {
+      width: 210px;
+      height: 240px;
+      padding: 0 16px 16px 16px;
+      gap: 8px;
+    }
   `;
 
   const img = css`
@@ -36,6 +45,14 @@ function ExampleCard({ image, name, company, tags }) {
     transform: translateX(-50%);
     width: 280px;
     object-fit: cover;
+    @media (max-width: 700px) {
+      top: 20px;
+      width: 186px;
+    }
+    @media (max-width: 350px) {
+      top: 10px;
+      width: 160px;
+    }
   `;
 
   const name_tag = css`
@@ -50,7 +67,16 @@ function ExampleCard({ image, name, company, tags }) {
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px; /* 160% */
+    line-height: 32px;
+    @media (max-width: 700px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 32px;
+      padding: 5px 10px;
+      font-size: 15px;
+    }
   `;
 
   const info_ctn = css`
@@ -59,6 +85,10 @@ function ExampleCard({ image, name, company, tags }) {
     align-items: center;
     gap: 10px;
     align-self: stretch;
+    @media (max-width: 350px) {
+      flex-direction: column;
+      gap: 4px;
+    }
   `;
 
   const company_style = css`
@@ -68,6 +98,9 @@ function ExampleCard({ image, name, company, tags }) {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    @media (max-width: 700px) {
+      font-size: 13px;
+    }
   `;
 
   const tags_ctn = css`
@@ -79,11 +112,13 @@ function ExampleCard({ image, name, company, tags }) {
     text-align: center;
     font-size: 14px;
     font-weight: 700;
+    @media (max-width: 700px) {
+      font-size: 12px;
+    }
   `;
 
   return (
     <div css={card}>
-      <div css={img_area}></div>
       <img src={image} alt="exampleCard" css={img} />
       <p css={name_tag}>{name}</p>
       <div css={info_ctn}>
@@ -101,6 +136,7 @@ function ExampleCard({ image, name, company, tags }) {
 }
 
 export default function BusinessExample() {
+  const [width, setWidth] = useState(0);
   const cardData = [
     {
       image: "/assets/images/businessReview/exampleCard.png",
@@ -121,26 +157,70 @@ export default function BusinessExample() {
       tags: ["음식", "가맹본부", "예비"],
     },
   ];
+
+  function handleResizeWidth() {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    handleResizeWidth();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResizeWidth);
+    return () => {
+      window.removeEventListener("resize", handleResizeWidth);
+    };
+  }, [width]);
+
   return (
     <div css={ctn}>
       <h3 css={section_title}>우수사례</h3>
       <div css={card_control_ctn}>
-        <button type="button" className="disabled" css={control_button}>
+        <button type="button" className="disabled prev" css={control_button}>
           <ArrowLeft />
           <p>prev</p>
         </button>
         <div css={card_ctn}>
-          {cardData.map((card, idx) => (
-            <ExampleCard
-              key={card.name + idx}
-              image={card.image}
-              name={card.name}
-              company={card.company}
-              tags={card.tags}
-            />
-          ))}
+          {width > 1520 &&
+            cardData
+              .slice(0, 3)
+              .map((card, idx) => (
+                <ExampleCard
+                  key={card.name + idx}
+                  image={card.image}
+                  name={card.name}
+                  company={card.company}
+                  tags={card.tags}
+                />
+              ))}
+          {width <= 1520 &&
+            width > 1084 &&
+            cardData
+              .slice(0, 2)
+              .map((card, idx) => (
+                <ExampleCard
+                  key={card.name + idx}
+                  image={card.image}
+                  name={card.name}
+                  company={card.company}
+                  tags={card.tags}
+                />
+              ))}
+          {width <= 1084 &&
+            cardData
+              .slice(0, 1)
+              .map((card, idx) => (
+                <ExampleCard
+                  key={card.name + idx}
+                  image={card.image}
+                  name={card.name}
+                  company={card.company}
+                  tags={card.tags}
+                />
+              ))}
         </div>
-        <button type="button" css={control_button}>
+        <button type="button" className="next" css={control_button}>
           <ArrowRight />
           <p>next</p>
         </button>
@@ -150,14 +230,22 @@ export default function BusinessExample() {
 }
 
 const ctn = css`
-  width: 100%;
-  max-height: 688px;
+  width: auto;
+  height: 100%;
   box-sizing: border-box;
   padding: 120px 210px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url("/assets/images/businessReview/cardCtnBg.png");
+  @media (max-width: 1919px) {
+    padding: 120px 0;
+    margin: 0 auto;
+  }
+  @media (max-width: 375px) {
+    padding: 50px 20px;
+    margin: 0 auto;
+  }
 `;
 
 const section_title = css`
@@ -166,14 +254,26 @@ const section_title = css`
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 44px;
+  @media (max-width: 375px) {
+    font-size: 24px;
+    margin-bottom: 34px;
+  }
 `;
 
 const card_control_ctn = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   gap: 30px;
+  @media (max-width: 450px) {
+    gap: 9.5px;
+  }
+  @media (max-width: 350px) {
+    gap: 8px;
+  }
+  @media (max-width: 320px) {
+    position: relative;
+  }
 `;
 
 const card_ctn = css`
@@ -189,9 +289,9 @@ const control_button = css`
   align-items: center;
   gap: 20px;
   text-align: center;
-  font-family: "Godo B";
+  font-family: "Godo", sans-serif;
+  font-weight: 700;
   font-size: 20px;
-  font-weight: 400;
   text-transform: uppercase;
   color: var(--primary, #9627e7);
   text-decoration-line: underline;
@@ -204,6 +304,51 @@ const control_button = css`
     cursor: default;
     svg {
       stroke: #343434;
+    }
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+    &.prev {
+      align-items: start;
+    }
+    &.next {
+      align-items: end;
+    }
+    p {
+      order: 1;
+    }
+    svg {
+      order: 2;
+      width: 31.5px;
+      height: 16px;
+    }
+  }
+  @media (max-width: 350px) {
+    gap: 4px;
+    font-size: 14px;
+    svg {
+      width: 20px;
+      height: auto;
+    }
+  }
+  @media (max-width: 320px) {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    padding: 8px 10px;
+    background-color: var(--white);
+    box-shadow: 0px 6px 33px 0px #ebebeb;
+    border-radius: 10px;
+    p {
+      display: none;
+    }
+    &.prev {
+      left: 0;
+    }
+    &.next {
+      right: 0;
     }
   }
 `;

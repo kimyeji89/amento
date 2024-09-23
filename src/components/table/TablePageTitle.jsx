@@ -26,5 +26,8 @@ const page_title = css`
   @media (max-width: 480px) {
     font-size: 20px;
   }
-
+  @media (max-width: 375px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 `;
