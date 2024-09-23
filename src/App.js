@@ -58,6 +58,7 @@ function App() {
             <Route path="/companyIntro" element={<CompanyIntroPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/application" element={<ApplicationPage />} />
+            <Route path="/application2" element={<ApplicationPage2 />} />
 
             <Route path="/consulting" element={<ConsultingPage />} />
             <Route path="/consulting2" element={<ConsultingPage2 />} />
