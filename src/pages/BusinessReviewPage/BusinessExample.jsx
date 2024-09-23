@@ -295,8 +295,12 @@ const control_button = css`
   text-transform: uppercase;
   color: var(--primary, #9627e7);
   text-decoration-line: underline;
+  transition: transform 0.3s ease;
   svg {
     stroke: var(--primary, #9627e7);
+  }
+  &:hover {
+    transform: translateY(-8px);
   }
   &.disabled {
     color: #343434;
