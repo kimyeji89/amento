@@ -271,19 +271,53 @@ const header = css`
   height: 90px;
   box-shadow: 0px 4px 20px 0px #0000001a;
   background-color: var(--white);
-  @media (max-width: 1919px) {
+  padding: 0 210px;
+  box-sizing: border-box;
+
+
+  // @media (max-width: 1919px) {
+  //   box-sizing: border-box;
+  //   padding: 0 40px;
+  // }
+  // @media (max-width: 1280px) {
+  //   height: 80px;
+  // }
+  // @media (max-width: 1024px) {
+  //   height: 70px;
+  // }
+  // @media (max-width: 767px) {
+  //   height: fit-content;
+  //   padding: 18px 10px;
+  // }
+
+  @media (min-width: 1921px) {
+  box-sizing: content: box;
+  padding: 0;
+  }
+
+  @media (max-width: 1520px) {
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 0 140px;
+  }
+
+  @media (max-width: 1400px){
+  
   }
   @media (max-width: 1280px) {
+    padding: 0 100px;
     height: 80px;
   }
   @media (max-width: 1024px) {
+    padding: 0 65px;
     height: 70px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px){
     height: fit-content;
-    padding: 18px 10px;
+    padding: 20px 40px;
+  }
+  @media (max-width: 768px) {
+
+    padding: 18px 40px;
   }
 `;
 
@@ -292,10 +326,15 @@ const ctn = css`
   width: 1500px;
   justify-content: space-between;
   align-items: center;
+  @media (min-width: 1921px) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 210px;
+  }
   @media (max-width: 1919px) {
     width: 100%;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     flex-direction: column;
     gap: 10px;
   }
@@ -314,13 +353,13 @@ const logo = css`
       object-fit: cover;
     }
   }
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     height: 32px;
   }
   @media (max-width: 1024px) {
     height: 26px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     height: 26px;
   }
   @media (max-width: 430px) {
@@ -343,7 +382,7 @@ const nav = css`
       gap: 40px;
     }
   }
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     ul {
       gap: 20px;
     }
@@ -353,7 +392,7 @@ const nav = css`
       gap: 18px;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     ul {
       gap: 16px;
     }
@@ -362,8 +401,6 @@ const nav = css`
   }
   @media (max-width: 375px) {
     display: none;
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -374,20 +411,14 @@ const nav_link = css`
   text-decoration: none;
   color: #454545;
   white-space: nowrap;
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     font-size: 16px;
   }
   @media (max-width: 950px) {
     font-size: 15px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     font-size: 14px;
-  }
-  @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -395,19 +426,11 @@ const link = css`
   font-size: 17px;
   text-decoration: none;
   color: #2c2825;
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     font-size: 16px;
   }
   @media (max-width: 950px) {
     font-size: 14px;
-  }
-  @media (max-width: 767px) {
-  }
-  @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -416,7 +439,7 @@ const user = css`
   align-items: center;
   gap: 30px;
   position: relative;
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     gap: 14px;
   }
   @media (max-width: 1024px) {
@@ -424,14 +447,6 @@ const user = css`
   }
   @media (max-width: 950px) {
     gap: 6px;
-  }
-  @media (max-width: 767px) {
-  }
-  @media (max-width: 499px) {
-  }
-  @media (max-width: 375px) {
-  }
-  @media (max-width: 320px) {
   }
 `;
 
@@ -441,7 +456,7 @@ const user_button = css`
   align-items: center;
   gap: 8px;
   font-size: 17px;
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     font-size: 16px;
     gap: 7px;
   }
@@ -452,7 +467,7 @@ const user_button = css`
     font-size: 14px;
     gap: 5px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     gap: 4px;
   }
   @media (max-width: 499px) {
@@ -460,8 +475,6 @@ const user_button = css`
 `;
 
 const user_icon = css`
-  @media (max-width: 1280px) {
-  }
   @media (max-width: 1024px) {
     width: 24px;
     height: 24px;
@@ -472,13 +485,11 @@ const user_icon = css`
 `;
 
 const chev_icon = css`
-  @media (max-width: 1280px) {
-  }
   @media (max-width: 1024px) {
     width: 20px;
     height: 20px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     width: 18px;
     height: 18px;
   }
@@ -507,14 +518,9 @@ const divider = css`
   height: 12px;
   background-color: #2c2825;
   opacity: 0.3;
-  @media (max-width: 1280px) {
-  }
-  @media (max-width: 1024px) {
-  }
-  @media (max-width: 767px) {
+
+  @media (max-width: 800px) {
     height: 10px;
-  }
-  @media (max-width: 499px) {
   }
 `;
 
@@ -531,7 +537,7 @@ const user_menu = css`
   border-radius: 15px;
   background-color: var(--primary);
   color: #ffffff;
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     top: calc(100% + 25px);
     width: calc(100% - 48px - 55px + 16px);
     padding: 24px 24px;
@@ -542,7 +548,7 @@ const user_menu = css`
     padding: 22px 20px;
     gap: 10px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     top: calc(100% + 20px);
     width: calc(100% - 16px - 48px + 16px);
     padding: 20px 16px;
@@ -563,13 +569,13 @@ const user_link = css`
     text-decoration: underline;
     font-weight: 700;
   }
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
     font-size: 16px;
   }
   @media (max-width: 1024px) {
     font-size: 14px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     font-size: 13px;
   }
   @media (max-width: 499px) {
