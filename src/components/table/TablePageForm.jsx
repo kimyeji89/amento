@@ -137,10 +137,11 @@ function TablePageSelect() {
 
   const value = css`
     box-sizing: border-box;
-    padding: 13px 0 13px 20px;
+    padding: 16px 0 16px 20px;
     color: var(--black, #111);
     font-size: 15px;
     font-weight: 500;
+    line-height: 18px;
     @media (max-width: 1024px) {
       padding: 14px 0 14px 16px;
       font-size: 14px;

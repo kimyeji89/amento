@@ -13,6 +13,7 @@ export default function BusinessReviewPage2() {
   const page_wrap = css`
     padding-top: ${headerHeight}px;
   `;
+
   return (
     <div css={page_wrap}>
       <PageTitle title="사업후기" hasBorder />

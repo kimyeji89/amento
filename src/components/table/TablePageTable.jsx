@@ -86,9 +86,6 @@ function Table() {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    @media (max-width: 700px) {
-      overflow: scroll;
-    }
   `;
 
   const small_cell = css`
@@ -310,7 +307,9 @@ export default function TablePageTable({ link }) {
   `;
 
   const table_ctn = css`
-    overflow: scroll;
+    @media (max-width: 700px) {
+      overflow: scroll;
+    }
   `;
 
   const table_control_ctn = css`

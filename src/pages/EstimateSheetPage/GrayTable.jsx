@@ -3,25 +3,34 @@ import { css } from "@emotion/react";
 
 export default function GrayTable({ data }) {
   return (
-    <table border="1" cellspacing="0" cellpadding="10" width="100%">
-      <thead>
-        <tr>
-          <th colspan="2" css={th}>
-            {data.th}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.tr.map((tr, idx) => (
-          <tr key={idx}>
-            <td css={[td, small_td]}>{tr.small}</td>
-            <td css={[td, large_td]}>{tr.big}</td>
+    <div css={ctn}>
+      <table border="1" cellSpacing="0" cellPadding="10" width="100%">
+        <thead>
+          <tr>
+            <th colSpan="2" css={th}>
+              {data.th}
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.tr.map((tr, idx) => (
+            <tr key={idx}>
+              <td css={[td, small_td]}>{tr.small}</td>
+              <td css={[td, large_td]}>{tr.big}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
+
+const ctn = css`
+  width: 100%;
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+  }
+`;
 
 const th = css`
   height: 50px;
@@ -34,6 +43,9 @@ const th = css`
   font-weight: 700;
   text-align: center;
   line-height: calc(50px - 2 * 10px);
+  @media (max-width: 1919px) {
+    font-size: 16px;
+  }
 `;
 
 const td = css`
@@ -46,6 +58,10 @@ const td = css`
   font-size: 17px;
   font-weight: 600;
   line-height: calc(50px - 2 * 10px);
+  @media (max-width: 1919px) {
+    font-size: 16px;
+    white-space: nowrap;
+  }
 `;
 
 const small_td = css`

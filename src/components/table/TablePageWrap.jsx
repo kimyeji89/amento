@@ -26,7 +26,7 @@ export default function TablePageWrap({ children }) {
     width: 100%;
     margin-top: ${headerHeight}px;
     box-sizing: border-box;
-    padding: 160px 205px 216px 210px;
+    padding: 34px 20px 265px 20px;
   `;
 
   return <main css={isMobile === false ? ctn_pc : ctn_mobile}>{children}</main>;

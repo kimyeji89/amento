@@ -65,16 +65,27 @@ const title_style = css`
   padding-bottom: 24px;
   margin-bottom: 34px;
   border-bottom: 1px solid #000;
+
+  @media (max-width: 1024px) {
+    padding-bottom: 0px;
+    margin-bottom: 24px;
+  }
 `;
 
 const section1_ctn = css`
   margin-bottom: 20px;
+  @media (max-width: 1024px) {
+    margin-bottom: 48px;
+  }
 `;
 
 const gray_table_ctn = css`
   display: flex;
   gap: 34px;
   margin-bottom: 24px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const pdf_button = css`
@@ -88,13 +99,20 @@ const pdf_button = css`
   border: 1.6px solid #ddd;
   background: var(--white, #fff);
   margin-left: auto;
+  @media (max-width: 1024px) {
+    padding: 8px 16px;
+  }
 `;
 
 const button_text = css`
   color: #444;
   text-align: center;
+  font-family: Pretendard;
   font-size: 17px;
   font-weight: 700;
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
 `;
 
 const section2_ctn = css`
@@ -102,10 +120,14 @@ const section2_ctn = css`
 `;
 
 const section_title = css`
+  margin-bottom: 24px;
   color: var(--black, #111);
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 24px;
+  word-break: keep-all;
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 const link_style = css`
@@ -124,8 +146,13 @@ const button = css`
   background: var(--primary, #9627e7);
   color: var(--white, #fff);
   leading-trim: both;
+  font-family: Pretendard;
   text-edge: cap;
   font-size: 17px;
   font-weight: 700;
   line-height: 160%;
+  @media (max-width: 1280px) {
+    padding: 16px 80px;
+    font-size: 16px;
+  }
 `;

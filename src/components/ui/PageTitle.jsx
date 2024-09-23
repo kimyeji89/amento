@@ -47,7 +47,7 @@ const title_wrap = (hasBorder) => css`
   @media (max-width: 768px) {
     padding: 0 0 0 40px;
     padding: 0 0 0 100px;
-    border-bottom: none;
+    // border-bottom: none;
   }
 
   @media (max-width: 400px) {

@@ -38,4 +38,7 @@ const ctn = css`
   @media (max-width: 767px) {
     padding: 80px 80px 146px 80px;
   }
+  @media (max-width: 400px) {
+    padding: 34px 20px 265px 20px;
+  }
 `;

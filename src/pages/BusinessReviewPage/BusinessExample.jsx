@@ -13,7 +13,7 @@ function ExampleCard({ image, name, company, tags }) {
     width: 360px;
     height: 356px;
     box-sizing: border-box;
-    padding: 0px 24px 24px 24px;
+    padding: 0px 58px 24px 58pxz;
     gap: 14px;
     border-radius: 30px;
     background: var(--white, #fff);
@@ -22,6 +22,10 @@ function ExampleCard({ image, name, company, tags }) {
     &:hover {
       transform: translateY(-8px);
     }
+  `;
+
+  const img_area = css`
+    width: 100%;
   `;
 
   const img = css`
@@ -79,6 +83,7 @@ function ExampleCard({ image, name, company, tags }) {
 
   return (
     <div css={card}>
+      <div css={img_area}></div>
       <img src={image} alt="exampleCard" css={img} />
       <p css={name_tag}>{name}</p>
       <div css={info_ctn}>
@@ -147,7 +152,6 @@ export default function BusinessExample() {
 const ctn = css`
   width: 100%;
   max-height: 688px;
-  height: 688px;
   box-sizing: border-box;
   padding: 120px 210px;
   background-repeat: no-repeat;
@@ -166,6 +170,7 @@ const section_title = css`
 
 const card_control_ctn = css`
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   gap: 30px;
@@ -175,7 +180,6 @@ const card_ctn = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   gap: 44px;
 `;
 

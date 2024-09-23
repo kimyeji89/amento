@@ -22,4 +22,7 @@ const page_title = css`
   @media (max-width: 767px) {
     font-size: 24px;
   }
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
