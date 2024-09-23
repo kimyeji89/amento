@@ -86,6 +86,9 @@ const gray_table_ctn = css`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
 `;
 
 const pdf_button = css`
@@ -99,9 +102,6 @@ const pdf_button = css`
   border: 1.6px solid #ddd;
   background: var(--white, #fff);
   margin-left: auto;
-  @media (max-width: 1024px) {
-    padding: 8px 16px;
-  }
 `;
 
 const button_text = css`
@@ -117,6 +117,9 @@ const button_text = css`
 
 const section2_ctn = css`
   margin-bottom: 44px;
+  @media (max-width: 375px) {
+    margin-bottom: 34px;
+  }
 `;
 
 const section_title = css`
@@ -151,8 +154,8 @@ const button = css`
   font-size: 17px;
   font-weight: 700;
   line-height: 160%;
-  @media (max-width: 1280px) {
-    padding: 16px 80px;
-    font-size: 16px;
+  @media (max-width: 375px) {
+    padding: 15px 90.5px;
+    line-height: normal;
   }
 `;

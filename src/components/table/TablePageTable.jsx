@@ -90,14 +90,25 @@ function Table() {
 
   const small_cell = css`
     width: 12%;
+
+    @media (max-width: 375px) {
+      min-width: 80px;
+    }
   `;
 
   const category = css`
     width: 18%;
+
+    @media (max-width: 375px) {
+      min-width: 140px;
+    }
   `;
 
   const title = css`
     width: 34%;
+    @media (max-width: 375px) {
+      min-width: 226px;
+    }
   `;
 
   const th_td = css`
@@ -124,8 +135,12 @@ function Table() {
     }
     @media (max-width: 767px) {
       height: 42px;
-      font-size: 14px;
       line-height: calc(42px - 12px);
+    }
+    @media (max-width: 375px) {
+      height: 40px;
+      padding: 10px 14px;
+      line-height: calc(40px - 20px);
     }
   `;
 
@@ -204,6 +219,9 @@ function TablePagination() {
       border-radius: 40px;
       background: var(--primary, #9627e7);
     }
+    @media (max-width: 375px) {
+      font-size: 13px;
+    }z
   `;
 
   const icon_button = css`

@@ -138,8 +138,9 @@ const tbody_th = css`
   @media (max-width: 1024px) {
     font-size: 15px;
   }
-  @media (max-width: 768px) {
-    font-size: 14px;
+  @media (max-width: 375px) {
+    min-width: 160px;
+    line-height: normal;
   }
 `;
 
@@ -187,8 +188,8 @@ const tfoot_th = css`
     font-size: 15px;
     white-space: nowrap;
   }
-  @media (max-width: 768px) {
-    font-size: 14px;
+  @media (max-width: 375px) {
+    height: 50px;
   }
 `;
 

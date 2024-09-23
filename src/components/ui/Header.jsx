@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useLocationControl from "@hooks/useLocationControl";
 import useIsMobile from "@hooks/useIsMobile";
 import { useHeaderHeight } from "@hooks/useHeaderHeight";
@@ -13,7 +13,7 @@ import { ReactComponent as Menu } from "@svgs/header/menu.svg";
 import { ReactComponent as Close } from "@svgs/header/close.svg";
 
 export default function Header() {
-  const { isMobile } = useIsMobile({ mobileWidth: 430, tabletWidth: 768 });
+  const { isMobile } = useIsMobile();
   const { checkLocation } = useLocationControl();
   const { headerRef } = useHeaderHeight();
   const [isDesktopUserOpen, setIsDesktopUserOpen] = useState(false);

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
-export default function useIsMobile({ mobileWidth = 430, tabletWidth = 768 }) {
+export default function useIsMobile() {
+  const mobileWidth = 430;
+  const tabletWidth = 768;
   const [isMobile, setIsMobile] = useState(window.innerWidth <= mobileWidth);
   const [isTablet, setIsTablet] = useState(window.innerWidth <= tabletWidth);
 
