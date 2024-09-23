@@ -24,7 +24,7 @@ function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
 }
 
 export default function SidePopUp() {
-  const { isTablet } = useIsMobile({ mobileWidth: 430, tabletWidth: 768 });
+  const { isTablet } = useIsMobile();
   const [formData, setFormData] = useState({
     isFaceToFace: true,
     desireType: "회원가입 정보",
