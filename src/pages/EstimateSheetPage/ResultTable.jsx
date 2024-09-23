@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export default function PurpleTable() {
+export default function ResultTable() {
   return (
     <div css={outer_ctn}>
       <div css={ctn}>
@@ -218,6 +218,10 @@ const mobile_tfoot = css`
   width: 100%;
   background: #2f2f2f;
   border-bottom: 1px solid var(--stroke, #e8e8e8);
+
+  @media (min-width: 376px) {
+    display: none;
+  }
 `;
 
 const mobile_tfoot_th = css`
