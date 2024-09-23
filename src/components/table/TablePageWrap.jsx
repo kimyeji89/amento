@@ -9,7 +9,7 @@ export default function TablePageWrap({ children }) {
 
   const ctn_pc = css`
     width: 100%;
-    margin-top: ${headerHeight}px;
+    margin: ${headerHeight}px auto 0;
     box-sizing: border-box;
     padding: 160px 205px 216px 210px;
     @media (max-width: 1280px) {
@@ -24,7 +24,7 @@ export default function TablePageWrap({ children }) {
   `;
   const ctn_mobile = css`
     width: 100%;
-    margin-top: ${headerHeight}px;
+    margin: ${headerHeight}px auto 0;
     box-sizing: border-box;
     padding: 34px 20px 265px 20px;
   `;

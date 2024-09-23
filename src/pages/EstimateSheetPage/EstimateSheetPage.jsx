@@ -118,7 +118,7 @@ const button_text = css`
 const section2_ctn = css`
   margin-bottom: 44px;
   @media (max-width: 375px) {
-    margin-bottom: 34px;
+    margin-bottom: 84px;
   }
 `;
 
