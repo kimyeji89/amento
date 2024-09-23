@@ -24,7 +24,7 @@ function SidePopUpFormInput({ name, label, value, onChange, onClick }) {
 }
 
 export default function SidePopUp() {
-  const { isMobile } = useIsMobile();
+  const { isTablet } = useIsMobile({ mobileWidth: 430, tabletWidth: 768 });
   const [formData, setFormData] = useState({
     isFaceToFace: true,
     desireType: "회원가입 정보",
@@ -62,7 +62,7 @@ export default function SidePopUp() {
 
   return (
     <>
-      {isMobile === false && (
+      {isTablet === false && (
         <div css={side_popup_ctn} className="side_popup_ctn">
           <form className="form" css={form}>
             <p css={form_title}>상담신청</p>
@@ -148,7 +148,7 @@ export default function SidePopUp() {
           </div>
         </div>
       )}
-      {isMobile === true && (
+      {isTablet === true && (
         <>
           <div css={mobile_side_popup_button} onClick={handleChangeIsOpen}>
             <CounselWhite />
