@@ -291,6 +291,7 @@ function TableWriteButton({ link }) {
     background: var(--primary, #9627e7);
     color: var(--white, #fff);
     leading-trim: both;
+    font-family: Pretendard;
     text-edge: cap;
     font-size: 17px;
     font-weight: 700;
