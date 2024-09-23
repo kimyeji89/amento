@@ -72,12 +72,18 @@ const ctn = css`
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 308px 0;
+  padding: 333px 90px 333px 0px;
   width: 100%;
-
+  max-height: 1080px;
   background: linear-gradient(180deg, #fefeff 0%, #f5f6f9 100%);
+  @media (min-width: 1921px) {
+    justify-content: center;
+
+    gap: 40px;
+  }
   @media (max-width: 1919px) {
     padding: 240px 0;
+    max-height: 100%;
   }
   @media (max-width: 1440px) {
     padding: 220px 0;
@@ -105,6 +111,9 @@ const text_ctn = css`
   box-sizing: border-box;
   padding: 0 82px 0 210px;
   width: 100%;
+  @media (min-width: 1921px) {
+    width: auto;
+  }
   @media (max-width: 1919px) {
     padding: 0 82px 0 160px;
   }
@@ -129,6 +138,9 @@ const img_ctn = css`
   position: relative;
   width: 100%;
   height: auto;
+  @media (min-width: 1921px) {
+    width: auto;
+  }
   @media (max-width: 1919px) {
     box-sizing: border-box;
     padding-right: 20px;

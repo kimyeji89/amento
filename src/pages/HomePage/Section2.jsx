@@ -88,11 +88,17 @@ const ctn = css`
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 308px 210px;
+  padding: 350px 210px;
   width: 100%;
+  max-height: 1080px;
   background: linear-gradient(180deg, #fefeff 0%, #f5f6f9 100%);
+  @media (min-width: 1921px) {
+    justify-content: center;
+    gap: 240px;
+  }
   @media (max-width: 1919px) {
     padding: 240px 180px;
+    max-height: 100%;
     gap: 100px;
   }
   @media (max-width: 1440px) {
@@ -125,6 +131,12 @@ const ctn = css`
 const img_ctn = css`
   width: 100%;
   position: relative;
+  @media (min-width: 1921px) {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
   @media (max-width: 1919px) {
     display: flex;
     align-items: center;
@@ -266,6 +278,9 @@ const img_float4 = css`
 const text_ctn = css`
   width: 100%;
   max-width: 662px;
+  @media (min-width: 1921px) {
+    width: auto;
+  }
   @media (max-width: 950px) {
     order: 1;
     text-align: center;

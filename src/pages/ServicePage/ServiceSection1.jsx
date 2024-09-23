@@ -186,9 +186,6 @@ const content_wrap = css`
     }
   }
 
-  @media (max-width: 768px) {
-  }
-
   @media (max-width: 375px) {
     h1 {
       font-size: 24px;
@@ -201,7 +198,12 @@ const content_container = css`
   flex-direction: column;
   gap: 50px;
   max-width: 1300px;
+  width: 100%;
   margin: 0 auto;
+
+  @media (max-width: 1480px) {
+    width: 90%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;

@@ -25,10 +25,6 @@ export const HeaderHeightProvider = ({ children }) => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(headerHeight);
-  }, [headerHeight]);
-
   return (
     <HeaderHeightContext.Provider value={{ headerHeight, headerRef }}>
       {children}
