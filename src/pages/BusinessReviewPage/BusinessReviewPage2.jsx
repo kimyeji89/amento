@@ -21,7 +21,7 @@ export default function BusinessReviewPage2() {
       <div css={table_ctn}>
         <TablePageTitle title="사업후기" />
         <TablePageForm />
-        <TablePageTable link="/" />
+        <TablePageTable buttonLink="/" detailLink="/businessReviewDetail" />
       </div>
     </div>
   );

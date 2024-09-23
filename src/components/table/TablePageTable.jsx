@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as ChevLeft } from "@svgs/common/chevLeft.svg";
 import { ReactComponent as ChevRight } from "@svgs/common/chevRight.svg";
 
-function Table() {
+function Table({ detailLink }) {
   const tableData = [
     {
       no: 1,
@@ -154,6 +154,10 @@ function Table() {
     background: var(--white, #ffffff);
     color: #444;
     font-weight: 500;
+    a {
+      text-decoration: none;
+      color: #444;
+    }
   `;
 
   return (
@@ -173,7 +177,9 @@ function Table() {
           <tr key={data.title + idx}>
             <td css={[th_td, td]}>{data.no}</td>
             <td css={[th_td, td]}>{data.category}</td>
-            <td css={[th_td, td]}>{data.title}</td>
+            <td css={[th_td, td]}>
+              <Link to={detailLink}>{data.title}</Link>
+            </td>
             <td css={[th_td, td]}>{data.user}</td>
             <td css={[th_td, td]}>{data.date}</td>
             <td css={[th_td, td]}>{data.view}</td>
@@ -264,7 +270,7 @@ function TablePagination() {
   );
 }
 
-function TableWriteButton({ link }) {
+function TableWriteButton({ buttonLink }) {
   const link_style = css`
     position: absolute;
     top: 50%;
@@ -310,7 +316,7 @@ function TableWriteButton({ link }) {
     }
   `;
   return (
-    <Link to={link} css={link_style}>
+    <Link to={buttonLink} css={link_style}>
       <button type="button" css={button}>
         글쓰기
       </button>
@@ -318,7 +324,7 @@ function TableWriteButton({ link }) {
   );
 }
 
-export default function TablePageTable({ link }) {
+export default function TablePageTable({ buttonLink, detailLink }) {
   const ctn = css`
     width: 100%;
     height: 100%;
@@ -348,11 +354,11 @@ export default function TablePageTable({ link }) {
   return (
     <div css={ctn}>
       <div css={table_ctn}>
-        <Table />
+        <Table detailLink={detailLink} />
       </div>
       <div css={table_control_ctn}>
         <TablePagination />
-        <TableWriteButton link={link} />
+        <TableWriteButton buttonLink={buttonLink} />
       </div>
     </div>
   );
