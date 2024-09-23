@@ -151,6 +151,7 @@ const tbody_th = css`
   }
   @media (max-width: 375px) {
     min-width: 160px;
+    vertical-align: middle;
     line-height: normal;
   }
 `;
