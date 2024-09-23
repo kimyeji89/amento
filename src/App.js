@@ -12,7 +12,10 @@ import ServicePage from "@pages/ServicePage/ServicePage";
 import ApplicationPage from "@pages/ApplicationPage/ApplicationPage";
 import ApplicationPage2 from "@pages/ApplicationPage/ApplicationPage2";
 import ConsultingPage from "@pages/ConsultingPage/ConsultingPage";
+import ConsultingPage2 from "@pages/ConsultingPage/ConsultingPage2";
 import BusinessReviewPage from "@pages/BusinessReviewPage/BusinessReviewPage";
+import BusinessReviewPage2 from "@pages/BusinessReviewPage/BusinessReviewPage2";
+
 import LoginPage from "@pages/LoginPage/LoginPage";
 import JoinTosPage from "@pages/JoinTosPage/JoinTosPage";
 import JoinDetailPage from "@pages/JoinDetailPage/JoinDetailPage";
@@ -36,7 +39,6 @@ import ConsultDetailPage from "@pages/ConsultDetailPage/ConsultDetailPage";
 import ConsultWritePage from "@pages/ConsultWritePage/ConsultWritePage";
 import QnAPage from "@pages/QnAPage/QnAPage";
 import BusinessReviewDetailPage from "@pages/BusinessReviewDetailPage/BusinessReviewDetailPage";
-import BusinessReviewPage2 from "@pages/BusinessReviewPage/BusinessReviewPage2";
 
 function App() {
   return (
@@ -56,8 +58,10 @@ function App() {
             <Route path="/companyIntro" element={<CompanyIntroPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/application" element={<ApplicationPage />} />
-            <Route path="/application2" element={<ApplicationPage2 />} />
+
             <Route path="/consulting" element={<ConsultingPage />} />
+            <Route path="/consulting2" element={<ConsultingPage2 />} />
+
             <Route path="/businessReview" element={<BusinessReviewPage />} />
             <Route path="/businessReview2" element={<BusinessReviewPage2 />} />
             <Route
