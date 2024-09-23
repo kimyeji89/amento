@@ -35,6 +35,20 @@ const page_wrap = css`
 
 const content_wrap = css`
   padding: 124px 210px 158px;
+
+
+  @media (max-width: 1280px) {
+    padding: 124px 100px 353px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 60px 65px 353px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 353px;
+  }
+
 `;
 
 const btn_wrap = css`
@@ -50,4 +64,12 @@ const btn_wrap = css`
     flex-grow: 1;
     flex-basis: 0;
   }
+
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    gap: 10px;
+    padding: 44px 0 0;
+  }
+
 `;

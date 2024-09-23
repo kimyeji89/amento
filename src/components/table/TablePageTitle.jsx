@@ -9,6 +9,7 @@ const page_title = css`
   color: var(--black, #111);
   font-size: 40px;
   font-weight: 700;
+
   @media (max-width: 1280px) {
     font-size: 36px;
   }
@@ -25,4 +26,5 @@ const page_title = css`
   @media (max-width: 480px) {
     font-size: 20px;
   }
+
 `;

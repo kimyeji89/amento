@@ -45,12 +45,32 @@ const title_wrap = css`
     font-weight: 700;
     line-height: normal;
   }
+
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
 `;
 
 const des_wrap = css`
   display: flex;
   justify-content: end;
   gap: 14px;
+
+  @media (max-width: 375px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 340px) {
+    gap: 5px;
+  }
 `;
 
 const detail_wrap = css`
@@ -66,5 +86,14 @@ const detail_wrap = css`
 
   .detail {
     color: #959595;
+  }
+
+  @media (max-width: 375px) {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
   }
 `;

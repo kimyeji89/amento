@@ -13,7 +13,7 @@ import { ReactComponent as Menu } from "@svgs/header/menu.svg";
 import { ReactComponent as Close } from "@svgs/header/close.svg";
 
 export default function Header() {
-  const { isMobile } = useIsMobile();
+  const { isMobile } = useIsMobile({ mobileWidth: 430, tabletWidth: 768 });
   const { checkLocation } = useLocationControl();
   const { headerRef } = useHeaderHeight();
   const [isDesktopUserOpen, setIsDesktopUserOpen] = useState(false);
@@ -323,7 +323,7 @@ const logo = css`
   @media (max-width: 767px) {
     height: 26px;
   }
-  @media (max-width: 375px) {
+  @media (max-width: 430px) {
     height: 30px;
   }
   @media (max-width: 320px) {

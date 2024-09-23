@@ -27,7 +27,9 @@ export default function BusinessReviewPage2() {
   );
 }
 
+
 const table_ctn = css`
   box-sizing: border-box;
   padding: 120px 210px 176px;
+
 `;

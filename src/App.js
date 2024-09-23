@@ -10,6 +10,7 @@ import ProcessDonePage from "@pages/ProcessDonePage/ProcessDonePage";
 import CompanyIntroPage from "@pages/CompanyIntroPage/CompanyIntroPage";
 import ServicePage from "@pages/ServicePage/ServicePage";
 import ApplicationPage from "@pages/ApplicationPage/ApplicationPage";
+import ApplicationPage2 from "@pages/ApplicationPage/ApplicationPage2";
 import ConsultingPage from "@pages/ConsultingPage/ConsultingPage";
 import ConsultingPage2 from "@pages/ConsultingPage/ConsultingPage2";
 import BusinessReviewPage from "@pages/BusinessReviewPage/BusinessReviewPage";
@@ -57,8 +58,10 @@ function App() {
             <Route path="/companyIntro" element={<CompanyIntroPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/application" element={<ApplicationPage />} />
+
             <Route path="/consulting" element={<ConsultingPage />} />
             <Route path="/consulting2" element={<ConsultingPage2 />} />
+
             <Route path="/businessReview" element={<BusinessReviewPage />} />
             <Route path="/businessReview2" element={<BusinessReviewPage2 />} />
             <Route

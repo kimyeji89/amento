@@ -16,12 +16,14 @@ function TablePageSearchBar() {
     right: 20px;
     transform: translateY(-50%);
     cursor: pointer;
+
     @media (max-width: 1024px) {
       right: 16px;
     }
     @media (max-width: 768px) {
       right: 14px;
     }
+
   `;
 
   const label_text = css`
@@ -49,6 +51,7 @@ function TablePageSearchBar() {
       font-weight: 500;
       opacity: 0.5;
     }
+
     @media (max-width: 1024px) {
       padding: 10px 16px;
       width: 280px;
@@ -69,13 +72,16 @@ function TablePageSearchBar() {
       width: 20px;
       height: 20px;
     }
+
   `;
 
   return (
     <div css={ctn}>
       <label htmlFor="search" css={label}>
         <span css={label_text}>검색</span>
+
         <Search css={search_icon} />
+
       </label>
       <input
         type="text"
@@ -107,6 +113,7 @@ function TablePageSelect() {
     justify-content: center;
     align-items: center;
     align-items: center;
+
     position: relative;
     border-radius: ${viewOption ? "10px 10px 0 0" : "10px"};
     box-shadow: 0 0 0 1px #cecece inset;
@@ -169,6 +176,7 @@ function TablePageSelect() {
   const options_ctn = css`
     width: 100%;
     height: auto;
+
   `;
   const options = css`
     display: flex;
@@ -176,6 +184,7 @@ function TablePageSelect() {
     gap: 8px;
     align-items: center;
     justify-content: center;
+
     position: absolute;
     top: calc(50px - 1px);
     width: 100%;
@@ -208,6 +217,7 @@ function TablePageSelect() {
       text-align: left;
       padding: 4px 0 4px 14px;
     }
+
   `;
 
   return (
@@ -245,10 +255,12 @@ const form = css`
   justify-content: end;
   width: 100%;
   gap: 14px;
+
   @media (max-width: 768px) {
     gap: 8px;
   }
   @media (max-width: 499px) {
     flex-direction: column;
   }
+
 `;

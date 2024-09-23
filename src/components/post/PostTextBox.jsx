@@ -10,7 +10,6 @@ export default function PostTextBox({ text }) {
           <br />
         </span>
       ))}
-      {/* {text} */}
     </div>
   );
 }
@@ -28,4 +27,10 @@ const text_wrap = css`
   font-size: 17px;
   font-weight: 400;
   line-height: 160%;
+
+  @media (max-width: 375px) {
+    padding: 20px;
+    margin: 24px 0 34px;
+    font-size: 15px;
+  }
 `;
