@@ -14,6 +14,7 @@ export default function Button({ label, link, onClick, isWhite }) {
 
 const link_style = css`
   text-decoration: none;
+  border-radius: 64px;
 `;
 
 const button_wrap = (isWhite) => css`

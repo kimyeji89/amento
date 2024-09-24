@@ -13,6 +13,37 @@ export default function ApplicationPage2() {
     padding-top: ${headerHeight}px;
   `;
 
+  const content_wrap = css`
+    padding: 120px 210px;
+
+    h1 {
+      color: var(--black, #111);
+      font-size: 40px;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    @media (max-width: 1520px) {
+      padding: 120px 140px 353px;
+    }
+
+    @media (max-width: 1280px) {
+      padding: 120px 100px 353px;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 60px 65px 353px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 60px 40px 353px;
+    }
+
+    @media (max-width: 375px) {
+      padding: 60px 20px 353px;
+    }
+  `;
+
   return (
     <div css={page_wrap}>
       <PageTitle title="설명회 신청" hasBorder />
@@ -31,29 +62,6 @@ export default function ApplicationPage2() {
     </div>
   );
 }
-
-const content_wrap = css`
-  padding: 120px 210px;
-
-  h1 {
-    color: var(--black, #111);
-    font-size: 40px;
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  @media (max-width: 1280px) {
-    padding: 120px 100px 353px;
-  }
-
-  @media (max-width: 1024px) {
-    padding: 60px 65px 353px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 60px 20px 353px;
-  }
-`;
 
 const search_bar = css`
   display: flex;
