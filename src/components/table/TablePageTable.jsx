@@ -333,7 +333,7 @@ export default function TablePageTable({ buttonLink, detailLink }) {
 
   const table_ctn = css`
     @media (max-width: 700px) {
-      overflow: scroll;
+      overflow-x: scroll;
     }
   `;
 

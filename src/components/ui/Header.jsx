@@ -274,22 +274,6 @@ const header = css`
   padding: 0 210px;
   box-sizing: border-box;
 
-
-  // @media (max-width: 1919px) {
-  //   box-sizing: border-box;
-  //   padding: 0 40px;
-  // }
-  // @media (max-width: 1280px) {
-  //   height: 80px;
-  // }
-  // @media (max-width: 1024px) {
-  //   height: 70px;
-  // }
-  // @media (max-width: 767px) {
-  //   height: fit-content;
-  //   padding: 18px 10px;
-  // }
-
   @media (min-width: 1921px) {
   box-sizing: content: box;
   padding: 0;
@@ -334,6 +318,9 @@ const ctn = css`
   @media (max-width: 1919px) {
     width: 100%;
   }
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
   @media (max-width: 800px) {
     flex-direction: column;
     gap: 10px;
@@ -357,7 +344,7 @@ const logo = css`
     height: 32px;
   }
   @media (max-width: 1024px) {
-    height: 26px;
+    height: 22px;
   }
   @media (max-width: 800px) {
     height: 26px;
@@ -389,13 +376,13 @@ const nav = css`
   }
   @media (max-width: 1024px) {
     ul {
-      gap: 18px;
+      gap: 12px;
     }
   }
   @media (max-width: 800px) {
-    ul {
-      gap: 16px;
-    }
+    // ul {
+    //   gap: 14px;
+    // }
   }
   @media (max-width: 499px) {
   }
@@ -429,6 +416,9 @@ const link = css`
   @media (max-width: 1400px) {
     font-size: 16px;
   }
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
   @media (max-width: 950px) {
     font-size: 14px;
   }
@@ -461,14 +451,14 @@ const user_button = css`
     gap: 7px;
   }
   @media (max-width: 1024px) {
+    font-size: 15px;
     gap: 6px;
   }
   @media (max-width: 950px) {
     font-size: 14px;
-    gap: 5px;
+    gap: 4px;
   }
   @media (max-width: 800px) {
-    gap: 4px;
   }
   @media (max-width: 499px) {
   }
