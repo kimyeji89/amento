@@ -45,5 +45,11 @@ const button = css`
   @media (max-width: 375px) {
     padding: 15px 90.5px;
     line-height: normal;
+    white-space: nowrap;
+  }
+  @media (max-width: 320px) {
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 0;
   }
 `;

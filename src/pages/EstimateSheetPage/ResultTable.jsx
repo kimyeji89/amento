@@ -67,8 +67,8 @@ export default function ResultTable() {
               <td css={[tbody_td, yellow, last]}>원</td>
             </tr>
           </tbody>
-          <tfoot>
-            <tr>
+          <tfoot css={tfoot}>
+            <tr css={tfoot}>
               <td css={tfoot_th}>총계(TOTAL)</td>
               <td colSpan="5" css={[tfoot_td, last]}>
                 원
@@ -100,11 +100,11 @@ const th = css`
   height: 50px;
   box-sizing: border-box;
   padding: 10px 14px;
-  border-bottom: 1px solid var(--stroke, #e8e8e8);
+  border-bottom: 1px solid #e8e8e8;
   background: #f7f0ff;
   color: var(--Black, #131313);
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: calc(50px - 2 * 10px);
   @media (max-width: 1919px) {
     font-size: 16px;
@@ -117,6 +117,11 @@ const th = css`
   }
   @media (max-width: 768px) {
     font-size: 14px;
+  }
+  @media (max-width: 375px) {
+    height: 40px;
+    line-height: normal;
+    vertical-align: middle;
   }
 `;
 
@@ -135,8 +140,8 @@ const tbody_th = css`
   box-sizing: border-box;
   padding: 10px 20px;
   background: #fff;
-  border-right: 1px solid var(--stroke, #e8e8e8);
-  border-bottom: 1px solid var(--stroke, #e8e8e8);
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
   color: var(--black, #111);
   font-size: 17px;
   font-weight: 700;
@@ -181,12 +186,16 @@ const last = css`
   text-align: right;
 `;
 
+const tfoot = css`
+  background-color: #2f2f2f;
+`;
+
 const tfoot_th = css`
   height: 60px;
   box-sizing: border-box;
   padding: 10px 34px;
-  border-bottom: 1px solid var(--stroke, #e8e8e8);
-  background: #2f2f2f;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #2f2f2f;
   color: #fff;
   font-size: 17px;
   font-weight: 800;
@@ -217,7 +226,7 @@ const mobile_tfoot = css`
   position: absolute;
   width: 100%;
   background: #2f2f2f;
-  border-bottom: 1px solid var(--stroke, #e8e8e8);
+  border-bottom: 1px solid #e8e8e8;
 
   @media (min-width: 376px) {
     display: none;

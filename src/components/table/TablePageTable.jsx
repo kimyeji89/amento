@@ -160,6 +160,10 @@ function Table({ detailLink }) {
     }
   `;
 
+  const left = css`
+    text-align: left;
+  `;
+
   return (
     <table css={table}>
       <thead>
@@ -176,8 +180,8 @@ function Table({ detailLink }) {
         {reversedData.map((data, idx) => (
           <tr key={data.title + idx}>
             <td css={[th_td, td]}>{data.no}</td>
-            <td css={[th_td, td]}>{data.category}</td>
-            <td css={[th_td, td]}>
+            <td css={[th_td, td, left]}>{data.category}</td>
+            <td css={[th_td, td, left]}>
               <Link to={detailLink}>{data.title}</Link>
             </td>
             <td css={[th_td, td]}>{data.user}</td>
