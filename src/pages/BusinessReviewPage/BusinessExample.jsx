@@ -20,14 +20,30 @@ function ExampleCard({ image, name, company, tags }) {
     background: var(--white, #fff);
     box-shadow: 0px 6px 33px 0px #ebebeb;
     transition: transform 0.3s ease-in-out;
+
     &:hover {
       transform: translateY(-8px);
+    }
+    @media (max-width: 1919px) {
+      width: calc(360px * 0.9);
+      height: calc(356px * 0.9);
+      padding: 0px calc(24px * 0.9) calc(24px * 0.9) calc(24px * 0.9);
+    }
+    @media (max-width: 1800px) {
+      width: calc(360px * 0.8);
+      height: calc(356px * 0.8);
+      padding: 0px calc(24px * 0.8) calc(24px * 0.8) calc(24px * 0.8);
+    }
+    @media (max-width: 1600px) {
+      gap: 10px;
+      width: calc(360px * 0.7);
+      height: calc(356px * 0.7);
+      padding: 0px calc(24px * 0.7) calc(24px * 0.7) calc(24px * 0.7);
     }
     @media (max-width: 700px) {
       width: 232px;
       height: 262px;
       padding: 0 20px 20px 20px;
-      gap: 15px;
     }
     @media (max-width: 350px) {
       width: 210px;
@@ -45,6 +61,15 @@ function ExampleCard({ image, name, company, tags }) {
     transform: translateX(-50%);
     width: 280px;
     object-fit: cover;
+    @media (max-width: 1919px) {
+      width: calc(280px * 0.9);
+    }
+    @media (max-width: 1800px) {
+      width: calc(280px * 0.8);
+    }
+    @media (max-width: 1600px) {
+      width: calc(280px * 0.7);
+    }
     @media (max-width: 700px) {
       top: 20px;
       width: 186px;
@@ -67,7 +92,15 @@ function ExampleCard({ image, name, company, tags }) {
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @media (max-width: 1600px) {
+      width: 100%;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
     @media (max-width: 700px) {
       display: flex;
       align-items: center;
@@ -195,7 +228,7 @@ export default function BusinessExample() {
                 />
               ))}
           {width <= 1520 &&
-            width > 1084 &&
+            width > 918 &&
             cardData
               .slice(0, 2)
               .map((card, idx) => (
@@ -207,7 +240,7 @@ export default function BusinessExample() {
                   tags={card.tags}
                 />
               ))}
-          {width <= 1084 &&
+          {width <= 918 &&
             cardData
               .slice(0, 1)
               .map((card, idx) => (
@@ -238,13 +271,25 @@ const ctn = css`
   background-position: center;
   background-size: cover;
   background-image: url("/assets/images/businessReview/cardCtnBg.png");
+
   @media (max-width: 1919px) {
-    padding: 120px 0;
-    margin: 0 auto;
+    width: 100%;
+    padding: 120px 210px;
+  }
+  @media (max-width: 1520px) {
+    padding: 120px 210px;
+  }
+  @media (max-width: 1280px) {
+    padding: 120px 100px;
+  }
+  @media (max-width: 1024px) {
+    padding: 120px 65px;
+  }
+  @media (max-width: 768px) {
+    padding: 120px 40px;
   }
   @media (max-width: 375px) {
-    padding: 50px 20px;
-    margin: 0 auto;
+    padding: 50px 20px 61px;
   }
 `;
 
@@ -254,6 +299,7 @@ const section_title = css`
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 44px;
+
   @media (max-width: 375px) {
     font-size: 24px;
     margin-bottom: 34px;
@@ -265,6 +311,13 @@ const card_control_ctn = css`
   justify-content: center;
   align-items: center;
   gap: 30px;
+  width: 100%;
+  @media (max-width: 1919px) {
+    gap: 28px;
+  }
+  @media (max-width: 1800px) {
+    gap: 24px;
+  }
   @media (max-width: 450px) {
     gap: 9.5px;
   }
@@ -281,6 +334,12 @@ const card_ctn = css`
   justify-content: center;
   align-items: center;
   gap: 44px;
+  @media (max-width: 1919px) {
+    gap: 40px;
+  }
+  @media (max-width: 1800px) {
+    gap: 36px;
+  }
 `;
 
 const control_button = css`
@@ -308,6 +367,14 @@ const control_button = css`
     cursor: default;
     svg {
       stroke: #343434;
+    }
+  }
+  @media (max-width: 1800px) {
+    gap: 12px;
+    font-size: 18px;
+    svg {
+      width: 34px;
+      height: auto;
     }
   }
   @media (max-width: 700px) {

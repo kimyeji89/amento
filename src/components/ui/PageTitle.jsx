@@ -26,33 +26,30 @@ const title_wrap = (hasBorder) => css`
   background-color: var(--white);
   border-bottom: ${hasBorder ? "1px solid #DBDBDB" : "none"};
 
-  @media (max-width: 1680px) {
-    padding: 0 0 0 160px;
-  }
-
   @media (max-width: 1520px) {
     padding: 0 0 0 140px;
   }
 
   @media (max-width: 1280px) {
-    padding: 0 0 0 120px;
+    padding: 0 0 0 100px;
     height: 150px;
   }
 
   @media (max-width: 1024px) {
-    padding: 0 0 0 100px;
+    padding: 0 0 0 65px;
     height: 150px;
   }
 
   @media (max-width: 768px) {
     padding: 0 0 0 40px;
-    padding: 0 0 0 100px;
-    // border-bottom: none;
   }
 
   @media (max-width: 400px) {
-    padding: 0 0 0 20px;
     height: 80px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0 0 20px;
   }
 `;
 
