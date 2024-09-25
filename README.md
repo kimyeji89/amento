@@ -39,3 +39,16 @@ https://amento.vercel.app/
     1. 비밀번호 변경 (ChangePwPage) : https://amento.vercel.app/changePw
     2. 비밀번호 변경 (새 비밀번호) (ChangePwDetailPage) : https://amento.vercel.app/changePwDetail
     3. 비밀번호 변경 완료 (ChangePwDonePage)  : https://amento.vercel.app/changePwDone
+
+## 2차 개발(PC/모바일 반응형 - 진행중)
+1. 결제내역 (PayHistoryPage) : https://amento.vercel.app/payHistory
+2. 결제내역 상세 (PayHistoryDetailPage) : https://amento.vercel.app/payHistoryDetail
+3. 견적서 (EstimateSheetPage) : https://amento.vercel.app/estimateSheet
+4. 상담내역 (ConsultHistoryPage) :  https://amento.vercel.app/consultHistory
+5. 상담내역 상세 (ConsultDetailPage) : https://amento.vercel.app/consultDetail
+6. 상담내역 쓰기 (ConsultWritePage) : https://amento.vercel.app/consultWrite
+7. Q&A (QnAPage) : https://amento.vercel.app/QnA
+8. 사업후기 (BusinessReviewPage2) :  https://amento.vercel.app/businessReview2
+9. 사업후기 상세 (BusinessReviewDetailPage) : https://amento.vercel.app/businessReviewDetail
+10. 설명회 신청 (ApplicationPage2) : https://amento.vercel.app/application2
+11. 창업 컨설팅 (ConsultingPage2) : https://amento.vercel.app/consulting2
