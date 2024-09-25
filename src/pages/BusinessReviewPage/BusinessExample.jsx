@@ -147,6 +147,7 @@ function ExampleCard({ image, name, company, tags }) {
     text-align: center;
     font-size: 14px;
     font-weight: 700;
+    white-space: nowrap;
     @media (max-width: 700px) {
       font-size: 12px;
     }
@@ -229,10 +230,11 @@ export default function BusinessExample({ slideDataArr }) {
           modules={[Navigation]}
           spaceBetween={36}
           slidesPerView={1}
-          centeredSlides={true}
+          // centeredSlides={true}
+          loop={true}
           onSlideChange={handleSlideChange}
           breakpoints={{
-            1000: {
+            910: {
               slidesPerView: 2,
               spaceBetween: 40,
             },
@@ -257,8 +259,8 @@ export default function BusinessExample({ slideDataArr }) {
           type="button"
           className={
             currentIndex < slideDataArr.length - 1
-              ? "prev swiper-button-prev"
-              : "prev swiper-button-prev disabled"
+              ? "prev swiper-button-next"
+              : "prev swiper-button-next disabled"
           }
           css={control_button}
           onClick={handleGoNextSlide}
@@ -272,7 +274,10 @@ export default function BusinessExample({ slideDataArr }) {
 }
 
 const swiper = css`
-  min-width: 210px;
+  min-width: 232px;
+  @media (max-width: 375px) {
+    min-width: 210px;
+  }
   .swiper-slide {
     display: flex;
     justify-content: center;
