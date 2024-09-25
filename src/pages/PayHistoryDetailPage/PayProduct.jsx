@@ -71,6 +71,7 @@ const des = css`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  word-break: keep-all;
 
   @media (max-width: 500px) {
     font-size: 13px;
