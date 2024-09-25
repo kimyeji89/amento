@@ -79,11 +79,6 @@ const input_style = (inputValue, isSearchBar) => css`
   line-height: 17.9px;
   text-align: start;
 
-  @media (max-width: 480px) {
-    font-size: 12px;
-    padding: ${isSearchBar ? "10px 14px" : "13px 14px"};
-  }
-
   @media (max-width: 430px) {
     font-size: 12px;
     padding: ${isSearchBar ? "10px 6px" : "13px 14px"};
