@@ -1,8 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export default function TablePageTitle({ title }) {
-  return <h2 css={page_title}>{title}</h2>;
+export default function TablePageTitle({ title, hasBorder }) {
+  return hasBorder === false ? (
+    <h2 css={page_title}>{title}</h2>
+  ) : (
+    <div css={border}>
+      <h2 css={page_title}>{title}</h2>
+    </div>
+  );
 }
 
 const page_title = css`
@@ -29,5 +35,16 @@ const page_title = css`
   @media (max-width: 375px) {
     font-size: 24px;
     margin-bottom: 20px;
+  }
+`;
+
+const border = css`
+  padding-bottom: 24px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid #000;
+
+  @media (max-width: 1024px) {
+    padding-bottom: 0px;
+    margin-bottom: 24px;
   }
 `;
