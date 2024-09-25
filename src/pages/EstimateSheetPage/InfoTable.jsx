@@ -58,7 +58,7 @@ const td = css`
   height: 50px;
   box-sizing: border-box;
   padding: 10px 14px;
-  border-right: 1px solid var(--stroke, #e8e8e8);
+
   border-bottom: 1px solid var(--stroke, #e8e8e8);
   color: #444;
   font-size: 17px;
@@ -78,6 +78,7 @@ const td = css`
 
 const small_td = css`
   width: 16%;
+  border-right: 1px solid var(--stroke, #e8e8e8);
   text-align: center;
   @media (max-width: 375px) {
     min-width: 120px;
