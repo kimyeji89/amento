@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import PostTitle from "@components/post/PostTitle";
 import WriteInputText from "@components/post/WriteInputText";
+import TablePageTitle from "@components/table/TablePageTitle";
 import Button from "@components/ui/Button";
 import TitleInput from "./TitleInput";
 import SelectBox from "./SelectBox";
@@ -36,26 +37,38 @@ export default function ConsultWritePage() {
 
   return (
     <div css={page_wrap}>
-      <PostTitle
-        title="상담신청"
-        writer={"primary"}
-        date={"2024.08.08"}
-        views={"3"}
-        isPost={false}
-      />
-      <div css={form_container}>
-        <SelectBox />
-        <TitleInput />
-        <WriteInputText />
-      </div>
+      <TablePageTitle title="상담내역" hasBorder={false} />
 
-      <div css={btn_wrap}>
-        <Button label="작성하기" />
-        <Button label="취소" link="/consultHistory" isWhite />
+      <div css={content_wrap}>
+        <PostTitle
+          title="상담신청"
+          writer={"primary"}
+          date={"2024.08.08"}
+          views={"3"}
+          isPost={false}
+        />
+        <div css={form_container}>
+          <SelectBox />
+          <TitleInput />
+          <WriteInputText />
+        </div>
+
+        <div css={btn_wrap}>
+          <Button label="작성하기" />
+          <Button label="취소" link="/consultHistory" isWhite />
+        </div>
       </div>
     </div>
   );
 }
+
+const content_wrap = css`
+  padding: 40px 0 0 0;
+
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+`;
 
 const form_container = css`
   display: flex;

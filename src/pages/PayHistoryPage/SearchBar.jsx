@@ -135,7 +135,7 @@ const btn_group = css`
   }
 
   & .selected {
-    background-color: #9b51e0;
+    background-color: #9627e7;
     color: white;
     font-weight: 700;
   }
@@ -257,4 +257,5 @@ const search_btn = css`
 const reset_btn = css`
   background: #fff;
   color: #111;
+  border: 1px solid #bcbcbc;
 `;

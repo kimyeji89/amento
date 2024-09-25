@@ -48,7 +48,7 @@ export default function ApplicationPage2() {
     <div css={page_wrap}>
       <PageTitle title="설명회 신청" hasBorder />
       <div css={content_wrap}>
-        <TablePageTitle title="프로그램" />
+        <TablePageTitle title="프로그램" hasBorder={false} />
 
         <div css={search_bar}>
           <div css={page}>
