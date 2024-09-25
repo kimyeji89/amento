@@ -33,6 +33,10 @@ export default function PayHistoryPage() {
     @media (max-width: 375px) {
       padding: ${headerHeight + 34}px 20px;
     }
+
+    @media (max-width: 320px) {
+      padding: ${headerHeight + 34}px 10px;
+    }
   `;
 
   return (
