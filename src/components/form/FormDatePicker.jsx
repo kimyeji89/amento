@@ -73,7 +73,7 @@ const input_style = (inputValue, isSearchBar) => css`
   background-color: #fff;
   height: 100%;
   border-radius: ${isSearchBar ? "10px" : "5px"};
-  color: ${isSearchBar ? "#6a6a6a" : "#181818"};
+  color: ${isSearchBar ? "#111111" : "#181818"};
   font-size: 15px;
   font-weight: 400;
   line-height: 17.9px;
@@ -115,14 +115,17 @@ const input_style = (inputValue, isSearchBar) => css`
   &::-webkit-datetime-edit-month-field {
     -webkit-appearance: none;
     display: ${inputValue ? "inline" : "none"};
+    padding: 0;
   }
   &::-webkit-datetime-edit-day-field {
     -webkit-appearance: none;
     display: ${inputValue ? "inline" : "none"};
+    padding: 0;
   }
   &::-webkit-datetime-edit-year-field {
     -webkit-appearance: none;
     display: ${inputValue ? "inline" : "none"};
+    padding: 0;
   }
 
   // Safari에서 왼쪽 정렬
