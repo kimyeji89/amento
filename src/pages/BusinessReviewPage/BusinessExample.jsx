@@ -173,18 +173,23 @@ function ExampleCard({ image, name, company, tags }) {
 export default function BusinessExample({ slideDataArr }) {
   const [width, setWidth] = useState(0);
   const swiperRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleGoPrevSlide = () => {
+  function handleSlideChange(swiper) {
+    setCurrentIndex(swiper.activeIndex);
+  }
+
+  function handleGoPrevSlide() {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
     }
-  };
+  }
 
-  const handleGoNextSlide = () => {
+  function handleGoNextSlide() {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext();
     }
-  };
+  }
 
   function handleResizeWidth() {
     setWidth(window.innerWidth);
@@ -207,7 +212,11 @@ export default function BusinessExample({ slideDataArr }) {
       <div css={card_control_ctn}>
         <button
           type="button"
-          className="disabled prev swiper-button-prev"
+          className={
+            currentIndex > 0
+              ? "prev swiper-button-prev"
+              : "prev swiper-button-prev disabled"
+          }
           css={control_button}
           onClick={handleGoPrevSlide}
         >
@@ -221,6 +230,7 @@ export default function BusinessExample({ slideDataArr }) {
           spaceBetween={36}
           slidesPerView={1}
           centeredSlides={true}
+          onSlideChange={handleSlideChange}
           breakpoints={{
             1000: {
               slidesPerView: 2,
@@ -234,20 +244,22 @@ export default function BusinessExample({ slideDataArr }) {
         >
           {slideDataArr.map((card, idx) => (
             <SwiperSlide key={card.name + idx}>
-              <div>
-                <ExampleCard
-                  image={card.image}
-                  name={card.name}
-                  company={card.company}
-                  tags={card.tags}
-                />
-              </div>
+              <ExampleCard
+                image={card.image}
+                name={card.name}
+                company={card.company}
+                tags={card.tags}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
         <button
           type="button"
-          className="next swiper-button-next"
+          className={
+            currentIndex < slideDataArr.length - 1
+              ? "prev swiper-button-prev"
+              : "prev swiper-button-prev disabled"
+          }
           css={control_button}
           onClick={handleGoNextSlide}
         >
@@ -260,6 +272,7 @@ export default function BusinessExample({ slideDataArr }) {
 }
 
 const swiper = css`
+  min-width: 210px;
   .swiper-slide {
     display: flex;
     justify-content: center;
@@ -328,8 +341,6 @@ const card_control_ctn = css`
   }
   @media (max-width: 350px) {
     gap: 8px;
-  }
-  @media (max-width: 320px) {
     position: relative;
   }
 `;
@@ -347,20 +358,7 @@ const control_button = css`
   color: var(--primary, #9627e7);
   text-decoration-line: underline;
   transition: transform 0.3s ease;
-  svg {
-    stroke: var(--primary, #9627e7);
-  }
-  &:hover {
-    transform: translateY(-8px);
-  }
-  &.disabled {
-    color: #343434;
-    text-decoration: none;
-    cursor: default;
-    svg {
-      stroke: #343434;
-    }
-  }
+
   &.swiper-button-prev {
     width: auto;
     height: auto;
@@ -370,9 +368,22 @@ const control_button = css`
     svg {
       width: auto;
       height: auto;
+      * {
+        stroke: var(--primary, #9627e7);
+      }
     }
     &:after {
       display: none;
+    }
+    &.disabled {
+      color: #343434;
+      text-decoration: none;
+      cursor: default;
+      svg {
+        * {
+          stroke: #343434;
+        }
+      }
     }
   }
   &.swiper-button-next {
@@ -384,9 +395,22 @@ const control_button = css`
     svg {
       width: auto;
       height: auto;
+      * {
+        stroke: var(--primary, #9627e7);
+      }
     }
     &:after {
       display: none;
+    }
+    &.disabled {
+      color: #343434;
+      text-decoration: none;
+      cursor: default;
+      svg {
+        * {
+          stroke: #343434;
+        }
+      }
     }
   }
   @media (max-width: 1800px) {
@@ -411,36 +435,52 @@ const control_button = css`
     p {
       order: 1;
     }
-    svg {
+    &.swiper-button-prev svg {
+      order: 2;
+      width: 31.5px;
+      height: 16px;
+    }
+    &.swiper-button-next svg {
       order: 2;
       width: 31.5px;
       height: 16px;
     }
   }
-  @media (max-width: 350px) {
+  @media (max-width: 375px) {
     gap: 4px;
     font-size: 14px;
-    svg {
+    &.swiper-button-prev svg {
+      width: 20px;
+      height: auto;
+    }
+    &.swiper-button-next svg {
       width: 20px;
       height: auto;
     }
   }
-  @media (max-width: 320px) {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    padding: 8px 10px;
-    background-color: var(--white);
-    box-shadow: 0px 6px 33px 0px #ebebeb;
-    border-radius: 10px;
+  @media (max-width: 350px) {
     p {
       display: none;
     }
-    &.prev {
+    &.swiper-button-prev {
+      position: absolute;
+      top: 50%;
       left: 0;
+      z-index: 5;
+      padding: 8px 10px;
+      background-color: var(--white);
+      box-shadow: 0px 6px 33px 0px #ebebeb;
+      border-radius: 10px;
     }
-    &.next {
+    &.swiper-button-next {
+      position: absolute;
+      top: 50%;
       right: 0;
+      z-index: 5;
+      padding: 8px 10px;
+      background-color: var(--white);
+      box-shadow: 0px 6px 33px 0px #ebebeb;
+      border-radius: 10px;
     }
   }
 `;
