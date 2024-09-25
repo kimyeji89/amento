@@ -1,8 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ReactComponent as ArrowLeft } from "@svgs/businessReview/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "@svgs/businessReview/arrowRight.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/swiper-bundle.css";
+import "swiper/css/pagination";
 
 function ExampleCard({ image, name, company, tags }) {
   const card = css`
@@ -12,6 +17,7 @@ function ExampleCard({ image, name, company, tags }) {
     align-items: center;
     justify-content: end;
     width: 360px;
+    max-width: 360px;
     height: 356px;
     box-sizing: border-box;
     padding: 0px 24px 24px 24px;
@@ -19,11 +25,6 @@ function ExampleCard({ image, name, company, tags }) {
     border-radius: 30px;
     background: var(--white, #fff);
     box-shadow: 0px 6px 33px 0px #ebebeb;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: translateY(-8px);
-    }
     @media (max-width: 1919px) {
       width: calc(360px * 0.9);
       height: calc(356px * 0.9);
@@ -34,7 +35,7 @@ function ExampleCard({ image, name, company, tags }) {
       height: calc(356px * 0.8);
       padding: 0px calc(24px * 0.8) calc(24px * 0.8) calc(24px * 0.8);
     }
-    @media (max-width: 1600px) {
+    @media (max-width: 1650px) {
       gap: 10px;
       width: calc(360px * 0.7);
       height: calc(356px * 0.7);
@@ -67,7 +68,7 @@ function ExampleCard({ image, name, company, tags }) {
     @media (max-width: 1800px) {
       width: calc(280px * 0.8);
     }
-    @media (max-width: 1600px) {
+    @media (max-width: 1650px) {
       width: calc(280px * 0.7);
     }
     @media (max-width: 700px) {
@@ -81,30 +82,31 @@ function ExampleCard({ image, name, company, tags }) {
   `;
 
   const name_tag = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     box-sizing: border-box;
     padding: 6px 36px;
     flex-shrink: 0;
     border-radius: 26px;
+    height: 44px;
     background: #4c00ff;
     color: #fff;
     text-align: center;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    vertical-align: middle;
     white-space: nowrap;
 
-    @media (max-width: 1600px) {
+    @media (max-width: 1700px) {
       width: 100%;
+      padding: 10px 0;
+      height: auto;
       font-size: 18px;
-      line-height: 28px;
     }
 
     @media (max-width: 700px) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 160px;
       height: 32px;
       padding: 5px 10px;
@@ -168,28 +170,21 @@ function ExampleCard({ image, name, company, tags }) {
   );
 }
 
-export default function BusinessExample() {
+export default function BusinessExample({ slideDataArr }) {
   const [width, setWidth] = useState(0);
-  const cardData = [
-    {
-      image: "/assets/images/businessReview/exampleCard.png",
-      name: "OO코퍼레이션 대표자",
-      company: "(주)00000",
-      tags: ["음식", "가맹본부", "예비"],
-    },
-    {
-      image: "/assets/images/businessReview/exampleCard.png",
-      name: "OO코퍼레이션 대표자",
-      company: "(주)00000",
-      tags: ["음식", "가맹본부", "예비"],
-    },
-    {
-      image: "/assets/images/businessReview/exampleCard.png",
-      name: "OO코퍼레이션 대표자",
-      company: "(주)00000",
-      tags: ["음식", "가맹본부", "예비"],
-    },
-  ];
+  const swiperRef = useRef(null);
+
+  const handleGoPrevSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const handleGoNextSlide = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
 
   function handleResizeWidth() {
     setWidth(window.innerWidth);
@@ -210,50 +205,52 @@ export default function BusinessExample() {
     <div css={ctn}>
       <h3 css={section_title}>우수사례</h3>
       <div css={card_control_ctn}>
-        <button type="button" className="disabled prev" css={control_button}>
+        <button
+          type="button"
+          className="disabled prev swiper-button-prev"
+          css={control_button}
+          onClick={handleGoPrevSlide}
+        >
           <ArrowLeft />
           <p>prev</p>
         </button>
-        <div css={card_ctn}>
-          {width > 1520 &&
-            cardData
-              .slice(0, 3)
-              .map((card, idx) => (
+        <Swiper
+          css={swiper}
+          ref={swiperRef}
+          modules={[Navigation]}
+          spaceBetween={36}
+          slidesPerView={1}
+          centeredSlides={true}
+          breakpoints={{
+            1000: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1550: {
+              slidesPerView: 3,
+              spaceBetween: 44,
+            },
+          }}
+        >
+          {slideDataArr.map((card, idx) => (
+            <SwiperSlide key={card.name + idx}>
+              <div>
                 <ExampleCard
-                  key={card.name + idx}
                   image={card.image}
                   name={card.name}
                   company={card.company}
                   tags={card.tags}
                 />
-              ))}
-          {width <= 1520 &&
-            width > 918 &&
-            cardData
-              .slice(0, 2)
-              .map((card, idx) => (
-                <ExampleCard
-                  key={card.name + idx}
-                  image={card.image}
-                  name={card.name}
-                  company={card.company}
-                  tags={card.tags}
-                />
-              ))}
-          {width <= 918 &&
-            cardData
-              .slice(0, 1)
-              .map((card, idx) => (
-                <ExampleCard
-                  key={card.name + idx}
-                  image={card.image}
-                  name={card.name}
-                  company={card.company}
-                  tags={card.tags}
-                />
-              ))}
-        </div>
-        <button type="button" className="next" css={control_button}>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <button
+          type="button"
+          className="next swiper-button-next"
+          css={control_button}
+          onClick={handleGoNextSlide}
+        >
           <p>next</p>
           <ArrowRight />
         </button>
@@ -261,6 +258,14 @@ export default function BusinessExample() {
     </div>
   );
 }
+
+const swiper = css`
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 const ctn = css`
   width: auto;
@@ -329,19 +334,6 @@ const card_control_ctn = css`
   }
 `;
 
-const card_ctn = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 44px;
-  @media (max-width: 1919px) {
-    gap: 40px;
-  }
-  @media (max-width: 1800px) {
-    gap: 36px;
-  }
-`;
-
 const control_button = css`
   display: flex;
   justify-content: center;
@@ -369,6 +361,34 @@ const control_button = css`
       stroke: #343434;
     }
   }
+  &.swiper-button-prev {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    z-index: 1;
+    position: static;
+    svg {
+      width: auto;
+      height: auto;
+    }
+    &:after {
+      display: none;
+    }
+  }
+  &.swiper-button-next {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    z-index: 1;
+    position: static;
+    svg {
+      width: auto;
+      height: auto;
+    }
+    &:after {
+      display: none;
+    }
+  }
   @media (max-width: 1800px) {
     gap: 12px;
     font-size: 18px;
@@ -377,6 +397,7 @@ const control_button = css`
       height: auto;
     }
   }
+
   @media (max-width: 700px) {
     flex-direction: column;
     gap: 10px;

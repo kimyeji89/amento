@@ -74,6 +74,9 @@ const pdf_button = css`
   border: 1.6px solid #ddd;
   background: var(--white, #fff);
   margin-left: auto;
+  @media (max-width: 375px) {
+    height: 50px;
+  }
 `;
 
 const button_text = css`
