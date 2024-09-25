@@ -230,8 +230,6 @@ export default function BusinessExample({ slideDataArr }) {
           modules={[Navigation]}
           spaceBetween={36}
           slidesPerView={1}
-          // centeredSlides={true}
-          loop={true}
           onSlideChange={handleSlideChange}
           breakpoints={{
             910: {
@@ -258,7 +256,7 @@ export default function BusinessExample({ slideDataArr }) {
         <button
           type="button"
           className={
-            currentIndex < slideDataArr.length - 1
+            currentIndex < slideDataArr.length - 3
               ? "prev swiper-button-next"
               : "prev swiper-button-next disabled"
           }
