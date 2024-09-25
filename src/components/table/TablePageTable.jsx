@@ -354,6 +354,13 @@ export default function TablePageTable({ buttonLink, detailLink }) {
       gap: 32px;
       margin-top: 32px;
     }
+    @media (max-width: 375px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      margin-top: 34px;
+    }
   `;
   return (
     <div css={ctn}>

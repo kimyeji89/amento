@@ -106,6 +106,7 @@ const th = css`
   font-size: 17px;
   font-weight: 900;
   line-height: calc(50px - 2 * 10px);
+  white-space: nowrap;
   @media (max-width: 1919px) {
     font-size: 16px;
   }
