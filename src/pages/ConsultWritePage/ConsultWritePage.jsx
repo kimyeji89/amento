@@ -78,6 +78,10 @@ const form_container = css`
   align-self: stretch;
 
   padding: 24px 0 0 0;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 const btn_wrap = css`

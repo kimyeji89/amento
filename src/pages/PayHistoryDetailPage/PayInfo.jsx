@@ -139,6 +139,7 @@ const product_amount = css`
 
   @media (max-width: 768px) {
     font-size: 18px;
+    padding: 0 0 0 10px;
   }
 
   @media (max-width: 500px) {

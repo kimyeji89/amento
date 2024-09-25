@@ -35,7 +35,7 @@ export default function PayHistoryDetailPage() {
 
   return (
     <div css={page_wrap}>
-      <TablePageTitle title="결제 상세" />
+      <TablePageTitle title="결제 상세" hasBorder={false} />
 
       <div css={line} />
 

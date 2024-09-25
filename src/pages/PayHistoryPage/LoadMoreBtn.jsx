@@ -30,4 +30,9 @@ const container = css`
 
   font-size: 17px;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    height: 52px;
+    font-size: 15px;
+  }
 `;
