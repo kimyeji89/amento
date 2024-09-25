@@ -64,6 +64,10 @@ const des_wrap = css`
   justify-content: end;
   gap: 14px;
 
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+
   @media (max-width: 375px) {
     gap: 10px;
   }
@@ -86,6 +90,10 @@ const detail_wrap = css`
 
   .detail {
     color: #959595;
+  }
+
+  @media (max-width: 768px) {
+    gap: 5px;
   }
 
   @media (max-width: 375px) {

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export default function GrayTable({ data }) {
+export default function InfoTable({ data }) {
   return (
     <div css={ctn}>
       <table border="1" cellSpacing="0" cellPadding="10" width="100%">

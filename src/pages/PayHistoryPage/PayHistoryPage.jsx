@@ -14,20 +14,28 @@ export default function PayHistoryPage() {
     padding: ${headerHeight + 160}px 210px;
     background: #f6f7fa;
 
-    @media (max-width: 1680px) {
-      padding: ${headerHeight + 120}px 100px;
+    @media (max-width: 1520px) {
+      padding: ${headerHeight + 120}px 140px;
     }
 
-    @media (max-width: 1480px) {
+    @media (max-width: 1280px) {
       padding: ${headerHeight + 120}px 100px;
     }
 
     @media (max-width: 1024px) {
-      padding: ${headerHeight + 120}px 65px;
+      padding: ${headerHeight + 80}px 65px;
     }
 
     @media (max-width: 768px) {
+      padding: ${headerHeight + 34}px 40px;
+    }
+
+    @media (max-width: 375px) {
       padding: ${headerHeight + 34}px 20px;
+    }
+
+    @media (max-width: 320px) {
+      padding: ${headerHeight + 34}px 10px;
     }
   `;
 

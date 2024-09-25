@@ -50,3 +50,12 @@ export function PageWrapWide({ children, pb = "0" }) {
 
   return <div css={page_wrap_wide(pt, pb)}>{children}</div>;
 }
+
+export function PageWrapSimple({ children }) {
+  const { headerHeight } = useHeaderHeight();
+
+  const page_wrap = css`
+    padding-top: ${headerHeight}px;
+  `;
+  return <div css={page_wrap}>{children}</div>;
+}

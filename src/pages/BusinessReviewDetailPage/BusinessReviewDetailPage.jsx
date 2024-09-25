@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import PostTitle from "@components/post/PostTitle";
 import PostTextBox from "@components/post/PostTextBox";
 import post from "@data/businessReviewData.json";
@@ -8,6 +9,12 @@ import Button from "@components/ui/Button";
 import PageTitle from "@components/ui/PageTitle";
 
 export default function BusinessReviewDetailPage() {
+  const { headerHeight } = useHeaderHeight();
+
+  const page_wrap = css`
+    padding: ${headerHeight}px 0 0;
+  `;
+
   return (
     <div css={page_wrap}>
       <PageTitle title="사업후기" hasBorder />
@@ -29,13 +36,8 @@ export default function BusinessReviewDetailPage() {
   );
 }
 
-const page_wrap = css`
-  padding: 90px 0 0 0;
-`;
-
 const content_wrap = css`
   padding: 124px 210px 158px;
-
 
   @media (max-width: 1280px) {
     padding: 124px 100px 353px;
@@ -46,9 +48,12 @@ const content_wrap = css`
   }
 
   @media (max-width: 768px) {
-    padding: 60px 20px 353px;
+    padding: 34px 40px 353px;
   }
 
+  @media (max-width: 375px) {
+    padding: 34px 20px 353px;
+  }
 `;
 
 const btn_wrap = css`
@@ -65,11 +70,9 @@ const btn_wrap = css`
     flex-basis: 0;
   }
 
-
   @media (max-width: 1024px) {
     width: 100%;
     gap: 10px;
     padding: 44px 0 0;
   }
-
 `;

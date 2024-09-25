@@ -28,6 +28,11 @@ const text_wrap = css`
   font-weight: 400;
   line-height: 160%;
 
+  @media (max-width: 768px) {
+    padding: 20px;
+    margin: 24px 0 34px;
+  }
+
   @media (max-width: 375px) {
     padding: 20px;
     margin: 24px 0 34px;

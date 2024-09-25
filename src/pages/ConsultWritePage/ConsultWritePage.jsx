@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import PostTitle from "@components/post/PostTitle";
 import WriteInputText from "@components/post/WriteInputText";
 import Button from "@components/ui/Button";
@@ -7,6 +8,32 @@ import TitleInput from "./TitleInput";
 import SelectBox from "./SelectBox";
 
 export default function ConsultWritePage() {
+  const { headerHeight } = useHeaderHeight();
+
+  const page_wrap = css`
+    padding: ${headerHeight + 160}px 210px;
+
+    @media (max-width: 1520px) {
+      padding: ${headerHeight + 120}px 140px;
+    }
+
+    @media (max-width: 1280px) {
+      padding: ${headerHeight + 120}px 100px;
+    }
+
+    @media (max-width: 1024px) {
+      padding: ${headerHeight + 80}px 65px;
+    }
+
+    @media (max-width: 768px) {
+      padding: ${headerHeight + 34}px 20px;
+    }
+
+    @media (max-width: 375px) {
+      padding: ${headerHeight + 34}px 20px;
+    }
+  `;
+
   return (
     <div css={page_wrap}>
       <PostTitle
@@ -29,22 +56,6 @@ export default function ConsultWritePage() {
     </div>
   );
 }
-
-const page_wrap = css`
-  padding: 250px 210px 353px;
-
-  @media (max-width: 1280px) {
-    padding: 250px 100px 353px;
-  }
-
-  @media (max-width: 1024px) {
-    padding: 250px 65px 353px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 250px 20px 353px;
-  }
-`;
 
 const form_container = css`
   display: flex;

@@ -26,33 +26,32 @@ const title_wrap = (hasBorder) => css`
   background-color: var(--white);
   border-bottom: ${hasBorder ? "1px solid #DBDBDB" : "none"};
 
-  @media (max-width: 1680px) {
-    padding: 0 0 0 160px;
-  }
-
   @media (max-width: 1520px) {
     padding: 0 0 0 140px;
   }
 
   @media (max-width: 1280px) {
-    padding: 0 0 0 120px;
+    padding: 0 0 0 100px;
     height: 150px;
   }
 
   @media (max-width: 1024px) {
-    padding: 0 0 0 100px;
-    height: 150px;
+    padding: 0 0 0 65px;
+    height: 130px;
   }
 
   @media (max-width: 768px) {
     padding: 0 0 0 40px;
-    padding: 0 0 0 100px;
+    height: 120px;
     // border-bottom: none;
   }
 
-  @media (max-width: 400px) {
-    padding: 0 0 0 20px;
+  @media (max-width: 430px) {
     height: 80px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0 0 20px;
   }
 `;
 
@@ -98,18 +97,18 @@ const title_h1 = css`
   }
 
   @media (max-width: 1024px) {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   @media (max-width: 768px) {
     font-size: 34px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     font-size: 28px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 430px) {
     font-size: 24px;
   }
 `;

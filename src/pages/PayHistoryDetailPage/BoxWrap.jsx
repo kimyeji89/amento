@@ -24,7 +24,13 @@ const wrap = css`
     line-height: normal;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 1024px) {
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 768px) {
     gap: 10px;
     h3 {
       font-size: 18px;
