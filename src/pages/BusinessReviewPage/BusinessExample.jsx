@@ -254,8 +254,8 @@ export default function BusinessExample() {
               ))}
         </div>
         <button type="button" className="next" css={control_button}>
-          <ArrowRight />
           <p>next</p>
+          <ArrowRight />
         </button>
       </div>
     </div>
