@@ -118,7 +118,6 @@ const btn_group = css`
   border-radius: 10px 10px 10px 10px;
   overflow: hidden;
   background-color: #fff;
-  border: 1px solid #cecece;
 
   button {
     flex: 1;
@@ -128,23 +127,34 @@ const btn_group = css`
     cursor: pointer;
     text-align: center;
     background-color: white;
-    border-right: 1px solid #cecece;
+    border-right: none;
     color: #111;
+    border: 1px solid #cecece;
+    border-right: 0px;
 
     font-size: 15px;
     font-weight: 500;
     line-height: normal;
   }
 
+  & .button:first-child {
+    border-radius: 10px 0px 0px 10px;
+  }
+
   & .selected {
     background-color: #9627e7;
     color: white;
+    border: none;
     font-weight: 700;
   }
 
   & .button:last-child {
     border-radius: 0px 10px 10px 0px;
-    border-right: none;
+    border-right: 1px solid #cecece;
+
+    &.selected {
+      border-right: none !important;
+    }
   }
 
   @media (max-width: 1280px) {
