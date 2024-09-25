@@ -32,11 +32,9 @@ const button = css`
   padding: 20px 90.5px;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   border-radius: 80px;
   background: var(--primary, #9627e7);
   color: var(--white, #fff);
-  leading-trim: both;
   font-family: Pretendard;
   text-edge: cap;
   font-size: 17px;

@@ -48,6 +48,9 @@ const th = css`
   }
   @media (max-width: 375px) {
     font-size: 15px;
+    height: 40px;
+    line-height: normal;
+    vertical-align: middle;
   }
 `;
 
@@ -67,6 +70,9 @@ const td = css`
   }
   @media (max-width: 375px) {
     font-size: 15px;
+    height: 40px;
+    line-height: normal;
+    vertical-align: middle;
   }
 `;
 

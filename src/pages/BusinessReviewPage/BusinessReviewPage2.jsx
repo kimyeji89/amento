@@ -6,12 +6,13 @@ import TablePageTitle from "@components/table/TablePageTitle";
 import TablePageForm from "@components/table/TablePageForm";
 import TablePageTable from "@components/table/TablePageTable";
 import BusinessExample from "./BusinessExample";
+import businessReviewCardData from "@data/businessReviewCardData.json";
 
 export default function BusinessReviewPage2() {
   return (
     <PageWrapSimple>
       <PageTitle title="사업후기" />
-      <BusinessExample />
+      <BusinessExample slideDataArr={businessReviewCardData} />
       <TablePageWrapTypeB>
         <TablePageTitle title="사업후기" hasBorder={false} />
         <TablePageForm />

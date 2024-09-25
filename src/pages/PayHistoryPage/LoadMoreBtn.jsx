@@ -27,4 +27,12 @@ const container = css`
   border: 1px solid #cecece;
   background: #fff;
   box-shadow: 0px 6px 20px 0px rgba(235, 235, 235, 0.7);
+
+  font-size: 17px;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    height: 52px;
+    font-size: 15px;
+  }
 `;

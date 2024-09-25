@@ -31,11 +31,15 @@ export default function PayHistoryDetailPage() {
     @media (max-width: 375px) {
       padding: ${headerHeight + 34}px 20px;
     }
+
+    @media (max-width: 320px) {
+      padding: ${headerHeight + 34}px 10px;
+    }
   `;
 
   return (
     <div css={page_wrap}>
-      <TablePageTitle title="결제 상세" />
+      <TablePageTitle title="결제 상세" hasBorder={false} />
 
       <div css={line} />
 

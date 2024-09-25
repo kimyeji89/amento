@@ -17,6 +17,7 @@ export default function FormDatePicker({ label, isSearchBar }) {
       <input
         type="date"
         value={inputValue}
+        placeholder={isSearchBar ? "2024.01.01" : "Select a date"}
         onChange={handleChange}
         css={input_style(inputValue, isSearchBar)}
       />
@@ -59,10 +60,12 @@ const label_style = css`
 `;
 
 const input_style = (inputValue, isSearchBar) => css`
+  min-height: 20px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
+  font-family: Pretendard;
 
   padding: ${isSearchBar ? "15px 14px" : "19px 15px"};
 
@@ -70,16 +73,11 @@ const input_style = (inputValue, isSearchBar) => css`
   background-color: #fff;
   height: 100%;
   border-radius: ${isSearchBar ? "10px" : "5px"};
-  color: ${isSearchBar ? "#6a6a6a" : "#181818"};
+  color: ${isSearchBar ? "#111111" : "#181818"};
   font-size: 15px;
   font-weight: 400;
   line-height: 17.9px;
   text-align: start;
-
-  @media (max-width: 480px) {
-    font-size: 12px;
-    // padding: ${isSearchBar ? "10px 14px" : "13px 14px"};
-  }
 
   @media (max-width: 430px) {
     font-size: 12px;
@@ -117,14 +115,22 @@ const input_style = (inputValue, isSearchBar) => css`
   &::-webkit-datetime-edit-month-field {
     -webkit-appearance: none;
     display: ${inputValue ? "inline" : "none"};
+    padding: 0;
   }
   &::-webkit-datetime-edit-day-field {
     -webkit-appearance: none;
     display: ${inputValue ? "inline" : "none"};
+    padding: 0;
   }
   &::-webkit-datetime-edit-year-field {
     -webkit-appearance: none;
     display: ${inputValue ? "inline" : "none"};
+    padding: 0;
+  }
+
+  // Safari에서 왼쪽 정렬
+  &::-webkit-date-and-time-value {
+    text-align: left;
   }
 `;
 

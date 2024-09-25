@@ -1,0 +1,38 @@
+[
+  {
+    "image": "/assets/images/businessReview/exampleCard.png",
+    "name": "OO코퍼레이션 대표자",
+    "company": "(주)00000",
+    "tags": ["음식", "가맹본부", "예비"]
+  },
+  {
+    "image": "/assets/images/businessReview/exampleCard.png",
+    "name": "OO코퍼레이션 대표자",
+    "company": "(주)11111",
+    "tags": ["음식", "가맹본부", "예비"]
+  },
+  {
+    "image": "/assets/images/businessReview/exampleCard.png",
+    "name": "OO코퍼레이션 대표자",
+    "company": "(주)22222",
+    "tags": ["음식", "가맹본부", "예비"]
+  },
+  {
+    "image": "/assets/images/businessReview/exampleCard.png",
+    "name": "OO코퍼레이션 대표자",
+    "company": "(주)33333",
+    "tags": ["음식", "가맹본부", "예비"]
+  },
+  {
+    "image": "/assets/images/businessReview/exampleCard.png",
+    "name": "OO코퍼레이션 대표자",
+    "company": "(주)44444",
+    "tags": ["음식", "가맹본부", "예비"]
+  },
+  {
+    "image": "/assets/images/businessReview/exampleCard.png",
+    "name": "OO코퍼레이션 대표자",
+    "company": "(주)55555",
+    "tags": ["음식", "가맹본부", "예비"]
+  }
+]

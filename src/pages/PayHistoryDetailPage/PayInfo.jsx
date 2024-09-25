@@ -115,6 +115,10 @@ const card_pay_container = css`
   @media (max-width: 500px) {
     font-size: 16px;
   }
+
+  @media (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
 
 const card_p = css`
@@ -139,6 +143,7 @@ const product_amount = css`
 
   @media (max-width: 768px) {
     font-size: 18px;
+    padding: 0 0 0 10px;
   }
 
   @media (max-width: 500px) {
@@ -164,5 +169,9 @@ const card_info = css`
 
   @media (max-width: 500px) {
     font-size: 16px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 14px;
   }
 `;

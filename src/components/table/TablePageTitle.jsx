@@ -47,4 +47,7 @@ const border = css`
     padding-bottom: 0px;
     margin-bottom: 24px;
   }
+  @media (max-width: 375px) {
+    margin-bottom: 34px;
+  }
 `;
