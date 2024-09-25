@@ -12,7 +12,6 @@ export default function PayHistoryPage() {
 
   const page_wrap = css`
     padding: ${headerHeight + 160}px 210px;
-    background: #f6f7fa;
 
     @media (max-width: 1520px) {
       padding: ${headerHeight + 120}px 140px;

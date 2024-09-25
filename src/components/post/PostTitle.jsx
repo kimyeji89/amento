@@ -70,6 +70,7 @@ const des_wrap = css`
 
   @media (max-width: 375px) {
     gap: 10px;
+    justify-content: start;
   }
 
   @media (max-width: 340px) {

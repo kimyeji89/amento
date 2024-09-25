@@ -63,6 +63,7 @@ const input_style = (inputValue, isSearchBar) => css`
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
+  font-family: Pretendard;
 
   padding: ${isSearchBar ? "15px 14px" : "19px 15px"};
 

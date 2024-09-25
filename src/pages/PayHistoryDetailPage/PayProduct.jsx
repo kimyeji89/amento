@@ -4,7 +4,7 @@ import BoxWrap from "./BoxWrap";
 
 export default function PayProduct() {
   return (
-    <BoxWrap title={"결제정보"}>
+    <BoxWrap title={"결제상품"}>
       <img
         src="/assets/images/payHistoryDetailPage/payProduct.png"
         alt="payProduct"

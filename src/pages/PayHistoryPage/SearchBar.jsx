@@ -3,8 +3,10 @@ import { css } from "@emotion/react";
 import { useState } from "react";
 import { ReactComponent as SearchIcon } from "@svgs/pageHistoryPage/searchWhite.svg";
 import FormDatePicker from "../../components/form/FormDatePicker";
+import useIsMobile from "../../hooks/useIsMobile";
 
 export default function SearchBar() {
+  const { isMobile } = useIsMobile();
   const [selected, setSelected] = useState("오늘");
 
   const buttons = ["오늘", "1주일", "1개월", "3개월", "6개월"];
@@ -39,7 +41,7 @@ export default function SearchBar() {
           <div>검색</div>
           <SearchIcon />
         </button>
-        <button css={reset_btn}>검색 초기화</button>
+        <button css={reset_btn}>{isMobile ? "초기화" : "검색 초기화"}</button>
       </div>
     </div>
   );
@@ -135,7 +137,7 @@ const btn_group = css`
   }
 
   & .selected {
-    background-color: #9b51e0;
+    background-color: #9627e7;
     color: white;
     font-weight: 700;
   }
@@ -257,4 +259,5 @@ const search_btn = css`
 const reset_btn = css`
   background: #fff;
   color: #111;
+  border: 1px solid #bcbcbc;
 `;

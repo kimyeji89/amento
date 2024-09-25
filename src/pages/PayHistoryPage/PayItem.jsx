@@ -105,7 +105,7 @@ const product_p = css`
   padding: 0 0 14px 0;
   color: #3c3c3c;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: normal;
 
   @media (max-width: 500px) {
