@@ -41,7 +41,7 @@ export default function PayHistoryPage() {
 
   return (
     <div css={page_wrap}>
-      <TablePageTitle title="결제내역" />
+      <TablePageTitle title="결제내역" hasBorder={false} />
       <SearchBar />
 
       <div css={item_wrap}>

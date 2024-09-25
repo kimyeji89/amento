@@ -76,6 +76,7 @@ const search_wrap = css`
 
   @media (max-width: 375px) {
     padding: 10px 10px;
+    margin: 20px 0 0 0;
   }
 `;
 
