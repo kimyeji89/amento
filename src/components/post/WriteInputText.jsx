@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 
 export default function WriteInputText() {
-  return <textarea css={textarea}>asdf</textarea>;
+  return <textarea css={textarea}></textarea>;
 }
 
 const textarea = css`

@@ -37,14 +37,16 @@ const title_wrap = (hasBorder) => css`
 
   @media (max-width: 1024px) {
     padding: 0 0 0 65px;
-    height: 150px;
+    height: 130px;
   }
 
   @media (max-width: 768px) {
     padding: 0 0 0 40px;
+    height: 120px;
+    // border-bottom: none;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 430px) {
     height: 80px;
   }
 
@@ -95,18 +97,18 @@ const title_h1 = css`
   }
 
   @media (max-width: 1024px) {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   @media (max-width: 768px) {
     font-size: 34px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     font-size: 28px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 430px) {
     font-size: 24px;
   }
 `;

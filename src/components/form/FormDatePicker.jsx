@@ -76,9 +76,14 @@ const input_style = (inputValue, isSearchBar) => css`
   line-height: 17.9px;
   text-align: start;
 
+  @media (max-width: 480px) {
+    font-size: 12px;
+    // padding: ${isSearchBar ? "10px 14px" : "13px 14px"};
+  }
+
   @media (max-width: 430px) {
-    font-size: 13px;
-    padding: ${isSearchBar ? "10px 14px" : "13px 14px"};
+    font-size: 12px;
+    padding: ${isSearchBar ? "10px 6px" : "13px 14px"};
   }
 
   @media (max-width: 375px) {
@@ -86,7 +91,7 @@ const input_style = (inputValue, isSearchBar) => css`
     padding: ${isSearchBar ? "10px 14px" : "15px 13px"};
   }
 
-  @media (max-width: 350px) {
+  @media (max-width: 360px) {
     font-size: 11px;
     padding: ${isSearchBar ? "10px 4px" : "15px 13px"};
   }
@@ -132,13 +137,14 @@ const calendar_icon = (isSearchBar) => css`
     width: ${isSearchBar ? "20px" : ""};
     height: ${isSearchBar ? "20px" : ""};
     bottom: ${isSearchBar ? "12px" : ""};
+    right: ${isSearchBar ? "8px" : "14px"};
   }
+
+  // @media (max-width: 520px) {
+  //   right: ${isSearchBar ? "8px" : "14px"};
+  // }
 
   @media (max-width: 375px) {
     bottom: ${isSearchBar ? "12px" : "13px"};
-  }
-
-  @media (max-width: 350px) {
-    right: ${isSearchBar ? "8px" : "14px"};
   }
 `;

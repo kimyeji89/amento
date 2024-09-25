@@ -25,6 +25,7 @@ export default function SearchBar() {
           ))}
         </div>
       </div>
+
       <div css={vertical_line}></div>
 
       <div css={calendar}>
@@ -58,6 +59,11 @@ const search_wrap = css`
     padding: 20px 20px;
   }
 
+  @media (max-width: 1440px) {
+    gap: 0px;
+    padding: 20px 10px;
+  }
+
   @media (max-width: 1280px) {
     flex-direction: column;
     gap: 10px;
@@ -88,8 +94,8 @@ const period = css`
   }
 
   @media (max-width: 1440px) {
-    gap: 18px;
-    padding: 0 16px 0 0;
+    gap: 6px;
+    padding: 0 10px 0 0;
     span {
       font-size: 18px;
     }
@@ -133,16 +139,8 @@ const btn_group = css`
     font-weight: 700;
   }
 
-  &. .button:first-child {
-    border-radius: 10px 0px 0px 10px;
-  }
-
-  &. .button:last-child {
+  & .button:last-child {
     border-radius: 0px 10px 10px 0px;
-    border-right: none;
-  }
-
-  &. .button:last-child {
     border-right: none;
   }
 
@@ -219,6 +217,10 @@ const button_wrap = css`
     button {
       width: 100px;
     }
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0 0 0 16px;
   }
 
   @media (max-width: 1280px) {
