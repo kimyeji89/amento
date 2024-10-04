@@ -12,7 +12,6 @@ export default function ProcessDetailPage1() {
       designFranchiseHeadquarters: false,
       prepareFranchiseHeadquartersManual: false,
       informationDisclosureForm: false,
-      startUpConsultingOtherLaws: false,
     },
     legalAssistance: {
       fairTradeAct: false,
@@ -137,13 +136,6 @@ export default function ProcessDetailPage1() {
               name="startUpConsulting"
               id="informationDisclosureForm"
               label="정보공개서 작성및 등록"
-              onClick={handleChangeCheckbox}
-              formData={formData}
-            />
-            <CheckBoxInput
-              name="startUpConsulting"
-              id="startUpConsultingOtherLaws"
-              label="기타 법률"
               onClick={handleChangeCheckbox}
               formData={formData}
             />
@@ -329,26 +321,26 @@ export default function ProcessDetailPage1() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>창업 메뉴얼</p>
+          <p css={group}>창업 매뉴얼</p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="startUpManual"
               id="affiliateBusinessManual"
-              label="가맹점사업자 메뉴얼"
+              label="가맹점사업자 매뉴얼"
               onClick={handleChangeCheckbox}
               formData={formData}
             />
             <CheckBoxInput
               name="startUpManual"
               id="affiliateBusinessMenuTraining"
-              label="가맹점사업자 메뉴 교육"
+              label="가맹점사업자 매뉴얼 교육"
               onClick={handleChangeCheckbox}
               formData={formData}
             />
             <CheckBoxInput
               name="startUpManual"
               id="manualTrainingFranchiseHeadquarters"
-              label="가맹점본부 메뉴얼 교육"
+              label="가맹점본부 매뉴얼 교육"
               onClick={handleChangeCheckbox}
               formData={formData}
             />
@@ -414,7 +406,7 @@ export default function ProcessDetailPage1() {
             <CheckBoxInput
               name="presentation"
               id=" operationFranchiseHeadquartersConsignmentExplanation"
-              label="가맹본부 위탁 설명<br/> 운영"
+              label="가맹본부 위탁 설명회<br/> 운영"
               onClick={handleChangeCheckbox}
               formData={formData}
               isBig={true}
