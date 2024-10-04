@@ -9,12 +9,14 @@ export default function CategoryCard({
   descText,
   img,
   onClick,
+  link,
 }) {
   return (
     <div
       className="category_card"
       css={category_card}
       data-category={categoryText}
+      data-link={link}
       onClick={onClick}
     >
       <img src={img} alt="categoryText.cate1" />

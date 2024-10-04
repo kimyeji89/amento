@@ -40,7 +40,7 @@ https://amento.vercel.app/
     2. 비밀번호 변경 (새 비밀번호) (ChangePwDetailPage) : https://amento.vercel.app/changePwDetail
     3. 비밀번호 변경 완료 (ChangePwDonePage)  : https://amento.vercel.app/changePwDone
 
-## 2차 개발(PC/모바일 반응형 - 진행중)
+## 2차 개발(PC/모바일 반응형)
 1. 결제내역 (PayHistoryPage) : https://amento.vercel.app/payHistory
 2. 결제내역 상세 (PayHistoryDetailPage) : https://amento.vercel.app/payHistoryDetail
 3. 견적서 (EstimateSheetPage) : https://amento.vercel.app/estimateSheet
