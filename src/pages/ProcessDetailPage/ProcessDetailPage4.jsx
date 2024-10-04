@@ -118,7 +118,9 @@ export default function ProcessDetailPage4() {
       <h2 css={page_title}>가맹본부 운영 컨설팅 (가맹본부 운영중)</h2>
       <form className="form" css={form_ctn} action="GET">
         <div css={group_ctn}>
-          <p css={group}>창업컨설팅</p>
+          <p className="gray" css={group}>
+            창업컨설팅
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="startUpConsulting"
@@ -151,7 +153,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>창업법률 지원</p>
+          <p className="gray" css={group}>
+            창업법률 지원
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="legalAssistance"
@@ -191,7 +195,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>인허가</p>
+          <p className="gray" css={group}>
+            인허가
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="authorization"
@@ -245,7 +251,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>지식재산권</p>
+          <p className="gray" css={group}>
+            지식재산권
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="intellectualPropertyRights"
@@ -292,7 +300,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>세무</p>
+          <p className="gray" css={group}>
+            세무
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="taxation"
@@ -311,7 +321,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>교육</p>
+          <p className="gray" css={group}>
+            교육
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="education"
@@ -330,7 +342,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>창업 메뉴얼</p>
+          <p className="gray" css={group}>
+            창업 메뉴얼
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="startUpManual"
@@ -356,7 +370,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>레시피 개발</p>
+          <p className="gray" css={group}>
+            레시피 개발
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="recipeDevelopment"
@@ -382,7 +398,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>행사 및 이벤트</p>
+          <p className="gray" css={group}>
+            행사 및 이벤트
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="events"
@@ -408,7 +426,7 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p className="big" css={group}>
+          <p className="big gray" css={group}>
             설명회
           </p>
           <div css={input_ctn}>
@@ -431,7 +449,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>포스</p>
+          <p className="gray" css={group}>
+            포스
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="force"
