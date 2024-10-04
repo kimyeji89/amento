@@ -334,7 +334,9 @@ export default function ProcessDetailPage4() {
           </div>
         </div>
         <div css={group_ctn}>
-          <p css={group}>창업 매뉴얼</p>
+          <p className="gray" css={group}>
+            창업 매뉴얼
+          </p>
           <div css={input_ctn}>
             <CheckBoxInput
               name="startUpManual"
