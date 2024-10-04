@@ -1,42 +1,58 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useHeaderHeight } from "@hooks/useHeaderHeight";
+import { useNavigate } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
 
 export default function ProcessCatePage() {
   const { headerHeight } = useHeaderHeight();
   const [category, setCategory] = useState("");
+  const [nextLink, setNextLink] = useState("");
+  const navigate = useNavigate();
 
   const categoryText = {
     cate1: {
       category: "예비 가맹본부 준비",
       desc: "사업(직영점 등) 1년 미만 or 미운영",
+      link: "/processDetail/1",
     },
     cate2: {
       category: "가맹본부 설립 희망",
       desc: "직영점 1년 이상",
+      link: "/processDetail/2",
     },
     cate3: {
       category: "가맹본부 사업 전환",
       desc: "가맹본부 또는 가맹점 1년 이상 운영",
+      link: "/processDetail/3",
     },
     cate4: {
       category: "가맹본부 운영 컨설팅",
       desc: "가맹본부 운영중",
+      link: "/processDetail/4",
     },
   };
 
   function handleChangeCategory(e) {
-    setCategory(e.currentTarget.dataset.category);
+    const selectedCategory = e.currentTarget.dataset.category; // 선택한 카테고리 가져오기
+    const selectedLink = e.currentTarget.dataset.link; // 링크 가져오기
+
+    setCategory(selectedCategory); // 카테고리 상태 업데이트
+    setNextLink(selectedLink); // 해당 카테고리 링크 저장
+
+    // 모든 카드에서 선택된 상태 제거
     document.querySelectorAll(".category_card").forEach((card) => {
       card.classList.remove("selected");
     });
-    if (e.currentTarget.classList.contains(category)) {
-      e.currentTarget.classList.remove("selected");
-    } else {
-      e.currentTarget.classList.add("selected");
+
+    // 선택된 카드에만 'selected' 클래스 추가
+    e.currentTarget.classList.add("selected");
+  }
+
+  function handleNextButtonClick() {
+    if (nextLink) {
+      navigate(nextLink);
     }
   }
 
@@ -79,6 +95,8 @@ export default function ProcessCatePage() {
           descText={categoryText.cate1.desc}
           img="/assets/images/processCate/cate1.png"
           onClick={handleChangeCategory}
+          data-category="cate1"
+          link={categoryText.cate1.link}
         />
         <CategoryCard
           category={category}
@@ -86,6 +104,8 @@ export default function ProcessCatePage() {
           descText={categoryText.cate2.desc}
           img="/assets/images/processCate/cate2.png"
           onClick={handleChangeCategory}
+          data-category="cate2"
+          link={categoryText.cate2.link}
         />
         <CategoryCard
           category={category}
@@ -93,6 +113,8 @@ export default function ProcessCatePage() {
           descText={categoryText.cate3.desc}
           img="/assets/images/processCate/cate3.png"
           onClick={handleChangeCategory}
+          data-category="cate3"
+          link={categoryText.cate3.link}
         />
         <CategoryCard
           category={category}
@@ -100,16 +122,26 @@ export default function ProcessCatePage() {
           descText={categoryText.cate4.desc}
           img="/assets/images/processCate/cate4.png"
           onClick={handleChangeCategory}
+          data-category="cate4"
+          link={categoryText.cate4.link}
         />
-        {category === "" ? (
+        {/* {category === "" ? (
           <button type="button" css={next_button_disabled}>
             next
           </button>
         ) : (
-          <Link to="/processDetail" css={next_button}>
+          <Link to={categoryText[category].link || "/"} css={next_button}>
             <button type="button">next</button>
           </Link>
-        )}
+        )} */}
+        <button
+          type="button"
+          css={category === "" ? next_button_disabled : next_button}
+          onClick={handleNextButtonClick} // 버튼 클릭 시 nextLink로 이동
+          disabled={category === ""}
+        >
+          next
+        </button>
       </div>
     </main>
   );
@@ -172,26 +204,26 @@ const next_button = css`
   width: 100%;
   max-width: 664px;
   text-decoration: none;
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    padding: 10px 20px;
-    width: 100%;
-    height: 50px;
-    border-radius: 80px;
-    background: var(--primary);
-    color: #fff;
-    font-family: Poppins;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: uppercase;
-  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 80px;
+  background: var(--primary);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+
   @media (max-width: 823px) {
     max-width: 320px;
   }

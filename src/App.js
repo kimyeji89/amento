@@ -39,6 +39,10 @@ import ConsultDetailPage from "@pages/ConsultDetailPage/ConsultDetailPage";
 import ConsultWritePage from "@pages/ConsultWritePage/ConsultWritePage";
 import QnAPage from "@pages/QnAPage/QnAPage";
 import BusinessReviewDetailPage from "@pages/BusinessReviewDetailPage/BusinessReviewDetailPage";
+import ProcessDetailPage1 from "@pages/ProcessDetailPage/ProcessDetailPage1";
+import ProcessDetailPage2 from "@pages/ProcessDetailPage/ProcessDetailPage2";
+import ProcessDetailPage3 from "@pages/ProcessDetailPage/ProcessDetailPage3";
+import ProcessDetailPage4 from "@pages/ProcessDetailPage/ProcessDetailPage4";
 
 function App() {
   return (
@@ -51,7 +55,12 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/processCate" element={<ProcessCatePage />} />
-            <Route path="/processDetail" element={<ProcessDetailPage />} />
+
+            <Route path="/processDetail/1" element={<ProcessDetailPage1 />} />
+            <Route path="/processDetail/2" element={<ProcessDetailPage2 />} />
+            <Route path="/processDetail/3" element={<ProcessDetailPage3 />} />
+            <Route path="/processDetail/4" element={<ProcessDetailPage4 />} />
+
             <Route path="/processDone" element={<ProcessDonePage />} />
 
             {/* 게시판 */}

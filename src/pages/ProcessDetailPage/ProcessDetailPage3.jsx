@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useHeaderHeight } from "@hooks/useHeaderHeight";
 import CheckBoxInput from "./CheckBoxInput";
+import SecChoiceOption from "./SecChoiceOption";
 
-export default function ProcessDetailPage({ title }) {
+export default function ProcessDetailPage3() {
   const { headerHeight } = useHeaderHeight();
   const [formData, setFormData] = useState({
     startUpConsulting: {
@@ -114,7 +115,9 @@ export default function ProcessDetailPage({ title }) {
 
   return (
     <main css={ctn}>
-      <h2 css={page_title}>{title}</h2>
+      <h2 css={page_title}>
+        가맹본부 사업 전환 (가맹본부 또는 가맹점 1년 이상 운영)
+      </h2>
       <form className="form" css={form_ctn} action="GET">
         <div css={group_ctn}>
           <p css={group}>창업컨설팅</p>
@@ -448,6 +451,9 @@ export default function ProcessDetailPage({ title }) {
             />
           </div>
         </div>
+
+        <SecChoiceOption />
+
         <div css={group_ctn}>
           <p className="gray" css={group}>
             기타 문의
