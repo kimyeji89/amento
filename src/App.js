@@ -5,7 +5,6 @@ import Header from "@components/ui/Header";
 import Footer from "@components/ui/Footer";
 import HomePage from "@pages/HomePage/HomePage";
 import ProcessCatePage from "@pages/ProcessCatePage/ProcessCatePage";
-import ProcessDetailPage from "@pages/ProcessDetailPage/ProcessDetailPage";
 import ProcessDonePage from "@pages/ProcessDonePage/ProcessDonePage";
 import CompanyIntroPage from "@pages/CompanyIntroPage/CompanyIntroPage";
 import ServicePage from "@pages/ServicePage/ServicePage";
@@ -55,12 +54,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/processCate" element={<ProcessCatePage />} />
-
             <Route path="/processDetail/1" element={<ProcessDetailPage1 />} />
             <Route path="/processDetail/2" element={<ProcessDetailPage2 />} />
             <Route path="/processDetail/3" element={<ProcessDetailPage3 />} />
             <Route path="/processDetail/4" element={<ProcessDetailPage4 />} />
-
             <Route path="/processDone" element={<ProcessDonePage />} />
 
             {/* 게시판 */}
